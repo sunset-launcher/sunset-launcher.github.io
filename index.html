@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunset Launcher — быстрый нативный лаунчер Minecraft на Rust</title>
+  <meta name="description" content="Sunset Launcher — бесплатный open-source лаунчер Minecraft на Rust. Vanilla, Fabric, Quilt, Forge, NeoForge, Modrinth, .mrpack, Microsoft / Ely.by / Offline." />
+  <meta name="theme-color" content="#120e18" />
+  <meta property="og:title" content="Sunset Launcher" />
+  <meta property="og:image" content="assets/logo.png" />
+  <link rel="icon" href="assets/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <div id="app-header"></div>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <a class="pill enter" style="--d:0" href="download.html">
+            <span class="dot"></span>
+            <span data-i18n="hero.pill">Новая версия</span>
+            <b class="version">v0.1.6</b>
+            <span class="arrow">→</span>
+          </a>
+          <h1>
+            <span class="line enter" style="--d:1" data-i18n="hero.title1">Minecraft-лаунчер,</span>
+            <span class="line enter grad shimmer" style="--d:2" data-i18n="hero.title2">который просто летает</span>
+          </h1>
+          <div class="cmdline enter" style="--d:3">
+            <span class="c">$</span> sunset launch --loader <span id="typed" class="typed">Fabric</span><span class="caret"></span>
+          </div>
+          <p class="lead enter" style="--d:4" data-i18n="hero.lead">
+            Нативный лаунчер на чистом Rust. Моды и модпаки с Modrinth, Microsoft, Ely.by и офлайн-аккаунты —
+            без Electron, без телеметрии, без лишнего.
+          </p>
+          <div class="hero-cta enter" style="--d:5">
+            <a href="download.html" class="btn btn-primary btn-lg magnetic" id="heroDownload">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+              <span id="heroDownloadText" data-i18n="hero.download">Скачать бесплатно</span>
+            </a>
+            <a href="features.html" class="btn btn-ghost btn-lg" data-i18n="hero.more">Возможности</a>
+          </div>
+          <ul class="hero-meta enter" style="--d:6">
+            <li><b>Linux</b> &amp; <b>Windows</b></li>
+            <li>MIT · Open Source</li>
+            <li data-i18n="hero.meta3">0 телеметрии</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual enter" style="--d:3">
+          <div class="sun" aria-hidden="true"></div>
+          <div class="window tilt" id="heroWindow">
+            <div class="window-bar">
+              <span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span>
+              <span class="window-title">Sunset Launcher</span>
+            </div>
+            <img src="assets/screenshots/library.jpg" alt="Sunset Launcher" />
+            <div class="window-shine" aria-hidden="true"></div>
+          </div>
+
+          <div class="cube-wrap" aria-hidden="true">
+            <div class="cube">
+              <i class="f top"></i><i class="f front"></i><i class="f right"></i>
+              <i class="f back"></i><i class="f left"></i><i class="f bottom"></i>
+            </div>
+          </div>
+
+          <div class="float-card fc1">
+            <span class="fc-ico">⚡</span>
+            <div><b>64</b><small data-i18n="hero.fc1">параллельных загрузок</small></div>
+          </div>
+          <div class="float-card fc2">
+            <span class="fc-ico">🧩</span>
+            <div><b>Modrinth</b><small data-i18n="hero.fc2">моды · шейдеры · паки</small></div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="mountains" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+        <polygon class="m1" points="0,220 0,120 80,90 140,130 220,60 300,110 380,70 460,120 540,50 620,100 700,40 780,95 860,65 940,120 1020,55 1100,100 1180,70 1260,115 1340,80 1440,110 1440,220"/>
+        <polygon class="m2" points="0,220 0,160 100,130 180,165 260,120 360,160 440,135 540,170 640,125 740,165 840,140 940,175 1040,130 1140,165 1240,140 1340,170 1440,145 1440,220"/>
+      </svg>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Vanilla</span><i>◆</i><span>Fabric</span><i>◆</i><span>Quilt</span><i>◆</i><span>Forge</span><i>◆</i><span>NeoForge</span><i>◆</i><span>Modrinth</span><i>◆</i><span>.mrpack</span><i>◆</i><span>Ely.by</span><i>◆</i><span>Microsoft</span><i>◆</i><span>Discord RPC</span><i>◆</i><span>Quick Play</span><i>◆</i><span>Aikar's Flags</span><i>◆</i>
+        <span>Vanilla</span><i>◆</i><span>Fabric</span><i>◆</i><span>Quilt</span><i>◆</i><span>Forge</span><i>◆</i><span>NeoForge</span><i>◆</i><span>Modrinth</span><i>◆</i><span>.mrpack</span><i>◆</i><span>Ely.by</span><i>◆</i><span>Microsoft</span><i>◆</i><span>Discord RPC</span><i>◆</i><span>Quick Play</span><i>◆</i><span>Aikar's Flags</span><i>◆</i>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats-grid reveal">
+        <div class="stat"><b data-count="5">0</b><span data-i18n="stats.loaders">загрузчиков модов</span></div>
+        <div class="stat"><b data-count="64">0</b><span data-i18n="stats.dl">потоков скачивания</span></div>
+        <div class="stat"><b data-count="9">0</b><span data-i18n="stats.lang">языков интерфейса</span></div>
+        <div class="stat"><b data-count="100" data-suffix="%">0</b><span data-i18n="stats.rust">чистый Rust</span></div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="feat.eyebrow">Возможности</span>
+          <h2 data-i18n="feat.title">Всё, что нужно для игры — в одном окне</h2>
+          <p data-i18n="feat.sub">От ванильного выживания до модпака на 300 модов. Sunset берёт всю рутину на себя.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal"><div class="f-ico">📦</div><h3 data-i18n="f1.t">Сборки и профили</h3><p data-i18n="f1.d">Создавайте, дублируйте и редактируйте сборки. Каждая живёт в своей изолированной папке.</p></article>
+          <article class="feature reveal"><div class="f-ico">🧩</div><h3 data-i18n="f2.t">Modrinth и .mrpack</h3><p data-i18n="f2.d">Моды, модпаки, ресурспаки и шейдеры. Импорт и экспорт .mrpack.</p></article>
+          <article class="feature reveal"><div class="f-ico">⚡</div><h3 data-i18n="f3.t">Молниеносные загрузки</h3><p data-i18n="f3.d">До 64 параллельных потоков с потоковой проверкой SHA-1.</p></article>
+          <article class="feature reveal"><div class="f-ico">👤</div><h3 data-i18n="f4.t">Аккаунты и скины</h3><p data-i18n="f4.d">Microsoft, Ely.by и офлайн-аккаунты с превью скина.</p></article>
+          <article class="feature reveal"><div class="f-ico">🌍</div><h3 data-i18n="f5.t">Миры и бэкапы</h3><p data-i18n="f5.d">Quick Play прямо в мир и .zip-бэкапы в один клик.</p></article>
+          <article class="feature reveal"><div class="f-ico">🖥️</div><h3 data-i18n="f7.t">Живая консоль</h3><p data-i18n="f7.d">Лог игры в реальном времени и детект крашей.</p></article>
+        </div>
+        <div class="center reveal"><a class="btn btn-ghost" href="features.html"><span data-i18n="feat.all">Все возможности</span> →</a></div>
+      </div>
+    </section>
+
+    <!-- LOADERS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="ld.eyebrow">Загрузчики</span>
+          <h2 data-i18n="ld.title">Любой загрузчик — в пару кликов</h2>
+          <p data-i18n="ld.sub">Официальные API Mojang, Fabric/Quilt Meta и Maven Forge/NeoForge, включая процессоры установщиков.</p>
+        </div>
+        <div class="loaders">
+          <div class="loader reveal"><div class="block grass"></div><b>Vanilla</b><small data-i18n="ld.v">Чистый Minecraft</small></div>
+          <div class="loader reveal"><div class="block fabric"></div><b>Fabric</b><small data-i18n="ld.f">Лёгкий и быстрый</small></div>
+          <div class="loader reveal"><div class="block quilt"></div><b>Quilt</b><small data-i18n="ld.q">Форк Fabric</small></div>
+          <div class="loader reveal"><div class="block forge"></div><b>Forge</b><small data-i18n="ld.fo">Классика модинга</small></div>
+          <div class="loader reveal"><div class="block neo"></div><b>NeoForge</b><small data-i18n="ld.n">Новое поколение</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="cmp.eyebrow">Почему Sunset</span>
+          <h2 data-i18n="cmp.title">Нативность против Electron</h2>
+        </div>
+        <div class="compare reveal">
+          <div class="cmp-row head"><span></span><span>Sunset</span><span data-i18n="cmp.others">Типичный лаунчер</span></div>
+          <div class="cmp-row"><span data-i18n="cmp.r1">Технология</span><span class="ok">Rust + egui</span><span>Electron / Java</span></div>
+          <div class="cmp-row"><span data-i18n="cmp.r2">Телеметрия</span><span class="ok" data-i18n="cmp.none">Нет</span><span class="bad" data-i18n="cmp.often">Часто есть</span></div>
+          <div class="cmp-row"><span data-i18n="cmp.r3">Один бинарник</span><span class="ok">✓</span><span class="bad">✕</span></div>
+          <div class="cmp-row"><span data-i18n="cmp.r4">Ely.by из коробки</span><span class="ok">✓</span><span class="bad">✕</span></div>
+          <div class="cmp-row"><span data-i18n="cmp.r5">Открытый код</span><span class="ok">MIT</span><span data-i18n="cmp.varies">По-разному</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="dl-sun" aria-hidden="true"></div>
+          <img src="assets/logo.png" alt="" class="dl-logo" width="88" height="88" />
+          <h2 data-i18n="dl.title">Готовы играть?</h2>
+          <p data-i18n="dl.sub">Скачайте Sunset Launcher для своей системы. Это бесплатно и всегда будет бесплатно.</p>
+          <div class="hero-cta center-row">
+            <a href="download.html" class="btn btn-primary btn-lg magnetic" data-i18n="nav.download">Скачать</a>
+            <a href="screenshots.html" class="btn btn-ghost btn-lg" data-i18n="cta.screens">Смотреть скриншоты</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>

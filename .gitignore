@@ -1,0 +1,10 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

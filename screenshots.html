@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Скриншоты — Sunset Launcher</title>
+  <meta name="theme-color" content="#120e18" />
+  <link rel="icon" href="assets/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="screenshots">
+  <div id="app-header"></div>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow enter" style="--d:0" data-i18n="nav.screens">Скриншоты</span>
+        <h1 class="enter" style="--d:1"><span data-i18n="sp.title1">Посмотрите</span> <span class="grad shimmer" data-i18n="sp.title2">изнутри</span></h1>
+        <p class="lead enter" style="--d:2" data-i18n="sp.lead">Нажмите на скриншот, чтобы открыть его на весь экран. Листайте стрелками ← →.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="gallery" id="gallery">
+          <figure class="shot wide reveal" data-src="assets/screenshots/library.jpg">
+            <img src="assets/screenshots/library.jpg" alt="" loading="lazy" />
+            <figcaption><b data-i18n="scr.t1">Библиотека</b><span data-i18n="scr.d1">Все сборки и быстрый запуск</span></figcaption>
+          </figure>
+          <figure class="shot reveal" data-src="assets/screenshots/discover.jpg">
+            <img src="assets/screenshots/discover.jpg" alt="" loading="lazy" />
+            <figcaption><b data-i18n="scr.t2">Modrinth</b><span data-i18n="scr.d2">Каталог модов и модпаков</span></figcaption>
+          </figure>
+          <figure class="shot reveal" data-src="assets/screenshots/mods.jpg">
+            <img src="assets/screenshots/mods.jpg" alt="" loading="lazy" />
+            <figcaption><b data-i18n="scr.t3">Моды</b><span data-i18n="scr.d3">Контент сборки</span></figcaption>
+          </figure>
+          <figure class="shot reveal" data-src="assets/screenshots/accounts.jpg">
+            <img src="assets/screenshots/accounts.jpg" alt="" loading="lazy" />
+            <figcaption><b data-i18n="scr.t4">Аккаунты</b><span data-i18n="scr.d4">Microsoft, Ely.by, Offline</span></figcaption>
+          </figure>
+          <figure class="shot reveal" data-src="assets/screenshots/settings.jpg">
+            <img src="assets/screenshots/settings.jpg" alt="" loading="lazy" />
+            <figcaption><b data-i18n="scr.t5">Настройки</b><span data-i18n="scr.d5">Темы, Java, язык</span></figcaption>
+          </figure>
+          <figure class="shot wide reveal" data-src="assets/screenshots/console.png">
+            <img src="assets/screenshots/console.png" alt="" loading="lazy" />
+            <figcaption><b data-i18n="scr.t6">Консоль</b><span data-i18n="scr.d6">Живой лог игры</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">✕</button>
+    <button class="lb-nav lb-prev" aria-label="Prev">‹</button>
+    <figure class="lb-stage"><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav lb-next" aria-label="Next">›</button>
+    <div class="lb-count" id="lbCount"></div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+

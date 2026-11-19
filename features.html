@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Возможности — Sunset Launcher</title>
+  <meta name="theme-color" content="#120e18" />
+  <link rel="icon" href="assets/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="features">
+  <div id="app-header"></div>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow enter" style="--d:0" data-i18n="nav.features">Возможности</span>
+        <h1 class="enter" style="--d:1"><span data-i18n="fp.title1">Мощь, которая</span> <span class="grad shimmer" data-i18n="fp.title2">не тормозит</span></h1>
+        <p class="lead enter" style="--d:2" data-i18n="fp.lead">Всё, что умеет Sunset Launcher — от установки модпака до восстановления мира из бэкапа.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container rows">
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="row-num">01</span>
+            <h2 data-i18n="f1.t">Сборки и профили</h2>
+            <p data-i18n="f1.long">Создавайте, дублируйте, редактируйте и удаляйте сборки. Каждая живёт в своей папке instances/&lt;name&gt; — моды, конфиги и миры разных версий никогда не перепутаются. Быстрое переключение между сборками прямо из боковой панели.</p>
+            <ul class="checks"><li data-i18n="f1.c1">Изолированные папки игры</li><li data-i18n="f1.c2">Дублирование в один клик</li><li data-i18n="f1.c3">Quick Switch и избранное</li></ul>
+          </div>
+          <div class="row-media window"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/library.jpg" alt="" loading="lazy" /></div>
+        </div>
+
+        <div class="row reverse reveal">
+          <div class="row-text">
+            <span class="row-num">02</span>
+            <h2 data-i18n="f2.t">Modrinth и .mrpack</h2>
+            <p data-i18n="f2.long">Встроенный каталог Modrinth: ищите и ставьте моды, модпаки, ресурспаки и шейдеры, не выходя из лаунчера. Зависимости и совместимость с версией подбираются автоматически.</p>
+            <ul class="checks"><li data-i18n="f2.c1">Импорт и экспорт .mrpack</li><li data-i18n="f2.c2">Шейдеры и ресурспаки</li><li data-i18n="f2.c3">Фильтры по версии и загрузчику</li></ul>
+          </div>
+          <div class="row-media window"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/discover.jpg" alt="" loading="lazy" /></div>
+        </div>
+
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="row-num">03</span>
+            <h2 data-i18n="f3b.t">Управление контентом</h2>
+            <p data-i18n="f3b.long">Включайте и выключайте отдельные моды, не удаляя их. Видно, что установлено, какой версии и откуда.</p>
+            <ul class="checks"><li data-i18n="f3b.c1">Вкл/выкл файлов</li><li data-i18n="f3b.c2">64 параллельных загрузки</li><li data-i18n="f3b.c3">Проверка SHA-1 на лету</li></ul>
+          </div>
+          <div class="row-media window"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/mods.jpg" alt="" loading="lazy" /></div>
+        </div>
+
+        <div class="row reverse reveal">
+          <div class="row-text">
+            <span class="row-num">04</span>
+            <h2 data-i18n="f4.t">Аккаунты и скины</h2>
+            <p data-i18n="f4.long">Вход через Microsoft по Device Code, аккаунты Ely.by через authlib-injector и офлайн-профили. Превью головы и скина кешируются локально.</p>
+            <ul class="checks"><li>Microsoft OAuth</li><li>Ely.by · authlib-injector</li><li>Offline</li></ul>
+          </div>
+          <div class="row-media window"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/accounts.jpg" alt="" loading="lazy" /></div>
+        </div>
+
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="row-num">05</span>
+            <h2 data-i18n="f7.t">Живая консоль</h2>
+            <p data-i18n="f7.long">stdout и stderr игры в реальном времени с фильтрами. Если игра упала — появится баннер с причиной, а краш-репорт копируется одной кнопкой.</p>
+            <ul class="checks"><li data-i18n="f7.c1">Фильтры логов</li><li data-i18n="f7.c2">Детект крашей</li><li data-i18n="f7.c3">Копирование краш-репорта</li></ul>
+          </div>
+          <div class="row-media window"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/console.png" alt="" loading="lazy" /></div>
+        </div>
+
+        <div class="row reverse reveal">
+          <div class="row-text">
+            <span class="row-num">06</span>
+            <h2 data-i18n="f8.t">Темы, языки и Discord</h2>
+            <p data-i18n="f8.long">9 языков интерфейса, настраиваемые темы и шрифты, командная палитра по Ctrl+K и Discord Rich Presence на вашем языке.</p>
+            <ul class="checks"><li>Ctrl + K</li><li>Discord RPC</li><li data-i18n="f8.c3">9 языков</li></ul>
+          </div>
+          <div class="row-media window"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/settings.jpg" alt="" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="fp.more">И ещё</span>
+          <h2 data-i18n="fp.moreTitle">Мелочи, которые решают</h2>
+        </div>
+        <div class="features">
+          <article class="feature reveal"><div class="f-ico">🌍</div><h3 data-i18n="f5.t">Миры и бэкапы</h3><p data-i18n="f5.d">Quick Play прямо в мир и .zip-бэкапы в один клик.</p></article>
+          <article class="feature reveal"><div class="f-ico">☕</div><h3 data-i18n="f6.t">Java и JVM</h3><p data-i18n="f6.d">RAM, свои аргументы JVM, пресеты G1GC, ZGC, Aikar's. Автопоиск Java.</p></article>
+          <article class="feature reveal"><div class="f-ico">🔄</div><h3 data-i18n="f9.t">Автообновления</h3><p data-i18n="f9.d">Проверка и установка обновлений из GitHub Releases.</p></article>
+          <article class="feature reveal"><div class="f-ico">🔒</div><h3 data-i18n="f10.t">Приватность</h3><p data-i18n="f10.d">Ноль телеметрии. Токены хранятся только у вас на диске.</p></article>
+          <article class="feature reveal"><div class="f-ico">🪟</div><h3 data-i18n="f11.t">Интеграция с ОС</h3><p data-i18n="f11.d">Ярлык .desktop в Linux и в меню «Пуск» в Windows, один экземпляр приложения.</p></article>
+          <article class="feature reveal"><div class="f-ico">🦀</div><h3 data-i18n="f12.t">Чистый Rust</h3><p data-i18n="f12.d">Один нативный бинарник на eframe/egui. Мгновенный старт и мало памяти.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
