@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const REPO = "svarkawm/sunset-launcher";
+  const REPO = "sunset-launcher/sunset-launcher";
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -68,7 +68,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span><span data-i18n="ft.by">Сделано</span> <a href="https://github.com/svarkawm" target="_blank" rel="noopener">svarka</a> &amp; Antigravity · MIT License</span>
+          <span><span data-i18n="ft.by">Сделано</span> <a href="https://github.com/sunset-launcher" target="_blank" rel="noopener">svarka</a> &amp; Antigravity · MIT License</span>
           <span data-i18n="ft.legal">Не является официальным продуктом Minecraft. Не связано с Mojang или Microsoft.</span>
         </div>
       </div>
