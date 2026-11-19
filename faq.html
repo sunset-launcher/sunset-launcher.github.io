@@ -13,9 +13,13 @@
   <meta property="og:image" content="https://sunset-launcher.github.io/assets/screenshots/library.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/logo.ico" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>try{const t=localStorage.getItem("theme");if(t&&t!=="sunset")document.documentElement.dataset.theme=t;}catch{}</script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="faq">
@@ -36,16 +40,16 @@
     <section class="section tight">
       <div class="container narrow">
         <div class="faq" id="faqList">
-          <details class="reveal"><summary data-i18n="q1">Это бесплатно?</summary><div class="ans"><p data-i18n="a1">Да. Sunset Launcher распространяется под лицензией MIT, исходный код открыт на GitHub.</p></div></details>
-          <details class="reveal"><summary data-i18n="q2">Нужна ли лицензия Minecraft?</summary><div class="ans"><p data-i18n="a2">Для входа через Microsoft нужна купленная игра. Также поддерживаются аккаунты Ely.by и офлайн-режим.</p></div></details>
-          <details class="reveal"><summary data-i18n="q3">Windows пишет «Неизвестный издатель». Это опасно?</summary><div class="ans"><p data-i18n="a3">Релизы пока не подписаны сертификатом, поэтому SmartScreen показывает предупреждение. Нажмите «Подробнее» → «Выполнить в любом случае». Целостность можно проверить по файлу .sha256 или собрать лаунчер из исходников.</p></div></details>
-          <details class="reveal"><summary data-i18n="q4">Собираете ли вы мои данные?</summary><div class="ans"><p data-i18n="a4">Нет. Никакой телеметрии и аналитики. Токены и аккаунты хранятся только локально. Сетевые запросы идут лишь к нужным сервисам: Mojang, Modrinth, загрузчики модов, Adoptium, Microsoft / Ely.by и GitHub для обновлений.</p></div></details>
-          <details class="reveal"><summary data-i18n="q5">Где хранятся файлы игры?</summary><div class="ans"><p data-i18n="a5">Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\sunset-launcher. Внутри — профили, аккаунты, версии, библиотеки, ассеты и изолированные папки сборок.</p></div></details>
-          <details class="reveal"><summary data-i18n="q6">Будет ли версия для macOS?</summary><div class="ans"><p data-i18n="a6">Сейчас официально поддерживаются Linux и Windows. Собрать под другие платформы можно из исходников через cargo.</p></div></details>
-          <details class="reveal"><summary data-i18n="q7">Как установить модпак?</summary><div class="ans"><p data-i18n="a7">Откройте вкладку Discover, найдите модпак на Modrinth и нажмите «Установить» — или импортируйте готовый .mrpack-файл. Лаунчер сам создаст сборку и скачает всё нужное.</p></div></details>
-          <details class="reveal"><summary data-i18n="q8">Нужно ли ставить Java вручную?</summary><div class="ans"><p data-i18n="a8">Нет. Лаунчер находит установленную Java автоматически и может скачать подходящую версию Adoptium в свою папку.</p></div></details>
-          <details class="reveal"><summary data-i18n="q9">Игра вылетает. Что делать?</summary><div class="ans"><p data-i18n="a9">Откройте вкладку Console — там будет баннер с крашем и кнопка копирования краш-репорта. Часто помогает увеличить RAM или выбрать пресет JVM в настройках сборки.</p></div></details>
-          <details class="reveal"><summary data-i18n="q10">Как обновить лаунчер?</summary><div class="ans"><p data-i18n="a10">Sunset сам проверяет GitHub Releases и предложит установить новую версию прямо из интерфейса.</p></div></details>
+          <details class="reveal" id="q1"><summary data-i18n="q1">Это бесплатно?</summary><div class="ans"><p data-i18n="a1">Да. Sunset Launcher распространяется под лицензией MIT, исходный код открыт на GitHub.</p></div></details>
+          <details class="reveal" id="q2"><summary data-i18n="q2">Нужна ли лицензия Minecraft?</summary><div class="ans"><p data-i18n="a2">Для входа через Microsoft нужна купленная игра. Также поддерживаются аккаунты Ely.by и офлайн-режим.</p></div></details>
+          <details class="reveal" id="q3"><summary data-i18n="q3">Windows пишет «Неизвестный издатель». Это опасно?</summary><div class="ans"><p data-i18n="a3">Релизы пока не подписаны сертификатом, поэтому SmartScreen показывает предупреждение. Нажмите «Подробнее» → «Выполнить в любом случае». Целостность можно проверить по файлу .sha256 или собрать лаунчер из исходников.</p></div></details>
+          <details class="reveal" id="q4"><summary data-i18n="q4">Собираете ли вы мои данные?</summary><div class="ans"><p data-i18n="a4">Нет. Никакой телеметрии и аналитики. Токены и аккаунты хранятся только локально. Сетевые запросы идут лишь к нужным сервисам: Mojang, Modrinth, загрузчики модов, Adoptium, Microsoft / Ely.by и GitHub для обновлений.</p></div></details>
+          <details class="reveal" id="q5"><summary data-i18n="q5">Где хранятся файлы игры?</summary><div class="ans"><p data-i18n="a5">Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\sunset-launcher. Внутри — профили, аккаунты, версии, библиотеки, ассеты и изолированные папки сборок.</p></div></details>
+          <details class="reveal" id="q6"><summary data-i18n="q6">Будет ли версия для macOS?</summary><div class="ans"><p data-i18n="a6">Сейчас официально поддерживаются Linux и Windows. Собрать под другие платформы можно из исходников через cargo.</p></div></details>
+          <details class="reveal" id="q7"><summary data-i18n="q7">Как установить модпак?</summary><div class="ans"><p data-i18n="a7">Откройте вкладку Discover, найдите модпак на Modrinth и нажмите «Установить» — или импортируйте готовый .mrpack-файл. Лаунчер сам создаст сборку и скачает всё нужное.</p></div></details>
+          <details class="reveal" id="q8"><summary data-i18n="q8">Нужно ли ставить Java вручную?</summary><div class="ans"><p data-i18n="a8">Нет. Лаунчер находит установленную Java автоматически и может скачать подходящую версию Adoptium в свою папку.</p></div></details>
+          <details class="reveal" id="q9"><summary data-i18n="q9">Игра вылетает. Что делать?</summary><div class="ans"><p data-i18n="a9">Откройте вкладку Console — там будет баннер с крашем и кнопка копирования краш-репорта. Часто помогает увеличить RAM или выбрать пресет JVM в настройках сборки.</p></div></details>
+          <details class="reveal" id="q10"><summary data-i18n="q10">Как обновить лаунчер?</summary><div class="ans"><p data-i18n="a10">Sunset сам проверяет GitHub Releases и предложит установить новую версию прямо из интерфейса.</p></div></details>
         </div>
         <p class="muted center empty" id="faqEmpty" hidden data-i18n="qp.empty">Ничего не найдено 🤔</p>
 

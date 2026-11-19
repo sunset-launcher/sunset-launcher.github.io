@@ -13,9 +13,13 @@
   <meta property="og:image" content="https://sunset-launcher.github.io/assets/screenshots/library.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/logo.ico" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>try{const t=localStorage.getItem("theme");if(t&&t!=="sunset")document.documentElement.dataset.theme=t;}catch{}</script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="screenshots">
@@ -32,43 +36,57 @@
 
     <section class="section tight">
       <div class="container">
+        <div class="filter-bar enter" style="--d:3" role="tablist" aria-label="Filter screenshots">
+          <button class="filter-btn active" type="button" data-filter="all" data-i18n="scr.fAll">Все</button>
+          <button class="filter-btn" type="button" data-filter="ui" data-i18n="scr.fUi">Интерфейс</button>
+          <button class="filter-btn" type="button" data-filter="mods" data-i18n="scr.fMods">Моды</button>
+          <button class="filter-btn" type="button" data-filter="system" data-i18n="scr.fSys">Система</button>
+        </div>
+
         <div class="gallery" id="gallery">
-          <figure class="shot wide reveal" data-src="assets/screenshots/library.jpg">
-            <img src="assets/screenshots/library.jpg" alt="" loading="lazy" />
+          <figure class="shot wide reveal" tabindex="0" role="button" data-cat="ui" data-src="assets/screenshots/library.jpg">
+            <img src="assets/screenshots/library.jpg" alt="Sunset Launcher — библиотека сборок и быстрый запуск" loading="lazy" />
             <figcaption><b data-i18n="scr.t1">Библиотека</b><span data-i18n="scr.d1">Все сборки и быстрый запуск</span></figcaption>
           </figure>
-          <figure class="shot reveal" data-src="assets/screenshots/discover.jpg">
-            <img src="assets/screenshots/discover.jpg" alt="" loading="lazy" />
+          <figure class="shot reveal" tabindex="0" role="button" data-cat="mods" data-src="assets/screenshots/discover.jpg">
+            <img src="assets/screenshots/discover.jpg" alt="Sunset Launcher — каталог модов и модпаков Modrinth" loading="lazy" />
             <figcaption><b data-i18n="scr.t2">Modrinth</b><span data-i18n="scr.d2">Каталог модов и модпаков</span></figcaption>
           </figure>
-          <figure class="shot reveal" data-src="assets/screenshots/mods.jpg">
-            <img src="assets/screenshots/mods.jpg" alt="" loading="lazy" />
+          <figure class="shot reveal" tabindex="0" role="button" data-cat="mods" data-src="assets/screenshots/mods.jpg">
+            <img src="assets/screenshots/mods.jpg" alt="Sunset Launcher — управление установленными модами сборки" loading="lazy" />
             <figcaption><b data-i18n="scr.t3">Моды</b><span data-i18n="scr.d3">Контент сборки</span></figcaption>
           </figure>
-          <figure class="shot reveal" data-src="assets/screenshots/accounts.jpg">
-            <img src="assets/screenshots/accounts.jpg" alt="" loading="lazy" />
+          <figure class="shot reveal" tabindex="0" role="button" data-cat="system" data-src="assets/screenshots/accounts.jpg">
+            <img src="assets/screenshots/accounts.jpg" alt="Sunset Launcher — аккаунты Microsoft, Ely.by и Offline с превью скина" loading="lazy" />
             <figcaption><b data-i18n="scr.t4">Аккаунты</b><span data-i18n="scr.d4">Microsoft, Ely.by, Offline</span></figcaption>
           </figure>
-          <figure class="shot reveal" data-src="assets/screenshots/settings.jpg">
-            <img src="assets/screenshots/settings.jpg" alt="" loading="lazy" />
+          <figure class="shot reveal" tabindex="0" role="button" data-cat="system" data-src="assets/screenshots/settings.jpg">
+            <img src="assets/screenshots/settings.jpg" alt="Sunset Launcher — настройки тем, Java и языка" loading="lazy" />
             <figcaption><b data-i18n="scr.t5">Настройки</b><span data-i18n="scr.d5">Темы, Java, язык</span></figcaption>
           </figure>
-          <figure class="shot wide reveal" data-src="assets/screenshots/console.png">
-            <img src="assets/screenshots/console.png" alt="" loading="lazy" />
+          <figure class="shot wide reveal" tabindex="0" role="button" data-cat="system" data-src="assets/screenshots/console.png">
+            <img src="assets/screenshots/console.png" alt="Sunset Launcher — живая консоль и диагностика логов" loading="lazy" />
             <figcaption><b data-i18n="scr.t6">Консоль</b><span data-i18n="scr.d6">Живой лог игры</span></figcaption>
           </figure>
         </div>
       </div>
     </section>
-  </main>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="Close">✕</button>
-    <button class="lb-nav lb-prev" aria-label="Prev">‹</button>
-    <figure class="lb-stage"><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
-    <button class="lb-nav lb-next" aria-label="Next">›</button>
-    <div class="lb-count" id="lbCount"></div>
-  </div>
+    <section class="section tight">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="dl-sun" aria-hidden="true"></div>
+          <img src="assets/logo.png" alt="" class="dl-logo" width="80" height="80" />
+          <h2 data-i18n="dl.title">Готовы играть?</h2>
+          <p data-i18n="dl.sub">Скачайте Sunset Launcher для своей системы. Это бесплатно и всегда будет бесплатно.</p>
+          <div class="hero-cta center-row">
+            <a href="download.html" class="btn btn-primary btn-lg magnetic" data-i18n="nav.download">Скачать</a>
+            <a href="features.html" class="btn btn-ghost btn-lg" data-i18n="nav.features">Возможности</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <div id="app-footer"></div>
   <script src="script.js"></script>

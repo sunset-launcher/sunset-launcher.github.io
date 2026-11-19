@@ -1,0 +1,16 @@
+{
+  "name": "Sunset Launcher",
+  "short_name": "Sunset",
+  "description": "Fast, native Minecraft launcher built in pure Rust.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#120e18",
+  "theme_color": "#120e18",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
