@@ -19,7 +19,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <script>try{const t=localStorage.getItem("theme");if(t&&t!=="sunset")document.documentElement.dataset.theme=t;}catch{}</script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="features">
@@ -100,30 +99,12 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" data-i18n="fp.custom">Персонализация</span>
-          <h2 data-i18n="fp.customTitle">Темы оформления и 9 языков</h2>
-          <p data-i18n="fp.customSub">Нажмите на тему, чтобы примерить её прямо здесь, на сайте.</p>
-        </div>
-        <div class="showcase-grid">
-          <div class="showcase-card reveal">
-            <h3 data-i18n="fp.themes">Темы лаунчера</h3>
-            <p class="muted" data-i18n="fp.themesDesc">В самом лаунчере доступно 10 пресетов и полностью настраиваемая палитра.</p>
-            <div class="theme-pills">
-              <button class="theme-pill" type="button" data-set-theme="sunset"><span class="swatch" style="--sw:#ff7833"></span>Sunset</button>
-              <button class="theme-pill" type="button" data-set-theme="emerald"><span class="swatch" style="--sw:#1bd96a"></span>Emerald</button>
-              <button class="theme-pill" type="button" data-set-theme="cyan"><span class="swatch" style="--sw:#22d3ee"></span>Obsidian Cyan</button>
-              <button class="theme-pill" type="button" data-set-theme="amethyst"><span class="swatch" style="--sw:#a855f7"></span>Amethyst</button>
-              <button class="theme-pill" type="button" data-set-theme="crimson"><span class="swatch" style="--sw:#ef4444"></span>Crimson</button>
-              <button class="theme-pill" type="button" data-set-theme="midnight"><span class="swatch" style="--sw:#38bdf8"></span>Midnight</button>
-            </div>
-          </div>
-          <div class="showcase-card reveal">
-            <h3 data-i18n="fp.langs">Языки интерфейса</h3>
-            <p class="muted" data-i18n="fp.langsDesc">Перевод интерфейса, командной палитры и статусов Discord Rich Presence.</p>
-            <div class="lang-pills">
-              <span>English</span><span>Русский</span><span>Українська</span><span>Deutsch</span><span>Français</span><span>Español</span><span>Polski</span><span>Português</span><span>Türkçe</span>
-            </div>
+        <div class="langs-card reveal">
+          <span class="eyebrow" data-i18n="fp.langsEyebrow">Локализация</span>
+          <h2 data-i18n="fp.langs">Языки интерфейса</h2>
+          <p class="muted" data-i18n="fp.langsDesc">Перевод интерфейса, командной палитры и статусов Discord Rich Presence.</p>
+          <div class="lang-pills">
+            <span>English</span><span>Русский</span><span>Українська</span><span>Deutsch</span><span>Français</span><span>Español</span><span>Polski</span><span>Português</span><span>Türkçe</span>
           </div>
         </div>
       </div>

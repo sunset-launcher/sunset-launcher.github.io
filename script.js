@@ -8,42 +8,6 @@
   const page = document.body.dataset.page || "home";
 
   /* =========================================================
-     Themes (matching launcher presets)
-     ========================================================= */
-  const THEMES = {
-    sunset: {
-      label: "Sunset", swatch: "#ff7833", themeColor: "#120e18",
-      particles: ["255,179,71", "255,120,51", "232,80,106", "160,120,220"],
-    },
-    emerald: {
-      label: "Emerald", swatch: "#1bd96a", themeColor: "#101514",
-      particles: ["134,239,172", "27,217,106", "16,185,129", "110,231,183"],
-    },
-    cyan: {
-      label: "Obsidian Cyan", swatch: "#22d3ee", themeColor: "#0d131a",
-      particles: ["165,243,252", "34,211,238", "56,189,248", "14,165,233"],
-    },
-    amethyst: {
-      label: "Amethyst", swatch: "#a855f7", themeColor: "#13101c",
-      particles: ["233,213,255", "192,132,252", "168,85,247", "139,92,246"],
-    },
-    crimson: {
-      label: "Crimson", swatch: "#ef4444", themeColor: "#161012",
-      particles: ["254,202,202", "239,68,68", "251,146,60", "248,113,113"],
-    },
-    midnight: {
-      label: "Midnight", swatch: "#38bdf8", themeColor: "#0b101e",
-      particles: ["186,230,253", "56,189,248", "129,140,248", "99,102,241"],
-    },
-  };
-  let currentTheme = (() => {
-    try {
-      const saved = localStorage.getItem("theme");
-      return saved && THEMES[saved] ? saved : "sunset";
-    } catch { return "sunset"; }
-  })();
-
-  /* =========================================================
      Shared layout (header / footer / decorative layers)
      ========================================================= */
   const GH_ICON = '<svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
@@ -98,12 +62,6 @@
         </nav>
         <div class="nav-actions">
           <button class="kbd-btn" id="paletteBtn" type="button" aria-label="Search (Ctrl+K)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><kbd>Ctrl K</kbd></button>
-          <div class="theme-wrap" id="themeWrap">
-            <button class="theme-btn" id="themeBtn" type="button" aria-label="Theme" aria-haspopup="menu" aria-expanded="false"><span class="theme-dot"></span></button>
-            <div class="theme-menu" id="themeMenu" role="menu">
-              ${Object.entries(THEMES).map(([k, th]) => `<button class="theme-opt" type="button" role="menuitemradio" data-set-theme="${k}" aria-checked="false"><span class="swatch" style="--sw:${th.swatch}"></span><span>${th.label}</span></button>`).join("")}
-            </div>
-          </div>
           <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
           <a class="btn btn-ghost btn-sm gh" href="https://github.com/${REPO}" target="_blank" rel="noopener">${GH_ICON}<span>GitHub</span><em class="gh-stars" id="ghStars" hidden></em></a>
           <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
@@ -151,7 +109,7 @@
     "title.404": "404 — Sunset Launcher",
     "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.faq": "FAQ", "nav.search": "Search",
     "a11y.skip": "Skip to content", "pal.ph": "Where to go?", "pal.nav": "select", "pal.open": "open", "pal.empty": "Nothing found",
-    "pal.pages": "Pages", "pal.actions": "Actions", "pal.themes": "Themes", "pal.themeSet": "Theme:",
+    "pal.pages": "Pages", "pal.actions": "Actions",
     "pal.dlWin": "Download for Windows", "pal.dlLinux": "Download for Linux",
     "pal.gh": "Open GitHub repository", "pal.issue": "Report a bug", "pal.lang": "Switch language to Russian", "pal.top": "Scroll to top",
     "stats.downloads": "downloads", "stats.stars": "GitHub stars",
@@ -189,8 +147,7 @@
     "f11.t": "OS integration", "f11.d": ".desktop entry on Linux and Start Menu shortcut on Windows, single-instance lock.",
     "f12.t": "Pure Rust", "f12.d": "A single native binary on eframe/egui. Instant startup and low memory use.",
     "fp.title1": "Power that", "fp.title2": "never lags", "fp.lead": "Everything Sunset Launcher can do — from installing a modpack to restoring a world from backup.",
-    "fp.custom": "Personalization", "fp.customTitle": "Themes and 9 UI languages", "fp.customSub": "Click a theme to preview it right here on the site.",
-    "fp.themes": "Launcher themes", "fp.themesDesc": "The launcher includes 10 presets and a fully customizable color palette.",
+    "fp.langsEyebrow": "Localization",
     "fp.langs": "Interface languages", "fp.langsDesc": "Translated UI, command palette and language-aware Discord Rich Presence.",
     "fp.more": "And more", "fp.moreTitle": "Little things that matter",
     "fp.ctaTitle": "Ready to try it?",
@@ -242,7 +199,7 @@
     "dl.copied": "Скопировано!", "dl.for": "Скачать для", "dl.started": "Загрузка началась…", "nav.search": "Поиск",
     "dp.noNotes": "Не удалось загрузить заметки. Смотрите их на GitHub.", "dp.history": "Предыдущие релизы",
     "stats.dl": "потоков скачивания", "stats.rust": "чистый Rust",
-    "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "pal.themes": "Темы", "pal.themeSet": "Тема:",
+    "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "fp.langsEyebrow": "Локализация",
     "pal.dlWin": "Скачать для Windows", "pal.dlLinux": "Скачать для Linux", "pal.gh": "Открыть репозиторий на GitHub",
     "pal.issue": "Сообщить о баге", "pal.lang": "Switch language to English", "pal.top": "Наверх",
     "scr.t1": "Библиотека", "scr.t2": "Modrinth", "scr.t3": "Моды", "scr.t4": "Аккаунты", "scr.t5": "Настройки", "scr.t6": "Консоль",
@@ -292,45 +249,6 @@
   });
 
   /* =========================================================
-     Theme switching
-     ========================================================= */
-  const themeBtn = $("#themeBtn"), themeMenu = $("#themeMenu");
-  function syncThemeUI() {
-    const th = THEMES[currentTheme] || THEMES.sunset;
-    if (currentTheme === "sunset") delete document.documentElement.dataset.theme;
-    else document.documentElement.dataset.theme = currentTheme;
-    $('meta[name="theme-color"]')?.setAttribute("content", th.themeColor);
-    $$("[data-set-theme]").forEach((el) => {
-      const on = el.dataset.setTheme === currentTheme;
-      el.classList.toggle("active", on);
-      if (el.hasAttribute("aria-checked")) el.setAttribute("aria-checked", String(on));
-    });
-  }
-  function setTheme(name) {
-    if (!THEMES[name]) return;
-    currentTheme = name;
-    try { localStorage.setItem("theme", name); } catch { /* ignore */ }
-    syncThemeUI();
-    rebuildParticleColors();
-    closeThemeMenu();
-  }
-  function closeThemeMenu() {
-    themeMenu.classList.remove("open");
-    themeBtn.setAttribute("aria-expanded", "false");
-  }
-  themeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const open = themeMenu.classList.toggle("open");
-    themeBtn.setAttribute("aria-expanded", String(open));
-    if (open) closeMenu();
-  });
-  $$("[data-set-theme]").forEach((el) => el.addEventListener("click", () => setTheme(el.dataset.setTheme)));
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest("#themeWrap")) closeThemeMenu();
-  });
-  syncThemeUI();
-
-  /* =========================================================
      Nav: scroll state, sliding indicator, burger
      ========================================================= */
   const nav = $("#nav"), links = $("#navLinks"), ind = $(".nav-ind"), hov = $(".nav-hover"), progress = $(".progress"), navBackdrop = $("#navBackdrop");
@@ -349,7 +267,6 @@
 
   const burger = $("#burger");
   function setMenu(open) {
-    if (open) closeThemeMenu();
     links.classList.toggle("open", open);
     burger.classList.toggle("open", open);
     navBackdrop.classList.toggle("open", open);
@@ -896,9 +813,6 @@
       { group: t("pal.actions"), icon: "🌐", label: t("pal.lang"), kw: "language язык english русский", run: () => $("#langBtn").click() },
       { group: t("pal.actions"), icon: "⬆️", label: t("pal.top"), kw: "top наверх", run: () => scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }) },
     );
-    Object.entries(THEMES).forEach(([k, th]) => items.push({
-      group: t("pal.themes"), icon: "🎨", label: `${t("pal.themeSet")} ${th.label}`, kw: `theme тема ${k} ${th.label}`, run: () => setTheme(k),
-    }));
     faqItems.forEach((d) => {
       const label = d.dataset.qOrig || $("summary", d).textContent;
       items.push({
@@ -948,7 +862,7 @@
       return;
     }
     if (!pal.classList.contains("open")) {
-      if (e.key === "Escape") { closeThemeMenu(); closeMenu(); }
+      if (e.key === "Escape") closeMenu();
       if (e.key === "/" && !typing) {
         const s = $("#faqSearch");
         if (s) { e.preventDefault(); s.focus(); }
@@ -971,18 +885,13 @@
      Floating pixel particles (embers) — paused when tab hidden
      ========================================================= */
   const cv = $("#particles"), ctx = cv.getContext("2d");
+  const colors = ["255,179,71", "255,120,51", "232,80,106", "160,120,220"];
   let W, H, parts = [], partRaf = null;
-  function paletteColors() { return (THEMES[currentTheme] || THEMES.sunset).particles; }
-  function rebuildParticleColors() {
-    const cols = paletteColors();
-    parts.forEach((p, i) => (p.c = cols[i % cols.length]));
-  }
   function resize() {
     const dpr = Math.min(devicePixelRatio || 1, 2);
     W = cv.width = innerWidth * dpr;
     H = cv.height = innerHeight * dpr;
     cv.style.width = innerWidth + "px"; cv.style.height = innerHeight + "px";
-    const cols = paletteColors();
     const n = Math.min(46, Math.floor(innerWidth / 32));
     parts = Array.from({ length: n }, () => ({
       x: Math.random() * W, y: Math.random() * H,
@@ -990,7 +899,7 @@
       v: (0.15 + Math.random() * 0.45) * dpr,
       w: Math.random() * Math.PI * 2,
       a: 0.12 + Math.random() * 0.4,
-      c: cols[Math.floor(Math.random() * cols.length)],
+      c: colors[Math.floor(Math.random() * colors.length)],
     }));
   }
   function tick(time) {
