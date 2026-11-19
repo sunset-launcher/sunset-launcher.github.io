@@ -26,7 +26,21 @@
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="progress" aria-hidden="true"></div>
     <div class="curtain" aria-hidden="true"></div>
-    <div class="toast" id="toast"></div>`);
+    <div class="toast" id="toast"></div>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержимому</a>
+    <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    <div class="palette" id="palette" aria-hidden="true">
+      <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="palette-input">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <input id="paletteInput" type="text" autocomplete="off" spellcheck="false" data-i18n-ph="pal.ph" placeholder="Куда перейти?" />
+          <kbd>Esc</kbd>
+        </div>
+        <ul class="palette-list" id="paletteList" role="listbox"></ul>
+        <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="pal.nav">выбор</span></span><span><kbd>Enter</kbd> <span data-i18n="pal.open">открыть</span></span></div>
+      </div>
+    </div>`);
+  $(".page")?.setAttribute("id", "main");
 
   $("#app-header").outerHTML = `
     <header class="nav" id="nav">
@@ -40,8 +54,9 @@
           ${PAGES.map(([id, href, key, ru]) => `<a href="${href}" class="${id === page ? "active" : ""}" data-i18n="${key}">${ru}</a>`).join("")}
         </nav>
         <div class="nav-actions">
+          <button class="kbd-btn" id="paletteBtn" aria-label="Search (Ctrl+K)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><kbd>Ctrl K</kbd></button>
           <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
-          <a class="btn btn-ghost btn-sm gh" href="https://github.com/${REPO}" target="_blank" rel="noopener">${GH_ICON}<span>GitHub</span></a>
+          <a class="btn btn-ghost btn-sm gh" href="https://github.com/${REPO}" target="_blank" rel="noopener">${GH_ICON}<span>GitHub</span><em class="gh-stars" id="ghStars" hidden></em></a>
           <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
       </div>
@@ -79,6 +94,15 @@
      ========================================================= */
   const EN = {
     "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.faq": "FAQ",
+    "a11y.skip": "Skip to content", "pal.ph": "Where to go?", "pal.nav": "select", "pal.open": "open", "pal.empty": "Nothing found",
+    "pal.pages": "Pages", "pal.actions": "Actions", "pal.dlWin": "Download for Windows", "pal.dlLinux": "Download for Linux",
+    "pal.gh": "Open GitHub repository", "pal.issue": "Report a bug", "pal.lang": "Switch language to Russian", "pal.top": "Scroll to top",
+    "stats.downloads": "downloads", "stats.stars": "GitHub stars",
+    "how.eyebrow": "Getting started", "how.title": "From download to playing — 3 steps",
+    "how.s1t": "Download", "how.s1d": "One file for Windows or Linux. No installers and no extra dependencies.",
+    "how.s2t": "Create an instance", "how.s2d": "Pick a version and a loader, or install a Modrinth modpack in one click.",
+    "how.s3t": "Play", "how.s3d": "Sign in with Microsoft, Ely.by or offline — and hit Play.",
+    "nf.lead": "This chunk hasn't been generated yet. Looks like the page got lost somewhere in the Nether.", "nf.home": "Back home",
     "hero.pill": "New release", "hero.title1": "The Minecraft launcher", "hero.title2": "that just flies",
     "hero.lead": "A native launcher written in pure Rust. Mods and modpacks from Modrinth, Microsoft, Ely.by and offline accounts — no Electron, no telemetry, no bloat.",
     "hero.download": "Download for free", "hero.more": "Features", "hero.meta3": "Zero telemetry",
@@ -147,7 +171,12 @@
     "ft.releases": "Releases", "ft.issues": "Report a bug", "ft.by": "Made by",
     "ft.legal": "Not an official Minecraft product. Not associated with Mojang or Microsoft.",
   };
-  const RU = { "dl.copied": "Скопировано!", "dl.for": "Скачать для", "dp.noNotes": "Не удалось загрузить заметки. Смотрите их на GitHub." };
+  const RU = {
+    "dl.copied": "Скопировано!", "dl.for": "Скачать для", "dp.noNotes": "Не удалось загрузить заметки. Смотрите их на GitHub.",
+    "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия",
+    "pal.dlWin": "Скачать для Windows", "pal.dlLinux": "Скачать для Linux", "pal.gh": "Открыть репозиторий на GitHub",
+    "pal.issue": "Сообщить о баге", "pal.lang": "Switch language to English", "pal.top": "Наверх",
+  };
   $$("[data-i18n]").forEach((el) => { if (!RU[el.dataset.i18n]) RU[el.dataset.i18n] = el.textContent.trim(); });
   $$("[data-i18n-ph]").forEach((el) => (RU[el.dataset.i18nPh] = el.placeholder));
 
@@ -348,9 +377,57 @@
     return out + (inList ? "</ul>" : "");
   }
 
-  fetch(`https://api.github.com/repos/${REPO}/releases/latest`)
-    .then((r) => (r.ok ? r.json() : Promise.reject()))
-    .then((d) => {
+  /* GitHub API: 60 req/hour per IP without auth → cache results for 15 min */
+  const CACHE_KEY = "gh-cache-v1", CACHE_TTL = 15 * 60 * 1000;
+  async function loadGitHub() {
+    try {
+      const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+      if (c && Date.now() - c.at < CACHE_TTL) return c.data;
+    } catch { /* ignore */ }
+    const [repo, releases] = await Promise.all([
+      fetch(`https://api.github.com/repos/${REPO}`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`https://api.github.com/repos/${REPO}/releases?per_page=100`).then((r) => (r.ok ? r.json() : null)),
+    ]);
+    if (!repo && !releases) throw new Error("github unavailable");
+    const list = Array.isArray(releases) ? releases.filter((r) => !r.draft) : [];
+    const latest = list.find((r) => !r.prerelease) || list[0] || null;
+    const downloads = list.reduce((sum, r) => sum + (r.assets || [])
+      .filter((a) => !a.name.endsWith(".sha256"))
+      .reduce((s, a) => s + a.download_count, 0), 0);
+    const data = { stars: repo?.stargazers_count ?? null, downloads: list.length ? downloads : null, latest };
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), data })); } catch { /* quota */ }
+    return data;
+  }
+
+  const fmtNum = (n) => (n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, "") + "k" : String(n));
+  function animateTo(el, end) {
+    if (reduceMotion) { el.textContent = fmtNum(end); return; }
+    const start = performance.now(), dur = 1400;
+    const step = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      el.textContent = fmtNum(Math.round(end * (1 - Math.pow(1 - p, 4))));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  loadGitHub()
+    .then(({ stars, downloads, latest: d }) => {
+      if (stars != null) {
+        const s = $("#ghStars");
+        if (s) { s.textContent = "★ " + fmtNum(stars); s.hidden = false; }
+      }
+      [["stars", stars], ["downloads", downloads]].forEach(([k, v]) => {
+        if (v == null) return;
+        $$(`[data-live="${k}"]`).forEach((el) => {
+          const run = () => animateTo(el, v);
+          // wait until the stats block is visible
+          const host = el.closest(".reveal");
+          if (!host || host.classList.contains("in")) run();
+          else new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { run(); o.disconnect(); } }).observe(host);
+        });
+      });
+
       if (!d?.tag_name) throw 0;
       const v = d.tag_name.startsWith("v") ? d.tag_name : `v${d.tag_name}`;
       $$(".version").forEach((el) => (el.textContent = v));
@@ -475,6 +552,85 @@
   $$(".faq details").forEach((d) => d.addEventListener("toggle", () => {
     if (d.open && !search?.value) $$(".faq details").forEach((o) => o !== d && (o.open = false));
   }));
+
+  /* =========================================================
+     Command palette (Ctrl+K) — same idea as in the launcher
+     ========================================================= */
+  const pal = $("#palette"), palInput = $("#paletteInput"), palList = $("#paletteList");
+  const ICONS = { home: "🏠", features: "✨", screenshots: "🖼️", download: "⬇️", faq: "❓" };
+  function paletteItems() {
+    const go = (href) => () => {
+      const a = document.createElement("a");
+      a.href = href; document.body.appendChild(a); a.click(); a.remove();
+    };
+    const items = PAGES.map(([id, href, key]) => ({
+      group: t("pal.pages"), icon: ICONS[id], label: t(key), kw: `${id} ${EN[key]} ${RU[key]}`, run: go(href),
+    }));
+    items.push(
+      { group: t("pal.actions"), icon: "🪟", label: t("pal.dlWin"), kw: "windows exe скачать download", run: () => (location.href = DL.win) },
+      { group: t("pal.actions"), icon: "🐧", label: t("pal.dlLinux"), kw: "linux скачать download", run: () => (location.href = DL.linux) },
+      { group: t("pal.actions"), icon: "🐙", label: t("pal.gh"), kw: "github source код исходники", run: () => open(`https://github.com/${REPO}`, "_blank", "noopener") },
+      { group: t("pal.actions"), icon: "🐞", label: t("pal.issue"), kw: "bug issue баг ошибка", run: () => open(`https://github.com/${REPO}/issues`, "_blank", "noopener") },
+      { group: t("pal.actions"), icon: "🌐", label: t("pal.lang"), kw: "language язык english русский", run: () => $("#langBtn").click() },
+      { group: t("pal.actions"), icon: "⬆️", label: t("pal.top"), kw: "top наверх", run: () => scrollTo({ top: 0, behavior: "smooth" }) },
+    );
+    $$(".faq details").forEach((d) => {
+      const s = $("summary", d);
+      items.push({ group: "FAQ", icon: "💬", label: s.textContent, kw: d.textContent, run: () => {
+        d.hidden = false; d.open = true; d.scrollIntoView({ behavior: "smooth", block: "center" });
+      } });
+    });
+    return items;
+  }
+  let palItems = [], palShown = [], palIdx = 0;
+  function renderPalette() {
+    const q = palInput.value.trim().toLowerCase();
+    palShown = palItems.filter((i) => !q || (i.label + " " + i.kw).toLowerCase().includes(q));
+    palIdx = Math.min(palIdx, Math.max(palShown.length - 1, 0));
+    if (!palShown.length) { palList.innerHTML = `<li class="palette-empty">${esc(t("pal.empty"))}</li>`; return; }
+    let html = "", group = "";
+    palShown.forEach((i, n) => {
+      if (i.group !== group) { group = i.group; html += `<li class="palette-group">${esc(group)}</li>`; }
+      html += `<li class="palette-item${n === palIdx ? " active" : ""}" role="option" data-n="${n}"><span class="pi-ico">${i.icon}</span><span>${esc(i.label)}</span><span class="pi-go">↵</span></li>`;
+    });
+    palList.innerHTML = html;
+    $(".palette-item.active", palList)?.scrollIntoView({ block: "nearest" });
+  }
+  function openPalette() {
+    palItems = paletteItems(); palIdx = 0; palInput.value = "";
+    renderPalette();
+    pal.classList.add("open"); pal.setAttribute("aria-hidden", "false");
+    setTimeout(() => palInput.focus(), 30);
+  }
+  function closePalette() { pal.classList.remove("open"); pal.setAttribute("aria-hidden", "true"); }
+  function runPalette(n) { const i = palShown[n]; if (!i) return; closePalette(); i.run(); }
+  $("#paletteBtn").addEventListener("click", openPalette);
+  pal.addEventListener("click", (e) => { if (e.target === pal) closePalette(); });
+  palInput.addEventListener("input", () => { palIdx = 0; renderPalette(); });
+  palList.addEventListener("click", (e) => { const li = e.target.closest(".palette-item"); if (li) runPalette(+li.dataset.n); });
+  palList.addEventListener("mousemove", (e) => {
+    const li = e.target.closest(".palette-item");
+    if (!li || +li.dataset.n === palIdx) return;
+    palIdx = +li.dataset.n;
+    $$(".palette-item", palList).forEach((el) => el.classList.toggle("active", el === li));
+  });
+  addEventListener("keydown", (e) => {
+    const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName);
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); pal.classList.contains("open") ? closePalette() : openPalette(); return; }
+    if (!pal.classList.contains("open")) {
+      if (e.key === "/" && !typing) { const s = $("#faqSearch"); if (s) { e.preventDefault(); s.focus(); } else { e.preventDefault(); openPalette(); } }
+      return;
+    }
+    if (e.key === "Escape") closePalette();
+    else if (e.key === "ArrowDown") { e.preventDefault(); palIdx = (palIdx + 1) % Math.max(palShown.length, 1); renderPalette(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); palIdx = (palIdx - 1 + palShown.length) % Math.max(palShown.length, 1); renderPalette(); }
+    else if (e.key === "Enter") { e.preventDefault(); runPalette(palIdx); }
+  });
+
+  /* back to top */
+  const toTop = $("#toTop");
+  toTop.addEventListener("click", () => scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
+  addEventListener("scroll", () => toTop.classList.toggle("show", scrollY > 700), { passive: true });
 
   /* =========================================================
      Floating pixel particles (embers)

@@ -6,8 +6,28 @@
   <title>Sunset Launcher — быстрый нативный лаунчер Minecraft на Rust</title>
   <meta name="description" content="Sunset Launcher — бесплатный open-source лаунчер Minecraft на Rust. Vanilla, Fabric, Quilt, Forge, NeoForge, Modrinth, .mrpack, Microsoft / Ely.by / Offline." />
   <meta name="theme-color" content="#120e18" />
-  <meta property="og:title" content="Sunset Launcher" />
-  <meta property="og:image" content="assets/logo.png" />
+  <link rel="canonical" href="https://sunset-launcher.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sunset Launcher" />
+  <meta property="og:url" content="https://sunset-launcher.github.io/" />
+  <meta property="og:title" content="Sunset Launcher — лаунчер Minecraft на Rust" />
+  <meta property="og:description" content="Быстрый нативный лаунчер Minecraft: Fabric, Forge, NeoForge, Quilt, Modrinth и Ely.by. Без телеметрии, open source." />
+  <meta property="og:image" content="https://sunset-launcher.github.io/assets/screenshots/library.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sunset Launcher",
+    "operatingSystem": "Windows, Linux",
+    "applicationCategory": "GameApplication",
+    "description": "Fast native Minecraft launcher written in Rust with Vanilla, Fabric, Quilt, Forge, NeoForge and Modrinth support.",
+    "url": "https://sunset-launcher.github.io/",
+    "downloadUrl": "https://github.com/sunset-launcher/sunset-launcher/releases/latest",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
   <link rel="icon" href="assets/logo.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -99,10 +119,38 @@
     <!-- STATS -->
     <section class="stats">
       <div class="container stats-grid reveal">
+        <div class="stat"><b data-live="downloads">—</b><span data-i18n="stats.downloads">скачиваний</span></div>
+        <div class="stat"><b data-live="stars">—</b><span data-i18n="stats.stars">звёзд на GitHub</span></div>
         <div class="stat"><b data-count="5">0</b><span data-i18n="stats.loaders">загрузчиков модов</span></div>
-        <div class="stat"><b data-count="64">0</b><span data-i18n="stats.dl">потоков скачивания</span></div>
         <div class="stat"><b data-count="9">0</b><span data-i18n="stats.lang">языков интерфейса</span></div>
-        <div class="stat"><b data-count="100" data-suffix="%">0</b><span data-i18n="stats.rust">чистый Rust</span></div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="how.eyebrow">Как начать</span>
+          <h2 data-i18n="how.title">От скачивания до игры — 3 шага</h2>
+        </div>
+        <div class="how">
+          <div class="how-line" aria-hidden="true"></div>
+          <div class="how-step reveal">
+            <div class="how-num">1</div>
+            <h3 data-i18n="how.s1t">Скачайте</h3>
+            <p data-i18n="how.s1d">Один файл для Windows или Linux. Без установщиков и лишних зависимостей.</p>
+          </div>
+          <div class="how-step reveal">
+            <div class="how-num">2</div>
+            <h3 data-i18n="how.s2t">Создайте сборку</h3>
+            <p data-i18n="how.s2d">Выберите версию и загрузчик или поставьте модпак с Modrinth в один клик.</p>
+          </div>
+          <div class="how-step reveal">
+            <div class="how-num">3</div>
+            <h3 data-i18n="how.s3t">Играйте</h3>
+            <p data-i18n="how.s3d">Войдите через Microsoft, Ely.by или офлайн — и жмите «Играть».</p>
+          </div>
+        </div>
       </div>
     </section>
 
