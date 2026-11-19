@@ -88,6 +88,13 @@
         <nav class="nav-links" id="navLinks">
           <span class="nav-hover"></span><span class="nav-ind"></span>
           ${PAGES.map(([id, href, key, ru]) => `<a href="${href}" class="${id === page ? "active" : ""}" data-i18n="${key}">${ru}</a>`).join("")}
+          <div class="nav-mobile-actions">
+            <button class="btn btn-ghost btn-sm" id="paletteBtnMobile" type="button">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+              <span data-i18n="nav.search">Поиск</span>
+            </button>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/${REPO}" target="_blank" rel="noopener">${GH_ICON}<span>GitHub</span><em class="gh-stars" hidden></em></a>
+          </div>
         </nav>
         <div class="nav-actions">
           <button class="kbd-btn" id="paletteBtn" type="button" aria-label="Search (Ctrl+K)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><kbd>Ctrl K</kbd></button>
@@ -102,7 +109,8 @@
           <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
         </div>
       </div>
-    </header>`;
+    </header>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>`;
 
   $("#app-footer").outerHTML = `
     <footer class="footer">
@@ -141,7 +149,7 @@
     "title.download": "Download — Sunset Launcher",
     "title.faq": "FAQ — Sunset Launcher",
     "title.404": "404 — Sunset Launcher",
-    "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.faq": "FAQ",
+    "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.faq": "FAQ", "nav.search": "Search",
     "a11y.skip": "Skip to content", "pal.ph": "Where to go?", "pal.nav": "select", "pal.open": "open", "pal.empty": "Nothing found",
     "pal.pages": "Pages", "pal.actions": "Actions", "pal.themes": "Themes", "pal.themeSet": "Theme:",
     "pal.dlWin": "Download for Windows", "pal.dlLinux": "Download for Linux",
@@ -231,7 +239,7 @@
   };
   const RU = {
     ["title." + page]: document.title,
-    "dl.copied": "Скопировано!", "dl.for": "Скачать для", "dl.started": "Загрузка началась…",
+    "dl.copied": "Скопировано!", "dl.for": "Скачать для", "dl.started": "Загрузка началась…", "nav.search": "Поиск",
     "dp.noNotes": "Не удалось загрузить заметки. Смотрите их на GitHub.", "dp.history": "Предыдущие релизы",
     "stats.dl": "потоков скачивания", "stats.rust": "чистый Rust",
     "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "pal.themes": "Темы", "pal.themeSet": "Тема:",
@@ -314,6 +322,7 @@
     e.stopPropagation();
     const open = themeMenu.classList.toggle("open");
     themeBtn.setAttribute("aria-expanded", String(open));
+    if (open) closeMenu();
   });
   $$("[data-set-theme]").forEach((el) => el.addEventListener("click", () => setTheme(el.dataset.setTheme)));
   document.addEventListener("click", (e) => {
@@ -324,9 +333,9 @@
   /* =========================================================
      Nav: scroll state, sliding indicator, burger
      ========================================================= */
-  const nav = $("#nav"), links = $("#navLinks"), ind = $(".nav-ind"), hov = $(".nav-hover"), progress = $(".progress");
+  const nav = $("#nav"), links = $("#navLinks"), ind = $(".nav-ind"), hov = $(".nav-hover"), progress = $(".progress"), navBackdrop = $("#navBackdrop");
   function place(el, target) {
-    if (!target) { el.style.opacity = 0; return; }
+    if (!target || !links.offsetWidth) { el.style.opacity = 0; return; }
     el.style.opacity = 1;
     el.style.width = target.offsetWidth + "px";
     el.style.transform = `translateX(${target.offsetLeft}px)`;
@@ -335,23 +344,34 @@
   $$("a", links).forEach((a) => a.addEventListener("mouseenter", () => place(hov, a)));
   links.addEventListener("mouseleave", () => (hov.style.opacity = 0));
   addEventListener("resize", moveInd);
+  if (typeof ResizeObserver !== "undefined") new ResizeObserver(moveInd).observe(links);
   document.fonts?.ready.then(moveInd);
 
   const burger = $("#burger");
-  function closeMenu() {
-    links.classList.remove("open");
-    burger.classList.remove("open");
-    burger.setAttribute("aria-expanded", "false");
+  function setMenu(open) {
+    if (open) closeThemeMenu();
+    links.classList.toggle("open", open);
+    burger.classList.toggle("open", open);
+    navBackdrop.classList.toggle("open", open);
+    nav.classList.toggle("menu-open", open);
+    burger.setAttribute("aria-expanded", String(open));
   }
+  function closeMenu() { setMenu(false); }
   burger.addEventListener("click", (e) => {
     e.stopPropagation();
-    const open = links.classList.toggle("open");
-    burger.classList.toggle("open", open);
-    burger.setAttribute("aria-expanded", String(open));
+    setMenu(!links.classList.contains("open"));
   });
+  $("#paletteBtnMobile")?.addEventListener("click", () => {
+    closeMenu();
+    openPalette();
+  });
+  navBackdrop.addEventListener("click", closeMenu);
   $$("a", links).forEach((a) => a.addEventListener("click", closeMenu));
   document.addEventListener("click", (e) => {
     if (links.classList.contains("open") && !e.target.closest("#navLinks, #burger")) closeMenu();
+  });
+  matchMedia("(min-width: 961px)").addEventListener("change", (e) => {
+    if (e.matches) closeMenu();
   });
 
   function onScroll() {
@@ -604,8 +624,7 @@
   loadGitHub()
     .then(({ stars, downloads, latest: d, history }) => {
       if (stars != null) {
-        const s = $("#ghStars");
-        if (s) { s.textContent = "★ " + fmtNum(stars); s.hidden = false; }
+        $$(".gh-stars").forEach((s) => { s.textContent = "★ " + fmtNum(stars); s.hidden = false; });
       }
       setLiveStat("downloads", downloads, 64, "", "stats.dl");
       setLiveStat("stars", stars, 100, "%", "stats.rust");
@@ -666,6 +685,7 @@
     $$(".seg-btn", seg).forEach((b) => b.addEventListener("click", () => select(b.dataset.os)));
     if (os === "win") select("windows");
     addEventListener("resize", moveSeg);
+    if (typeof ResizeObserver !== "undefined") new ResizeObserver(moveSeg).observe(seg);
     document.fonts?.ready.then(moveSeg);
   }
 
