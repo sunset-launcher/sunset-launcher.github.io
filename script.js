@@ -174,8 +174,17 @@
     "scr.d1": "All instances and quick launch", "scr.d2": "Mods and modpacks catalog", "scr.d3": "Instance content",
     "scr.d4": "Microsoft, Ely.by, Offline", "scr.d5": "Themes, Java, language", "scr.d6": "Live game log",
     "dp.title1": "Download", "dp.rec": "Recommended", "dp.get": "Download", "dp.install": "Install", "dp.howto": "How to install",
+    "hero.meta2": "MIT · Open Source",
     "dl.chooseFmt": "Choose download format", "dl.debShort": ".deb package", "dl.anyLinux": "Any distro",
+    "dl.winExeLabel": ".exe installer", "dl.macAppLabel": ".app bundle", "dl.binChip": "bin",
+    "dl.tipZip": "Portable .zip archive for Windows",
+    "dl.tipDebArm": ".deb package for Linux ARM64",
+    "dl.tipBinArm": "Standalone binary for Linux ARM64",
+    "dl.tipMacIntel": "macOS .app bundle for Intel (x64)",
+    "dl.tipMacBin": "Standalone binary for macOS",
     "dl.allFormats": "All builds, SHA-256 & install guide",
+    "dp.bit64": "64-bit", "dp.archLabel": "Architecture",
+    "dp.macSub": "macOS 11+ · Apple Silicon & Intel",
     "dp.binLabel": "binary",
     "dp.winExeSub": "Standalone .exe", "dp.winZipSub": "Portable archive",
     "dp.debSub": "Ubuntu / Debian / Mint", "dp.binSub": "Any distro · glibc",
@@ -187,7 +196,7 @@
     "dp.termBin": "Any distro — run standalone binary",
     "dp.l3": "Installing the .deb or launching the binary for the first time adds Sunset to your application menu automatically.",
     "dp.verifyLinux": "Verify SHA-256 (optional)",
-    "dp.w1": "Download sunset-launcher-windows-x64.exe (or extract Portable .zip anywhere).", "dp.w2": "Run the .exe — a Start Menu shortcut is created automatically.",
+    "dp.w1": "Download sunset-launcher-windows-x64.exe (or extract the portable .zip anywhere).", "dp.w2": "Run the .exe — a Start Menu shortcut is created automatically.",
     "dp.w3": "If SmartScreen appears: \"More info\" → \"Run anyway\".", "dp.verify": "PowerShell — verify SHA-256",
     "dp.m1": "Download sunset-launcher-macos-arm64.app.zip (Apple Silicon M1–M4) or sunset-launcher-macos-x64.app.zip (Intel).",
     "dp.m2": "Extract the archive and move Sunset Launcher.app to /Applications.",
@@ -283,9 +292,41 @@
     "scr.t1": "Библиотека", "scr.t2": "Modrinth", "scr.t3": "Моды", "scr.t4": "Аккаунты", "scr.t5": "Настройки", "scr.t6": "Консоль",
     "scr.d1": "Все сборки и быстрый запуск", "scr.d2": "Каталог модов и модпаков", "scr.d3": "Контент сборки",
     "scr.d4": "Microsoft, Ely.by, Offline", "scr.d5": "Темы, Java, язык", "scr.d6": "Живой лог игры",
+    "hero.meta2": "MIT · Открытый код",
+    "how.s1d": "Выберите удобный вариант: .exe для Windows, .deb или бинарник для Linux, либо сборку для macOS.",
+    "dl.chooseFmt": "Выберите формат загрузки", "dl.debShort": ".deb пакет", "dl.anyLinux": "Любой дистрибутив",
+    "dl.winExeLabel": ".exe файл", "dl.macAppLabel": "приложение .app", "dl.binChip": "бин",
+    "dl.tipZip": "Портативный архив .zip для Windows",
+    "dl.tipDebArm": "Пакет .deb для Linux ARM64",
+    "dl.tipBinArm": "Бинарник для Linux ARM64",
+    "dl.tipMacIntel": "Сборка .app для macOS Intel (x64)",
+    "dl.tipMacBin": "Отдельный бинарник для macOS",
+    "dl.allFormats": "Все сборки, SHA-256 и инструкции",
+    "dp.bit64": "64-бит", "dp.archLabel": "Архитектура",
+    "dp.macSub": "macOS 11+ · Apple Silicon и Intel",
+    "dp.binLabel": "бинарник",
+    "dp.winExeSub": "Исполняемый файл .exe", "dp.winZipSub": "Портативный архив",
+    "dp.debSub": "Ubuntu / Debian / Mint", "dp.binSub": "Любой дистрибутив · glibc",
+    "dp.macAppSub": "Пакет приложения .app", "dp.macBinSub": "Отдельный бинарник",
+    "dp.srcDesc": "Открытый репозиторий sunset-launcher/sunset-launcher · Rust 2021 · MIT License",
+    "dp.l1": "На Ubuntu / Debian / Mint установите готовый .deb-пакет, а на любом другом дистрибутиве — запустите бинарник.",
+    "dp.l2": "Выберите нужный вариант установки в терминале:",
+    "dp.termDeb": "Ubuntu / Debian — установка .deb пакета",
+    "dp.termBin": "Любой дистрибутив — запуск бинарника",
+    "dp.l3": "При установке .deb или первом запуске бинарника лаунчер автоматически появится в меню приложений.",
+    "dp.w1": "Скачайте sunset-launcher-windows-x64.exe (или распакуйте портативный .zip в любую папку).",
+    "dp.m1": "Скачайте sunset-launcher-macos-arm64.app.zip (Apple Silicon M1–M4) или sunset-launcher-macos-x64.app.zip (Intel).",
+    "dp.m2": "Распакуйте архив и перенесите Sunset Launcher.app в папку /Applications.",
+    "dp.m3": "Снимите карантин Gatekeeper перед первым запуском неподписанной сборки:",
+    "q5": "Где хранятся файлы игры?",
+    "a5": "Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\\sunset-launcher. macOS: ~/Library/Application Support/sunset-launcher. Внутри — профили, аккаунты, версии, библиотеки, ассеты и изолированные папки сборок.",
+    "q6": "Есть ли версия для macOS и .deb пакет для Linux?",
+    "a6": "Да! На странице загрузки и в релизах sunset-launcher/sunset-launcher доступны .exe и .zip для Windows, .deb пакеты и бинарники для Linux (x64 и ARM64), а также .app и бинарники для macOS (Apple Silicon и Intel).",
   };
   $$("[data-i18n]").forEach((el) => { if (!RU[el.dataset.i18n]) RU[el.dataset.i18n] = el.textContent.trim(); });
-  $$("[data-i18n-ph]").forEach((el) => (RU[el.dataset.i18nPh] = el.placeholder));
+  $$("[data-i18n-ph]").forEach((el) => { if (!RU[el.dataset.i18nPh]) RU[el.dataset.i18nPh] = el.placeholder; });
+  $$("[data-i18n-title]").forEach((el) => { if (!RU[el.dataset.i18nTitle]) RU[el.dataset.i18nTitle] = el.getAttribute("title") || ""; });
+  $$("[data-i18n-aria]").forEach((el) => { if (!RU[el.dataset.i18nAria]) RU[el.dataset.i18nAria] = el.getAttribute("aria-label") || ""; });
 
   let lang = (() => {
     try {
@@ -314,6 +355,8 @@
     if (EN[titleKey] || RU[titleKey]) document.title = t(titleKey);
     $$("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
     $$("[data-i18n-ph]").forEach((el) => (el.placeholder = t(el.dataset.i18nPh)));
+    $$("[data-i18n-title]").forEach((el) => el.setAttribute("title", t(el.dataset.i18nTitle)));
+    $$("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
     $("#langBtn").textContent = lang === "ru" ? "EN" : "RU";
     updateDownloadCTA();
     formatRelDate();
