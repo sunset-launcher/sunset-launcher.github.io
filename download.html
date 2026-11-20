@@ -37,7 +37,7 @@
         </div>
         <h1 class="enter" style="--d:1"><span data-i18n="dp.title1">Скачать</span> <span class="grad shimmer">Sunset Launcher</span></h1>
         <p class="lead enter" style="--d:2">
-          <span data-i18n="dl.ver">Последняя версия:</span> <b class="version">v0.1.6</b>
+          <span data-i18n="dl.ver">Последняя версия:</span> <b class="version">v0.1.8</b>
           <span class="rel-date" id="relDate"></span>
         </p>
       </div>
@@ -157,11 +157,21 @@
           <span class="eyebrow">Changelog</span>
           <h2 data-i18n="dp.changes">Что нового</h2>
         </div>
-        <div class="changelog reveal" id="changelog">
-          <p class="muted" data-i18n="dp.loading">Загружаем заметки к релизу с GitHub…</p>
+        <div class="changelog reveal" id="changelog" data-curated-ver="v0.1.8">
+          <h3 data-i18n="dp.v018.h">Sunset Launcher v0.1.8 — Выделенные серверы и туннель bore</h3>
+          <ul>
+            <li data-i18n="dp.v018.b1">Поддержка Dedicated-серверов прямо в лаунчере: Vanilla, Paper, Purpur, Folia, Fabric, Quilt, Forge, NeoForge и Arclight с живой консолью и модами/плагинами из Modrinth.</li>
+            <li data-i18n="dp.v018.b2">Открытие сервера в сеть для «серых» IP (CGNAT / за NAT) через встроенный публичный TCP-туннель bore (bore.pub), а также автопроброс портов по UPnP.</li>
+            <li data-i18n="dp.v018.b3">Защита токенов через системное хранилище ключей ОС (OS Keyring), проверка SHA-256 при автообновлении и защита от уязвимостей Log4j.</li>
+            <li data-i18n="dp.v018.b4">Поддержка старых версий Minecraft (Forge ≤ 1.12.2, ассеты до 1.7.3), импорт модпаков Prism / CurseForge и пакетное обновление модов.</li>
+          </ul>
+          <div id="changelogAssets"></div>
         </div>
         <div class="rel-history reveal" id="relHistory" hidden></div>
-        <div class="center"><a class="btn btn-ghost" href="https://github.com/sunset-launcher/sunset-launcher/releases" target="_blank" rel="noopener" data-i18n="dl.all">Все релизы</a></div>
+        <div class="center hero-cta center-row">
+          <a class="btn btn-primary magnetic" href="changelog.html"><span data-i18n="dp.fullCl">Полный чейнджлог</span> →</a>
+          <a class="btn btn-ghost" href="https://github.com/sunset-launcher/sunset-launcher/releases" target="_blank" rel="noopener" data-i18n="dl.all">Все релизы</a>
+        </div>
       </div>
     </section>
 

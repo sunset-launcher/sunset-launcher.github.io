@@ -16,6 +16,7 @@
     ["features", "features.html", "nav.features", "Возможности"],
     ["screenshots", "screenshots.html", "nav.screens", "Скриншоты"],
     ["download", "download.html", "nav.download", "Скачать"],
+    ["changelog", "changelog.html", "nav.changelog", "Чейнджлог"],
     ["faq", "faq.html", "nav.faq", "FAQ"],
   ];
 
@@ -105,11 +106,13 @@
     "title.features": "Features — Sunset Launcher",
     "title.screenshots": "Screenshots — Sunset Launcher",
     "title.download": "Download — Sunset Launcher",
+    "title.changelog": "Changelog — Sunset Launcher",
     "title.faq": "FAQ — Sunset Launcher",
     "title.404": "404 — Sunset Launcher",
-    "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.faq": "FAQ", "nav.search": "Search",
+    "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.changelog": "Changelog", "nav.faq": "FAQ", "nav.search": "Search",
     "a11y.skip": "Skip to content", "pal.ph": "Where to go?", "pal.nav": "select", "pal.open": "open", "pal.empty": "Nothing found",
-    "pal.pages": "Pages", "pal.actions": "Actions",
+    "pal.pages": "Pages", "pal.actions": "Actions", "pal.cl": "Changelog",
+    "pal.cl018": "v0.1.8 — Dedicated Servers & bore tunnel (CGNAT)",
     "pal.dlWin": "Download for Windows", "pal.dlLinux": "Download for Linux",
     "pal.gh": "Open GitHub repository", "pal.issue": "Report a bug", "pal.lang": "Switch language to Russian", "pal.top": "Scroll to top",
     "stats.downloads": "downloads", "stats.stars": "GitHub stars",
@@ -176,7 +179,58 @@
     "dp.req": "System requirements", "dp.r1": "OS", "dp.r2": "Memory", "dp.r2v": "4 GB+ (8 GB for modpacks)",
     "dp.r3v": "Auto-detect / Adoptium", "dp.r4": "Internet", "dp.r4v": "For the first version download",
     "dp.changes": "What's new", "dp.loading": "Loading release notes from GitHub…", "dp.noNotes": "Couldn't load release notes. See them on GitHub.",
-    "dp.history": "Previous releases",
+    "dp.history": "Previous releases", "dp.fullCl": "Full changelog",
+    "dp.v018.h": "Sunset Launcher v0.1.8 — Dedicated Servers & bore Tunnel",
+    "dp.v018.b1": "Dedicated Server manager right inside the launcher: Vanilla, Paper, Purpur, Folia, Fabric, Quilt, Forge, NeoForge and Arclight with a live console and Modrinth mods/plugins.",
+    "dp.v018.b2": "Expose your server to the network behind a private / CGNAT IP using the built-in bore public TCP tunnel (bore.pub), plus automatic UPnP port forwarding.",
+    "dp.v018.b3": "Account token protection via OS Keyring, SHA-256 updater verification and Mojang Log4j XML exploit mitigation.",
+    "dp.v018.b4": "Legacy Minecraft support (Forge ≤ 1.12.2, pre-1.7.3 assets), Prism / CurseForge modpack import and batch mod updates.",
+    "cp.title1": "Release", "cp.title2": "changelog",
+    "cp.lead": "Every Sunset Launcher release, new feature and technical improvement — from the latest build back to day one.",
+    "cp.search": "Search versions, bore, servers, features…",
+    "cp.fAll": "All changes", "cp.fNew": "New", "cp.fNet": "Servers & Network", "cp.fImp": "Improvements & Security",
+    "cp.latest": "Latest release",
+    "cp.tagNew": "New", "cp.tagNet": "Network", "cp.tagSec": "Security", "cp.tagImp": "Improved", "cp.tagFix": "Fixed",
+    "cp.d018": "November 20, 2026",
+    "cp.v018.t": "Dedicated Minecraft Servers & bore Public Tunnel for Private / CGNAT IPs",
+    "cp.v018.spotBadge": "Release Highlight · Dedicated Servers + bore",
+    "cp.v018.spotTitle": "Host your own server in a couple of clicks — even behind carrier-grade NAT",
+    "cp.v018.spotP1": "Sunset Launcher now features a built-in Dedicated Server manager. Create and run Vanilla, Paper, Purpur, Folia, Fabric, Quilt, Forge, NeoForge and Arclight servers with automatic Java provisioning, a live server console, server.properties editing, and direct mod or plugin installation from Modrinth.",
+    "cp.v018.spotP2": "So friends can join without Hamachi or Radmin VPN, two network publishing modes are included: automatic UPnP port forwarding for public IPs, and TCP tunneling powered by the open-source bore client (bore.pub) specifically for private / gray IPs behind CGNAT. The launcher downloads bore automatically, exposes the port to the network and gives you a ready-to-copy public address.",
+    "cp.v018.termHead": "Public tunnel for CGNAT / private IP — bore",
+    "cp.v018.boreTag": "bore (CGNAT / private IP)",
+    "cp.v018.i1": "Dedicated Server manager: creation, RAM/JVM tuning, live stdout/stderr log, stdin commands, graceful shutdown and automatic Java 8/16/17/21 selection.",
+    "cp.v018.i2": "Built-in bore client (ekzhang/bore) to expose servers behind private / CGNAT IPs to the network via bore.pub, plus automatic UPnP port mapping with cleanup on exit.",
+    "cp.v018.i3": "Install server mods and plugins straight from Modrinth matched to your server software (Paper, Purpur, Folia, Fabric, Forge, NeoForge, Arclight) and edit core server.properties options.",
+    "cp.v018.i4": "Account tokens stored in the OS Keyring, atomic 0600 JSON writes, SHA-256 verification on self-update and Log4j XML exploit protection.",
+    "cp.v018.i5": "Legacy Minecraft compatibility (Forge ≤ 1.12.2 installers, pre-1.7.3 virtual/mapped assets) and Prism Launcher / CurseForge modpack import.",
+    "cp.v018.i6": "Batch hash-based mod updates, world datapack management, screenshot thumbnails, active download cancellation, modular UI architecture and Linux ARM64 (.deb) & macOS builds.",
+    "cp.v018.i7": "Kept the single-instance Unix domain socket path within the OS sun_path length limit.",
+    "cp.d017": "November 19, 2026",
+    "cp.v017.t": "UI Optimization & List Virtualization",
+    "cp.v017.i1": "Virtualized rendering in the live console and mods list for smooth FPS even with thousands of log lines and hundreds of installed mods.",
+    "cp.v017.i2": "Auto-hiding idle bottom status bar and a clean author badge in the sidebar.",
+    "cp.v017.i3": "Fixed layout clipping on compact window sizes.",
+    "cp.d016": "November 18, 2026",
+    "cp.v016.t": "Readable Instance Folders & Unified Data Directory",
+    "cp.v016.i1": "Instances now live in human-readable instances/<name> folders instead of UUIDs so mods, screenshots and configs are easy to locate on disk.",
+    "cp.v016.i2": "Unified the main data directory under sunset-launcher while keeping backward compatibility.",
+    "cp.d015": "November 18, 2026",
+    "cp.v015.t": "Sunset Launcher Rebrand & Default Sunset Theme",
+    "cp.v015.i1": "Added the warm Sunset default color theme and updated the launcher icon.",
+    "cp.v015.i2": "Rebranded to Sunset Launcher under the sunset-launcher GitHub organization with seamless auto-update support.",
+    "cp.d014": "November 18, 2026",
+    "cp.v014.t": "Windows Integration & Native File Dialogs",
+    "cp.v014.i1": "Native OS file dialogs (.mrpack, custom icons, Java path) and embedded Windows PE metadata and icon.",
+    "cp.d013": "November 15, 2026",
+    "cp.v013.t": "9 Languages, Auto-Java Manager, Theme Presets & Discord RPC",
+    "cp.v013.i1": "Full 9-language UI translation, Ctrl+K command palette, theme presets, automatic Adoptium Java downloads, .mrpack export and Discord Rich Presence.",
+    "cp.d010": "November 13, 2026",
+    "cp.v010.t": "Initial Public Release",
+    "cp.v010.i1": "Native launcher written in pure Rust and egui: Vanilla, Fabric, Quilt, Forge and NeoForge support, Modrinth catalog, Microsoft / Ely.by / Offline accounts, and Windows & Linux builds.",
+    "cp.empty": "No matching changes found 🤔",
+    "cp.ctaTitle": "Update to the latest release",
+    "cp.ctaSub": "Try the Dedicated Server manager and bore tunnel for private / CGNAT IPs right now.",
     "dp.faqTitle": "Questions about install or SmartScreen?", "dp.faqDesc": "Answers on security, Java, game folders and modpacks are in the FAQ.", "dp.faqBtn": "Open FAQ",
     "qp.title1": "Frequently asked", "qp.title2": "questions", "qp.search": "Search questions…", "qp.empty": "Nothing found 🤔",
     "qp.help": "Didn't find an answer?", "qp.helpd": "Open an issue on GitHub — we'll sort it out.", "qp.issue": "Open an issue",
@@ -199,7 +253,9 @@
     "dl.copied": "Скопировано!", "dl.for": "Скачать для", "dl.started": "Загрузка началась…", "nav.search": "Поиск",
     "dp.noNotes": "Не удалось загрузить заметки. Смотрите их на GitHub.", "dp.history": "Предыдущие релизы",
     "stats.dl": "потоков скачивания", "stats.rust": "чистый Rust",
-    "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "fp.langsEyebrow": "Локализация",
+    "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "pal.cl": "Чейнджлог",
+    "pal.cl018": "v0.1.8 — Выделенные серверы и туннель bore (серый IP)",
+    "fp.langsEyebrow": "Локализация",
     "pal.dlWin": "Скачать для Windows", "pal.dlLinux": "Скачать для Linux", "pal.gh": "Открыть репозиторий на GitHub",
     "pal.issue": "Сообщить о баге", "pal.lang": "Switch language to English", "pal.top": "Наверх",
     "scr.t1": "Библиотека", "scr.t2": "Modrinth", "scr.t3": "Моды", "scr.t4": "Аккаунты", "scr.t5": "Настройки", "scr.t6": "Консоль",
@@ -229,6 +285,7 @@
   }
 
   let refreshFaqAfterLang = () => {};
+  let refreshClAfterLang = () => {};
   function applyLang() {
     document.documentElement.lang = lang;
     const titleKey = "title." + page;
@@ -239,6 +296,7 @@
     updateDownloadCTA();
     formatRelDate();
     refreshFaqAfterLang();
+    refreshClAfterLang();
     requestAnimationFrame(() => { moveInd(); moveSeg(); });
   }
   $("#langBtn").addEventListener("click", () => {
@@ -370,7 +428,7 @@
     });
     glowRaf = requestAnimationFrame(stepGlow);
 
-    $$(".feature, .os-card").forEach((f) => f.addEventListener("pointermove", (e) => {
+    $$(".feature, .os-card, .cl-card").forEach((f) => f.addEventListener("pointermove", (e) => {
       const r = f.getBoundingClientRect();
       f.style.setProperty("--mx", `${e.clientX - r.left}px`);
       f.style.setProperty("--my", `${e.clientY - r.top}px`);
@@ -476,7 +534,15 @@
     return out + (inList ? "</ul>" : "");
   }
 
-  const CACHE_KEY = "gh-cache-v2", CACHE_TTL = 15 * 60 * 1000;
+  const LOCAL_VER = "v0.1.8";
+  const parseVer = (v) => String(v || "").replace(/^v/i, "").split(/[.-]/).map((n) => parseInt(n, 10) || 0);
+  const cmpVer = (a, b) => {
+    const pa = parseVer(a), pb = parseVer(b);
+    for (let i = 0; i < 3; i++) if ((pa[i] || 0) !== (pb[i] || 0)) return (pa[i] || 0) - (pb[i] || 0);
+    return 0;
+  };
+
+  const CACHE_KEY = "gh-cache-v3", CACHE_TTL = 15 * 60 * 1000;
   async function loadGitHub() {
     try {
       const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
@@ -492,18 +558,17 @@
     const downloads = list.reduce((sum, r) => sum + (r.assets || [])
       .filter((a) => !a.name.endsWith(".sha256"))
       .reduce((s, a) => s + a.download_count, 0), 0);
-    const history = list
-      .filter((r) => latest && r.id !== latest.id)
-      .slice(0, 5)
-      .map((r) => ({
-        tag: r.tag_name,
-        name: r.name || r.tag_name,
-        date: r.published_at,
-        body: r.body || "",
-        url: r.html_url,
-        downloads: (r.assets || []).filter((a) => !a.name.endsWith(".sha256")).reduce((s, a) => s + a.download_count, 0),
-      }));
-    const data = { stars: repo?.stargazers_count ?? null, downloads: list.length ? downloads : null, latest, history };
+    const mapRel = (r) => ({
+      tag: r.tag_name,
+      name: r.name || r.tag_name,
+      date: r.published_at,
+      body: r.body || "",
+      url: r.html_url,
+      downloads: (r.assets || []).filter((a) => !a.name.endsWith(".sha256")).reduce((s, a) => s + a.download_count, 0),
+    });
+    const history = list.filter((r) => latest && r.id !== latest.id).slice(0, 6).map(mapRel);
+    const all = list.map(mapRel);
+    const data = { stars: repo?.stargazers_count ?? null, downloads: list.length ? downloads : null, latest, history, all };
     try { localStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), data })); } catch { /* quota */ }
     return data;
   }
@@ -539,7 +604,7 @@
   }
 
   loadGitHub()
-    .then(({ stars, downloads, latest: d, history }) => {
+    .then(({ stars, downloads, latest: d, history, all }) => {
       if (stars != null) {
         $$(".gh-stars").forEach((s) => { s.textContent = "★ " + fmtNum(stars); s.hidden = false; });
       }
@@ -548,34 +613,91 @@
 
       if (!d?.tag_name) throw 0;
       const v = d.tag_name.startsWith("v") ? d.tag_name : `v${d.tag_name}`;
-      $$(".version").forEach((el) => (el.textContent = v));
-      if (d.published_at) {
-        latestPublishedAt = d.published_at;
-        formatRelDate();
+      const cmp = cmpVer(v, LOCAL_VER);
+      if (cmp >= 0) {
+        $$(".version").forEach((el) => (el.textContent = v));
+        if (d.published_at) {
+          latestPublishedAt = d.published_at;
+          formatRelDate();
+        }
       }
       (d.assets || []).forEach((a) => $$(`[data-asset="${a.name}"]`).forEach((el) => (el.textContent = "· " + fmtSize(a.size))));
+
+      const assetsHtml = d.assets?.length ? `<div class="assets">${d.assets.map((a) =>
+        `<div class="asset"><a href="${esc(a.browser_download_url)}">${esc(a.name)}</a><span>${fmtSize(a.size)} · ⬇ ${a.download_count}</span></div>`).join("")}</div>` : "";
       const cl = $("#changelog");
       if (cl) {
-        cl.innerHTML = `<h3>${esc(d.name || v)}</h3>` + (md(d.body || "") || "") +
-          (d.assets?.length ? `<div class="assets">${d.assets.map((a) =>
-            `<div class="asset"><a href="${esc(a.browser_download_url)}">${esc(a.name)}</a><span>${fmtSize(a.size)} · ⬇ ${a.download_count}</span></div>`).join("")}</div>` : "");
+        if (cmp > 0 && d.body) {
+          cl.innerHTML = `<h3>${esc(d.name || v)}</h3>` + (md(d.body || "") || "") + assetsHtml;
+        } else if (cmp === 0 && assetsHtml) {
+          const slot = $("#changelogAssets", cl);
+          if (slot) slot.innerHTML = assetsHtml;
+        }
       }
+
+      const prevList = cmp < 0
+        ? [{ tag: d.tag_name, name: d.name || v, date: d.published_at, body: d.body || "", url: d.html_url,
+          downloads: (d.assets || []).filter((a) => !a.name.endsWith(".sha256")).reduce((s, a) => s + a.download_count, 0) }, ...(history || [])].slice(0, 5)
+        : (history || []);
       const rh = $("#relHistory");
-      if (rh && history?.length) {
+      if (rh && prevList.length) {
         rh.hidden = false;
         rh.innerHTML = `<div class="rel-history-title" data-i18n="dp.history">${esc(t("dp.history"))}</div>` +
-          history.map((r) => `
+          prevList.map((r) => `
             <details class="rel-old">
               <summary><span>${esc(r.name)}</span><span>${r.date ? new Date(r.date).toISOString().slice(0, 10) : ""} · ⬇ ${r.downloads}</span></summary>
               <div class="rel-old-body">${md(r.body) || ""}<p><a href="${esc(r.url)}" target="_blank" rel="noopener">GitHub →</a></p></div>
             </details>`).join("");
+      }
+
+      /* Enrich changelog.html with live download counts + any newer GitHub releases */
+      const clTimeline = $("#clTimeline");
+      if (clTimeline && Array.isArray(all)) {
+        const known = new Set($$("[data-version]", clTimeline).map((el) => el.dataset.version));
+        all.forEach((r) => {
+          const rv = r.tag.startsWith("v") ? r.tag : `v${r.tag}`;
+          const card = $(`[data-version="${rv}"] .cl-meta`, clTimeline);
+          if (card && r.downloads > 0 && !$(".cl-dl-badge", card)) {
+            card.insertAdjacentHTML("afterbegin", `<span class="cl-dl-badge">⬇ ${fmtNum(r.downloads)}</span>`);
+          }
+        });
+        const newer = all.filter((r) => {
+          const rv = r.tag.startsWith("v") ? r.tag : `v${r.tag}`;
+          return !known.has(rv) && cmpVer(rv, LOCAL_VER) > 0;
+        });
+        const extra = $("#clLiveExtra");
+        if (extra && newer.length) {
+          $$(".latest", clTimeline).forEach((el) => { el.classList.remove("latest"); $(".latest-pill", el)?.remove(); });
+          extra.hidden = false;
+          extra.innerHTML = newer.map((r, idx) => {
+            const rv = r.tag.startsWith("v") ? r.tag : `v${r.tag}`;
+            return `<article class="cl-entry${idx === 0 ? " latest" : ""} in" id="${esc(rv)}" data-version="${esc(rv)}" data-cats="new imp">
+              <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+              <div class="cl-card">
+                <header class="cl-head">
+                  <div class="cl-ver-wrap">
+                    <a href="#${esc(rv)}" class="cl-ver">${esc(rv)}</a>
+                    ${idx === 0 ? `<span class="cl-pill latest-pill" data-i18n="cp.latest">${esc(t("cp.latest"))}</span>` : ""}
+                  </div>
+                  <div class="cl-meta">
+                    ${r.downloads > 0 ? `<span class="cl-dl-badge">⬇ ${fmtNum(r.downloads)}</span>` : ""}
+                    <time>${r.date ? new Date(r.date).toISOString().slice(0, 10) : ""}</time>
+                    <a class="cl-gh" href="${esc(r.url)}" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </header>
+                <h2 class="cl-title">${esc(r.name)}</h2>
+                <div class="rel-old-body">${md(r.body) || ""}</div>
+              </div>
+            </article>`;
+          }).join("");
+        }
       }
     })
     .catch(() => {
       setLiveStat("downloads", null, 64, "", "stats.dl");
       setLiveStat("stars", null, 100, "%", "stats.rust");
       const cl = $("#changelog");
-      if (cl) cl.innerHTML = `<p class="muted" data-i18n="dp.noNotes">${t("dp.noNotes")}</p>`;
+      if (cl && !cl.dataset.curatedVer) cl.innerHTML = `<p class="muted" data-i18n="dp.noNotes">${t("dp.noNotes")}</p>`;
     });
 
   /* =========================================================
@@ -704,7 +826,7 @@
     });
 
     /* screenshot category filters */
-    const filterBtns = $$(".filter-btn");
+    const filterBtns = $$(".filter-btn[data-filter]");
     if (filterBtns.length) {
       filterBtns.forEach((btn) => btn.addEventListener("click", () => {
         const cat = btn.dataset.filter;
@@ -715,6 +837,88 @@
           if (match) s.classList.add("in");
         });
       }));
+    }
+  }
+
+  /* =========================================================
+     Changelog: search + category filter + highlighting + hash scroll
+     ========================================================= */
+  const clEntries = $$("#clTimeline .cl-entry");
+  if (clEntries.length) {
+    const clSearch = $("#clSearch"), clEmpty = $("#clEmpty"), clBtns = $$("[data-cl-filter]");
+    let activeCat = "all";
+    const textTargets = (entry) => [
+      $(".cl-title", entry),
+      ...$$(".cl-spotlight h3, .cl-spotlight p", entry),
+      ...$$(".cl-list li > span:last-child", entry),
+    ].filter(Boolean);
+    const storeClOriginals = () => clEntries.forEach((entry) => {
+      textTargets(entry).forEach((el) => (el.dataset.clOrig = el.textContent));
+    });
+    const markText = (str, q) => {
+      if (!q) return esc(str);
+      const safe = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return esc(str).replace(new RegExp(safe, "gi"), (m) => `<mark>${m}</mark>`);
+    };
+    const runClFilter = () => {
+      const q = (clSearch?.value || "").trim();
+      const ql = q.toLowerCase();
+      let shownEntries = 0;
+      clEntries.forEach((entry) => {
+        const verText = ($(".cl-ver", entry)?.textContent || "").toLowerCase();
+        const titleEl = $(".cl-title", entry);
+        const titleOrig = titleEl?.dataset.clOrig || "";
+        const tagsText = $$(".cl-tags span", entry).map((s) => s.textContent).join(" ").toLowerCase();
+        const headerHit = !ql || verText.includes(ql) || titleOrig.toLowerCase().includes(ql) || tagsText.includes(ql);
+        if (titleEl) titleEl.innerHTML = markText(titleOrig, q);
+
+        const spot = $(".cl-spotlight", entry);
+        let spotShown = false;
+        if (spot) {
+          const spotCatOk = activeCat === "all" || spot.dataset.clCat === activeCat || activeCat === "new";
+          const spotEls = $$("h3, p", spot);
+          const spotText = spotEls.map((el) => el.dataset.clOrig || "").join("\n").toLowerCase();
+          const termText = ($("pre", spot)?.textContent || "").toLowerCase();
+          const spotHit = spotCatOk && (!ql || headerHit || spotText.includes(ql) || termText.includes(ql));
+          spot.hidden = !spotHit;
+          spotEls.forEach((el) => (el.innerHTML = markText(el.dataset.clOrig || "", q)));
+          spotShown = spotHit;
+        }
+
+        let itemsShown = 0;
+        $$(".cl-list li", entry).forEach((li) => {
+          const catOk = activeCat === "all" || li.dataset.clCat === activeCat;
+          const bodySpan = $("span:last-child", li);
+          const orig = bodySpan?.dataset.clOrig || "";
+          const hit = catOk && (!ql || headerHit || orig.toLowerCase().includes(ql));
+          li.hidden = !hit;
+          if (bodySpan) bodySpan.innerHTML = markText(orig, q);
+          if (hit) itemsShown++;
+        });
+
+        const showEntry = spotShown || itemsShown > 0;
+        entry.hidden = !showEntry;
+        if (showEntry) {
+          entry.classList.add("in");
+          shownEntries++;
+        }
+      });
+      if (clEmpty) clEmpty.hidden = shownEntries > 0;
+    };
+    refreshClAfterLang = () => { storeClOriginals(); runClFilter(); };
+    storeClOriginals();
+    clSearch?.addEventListener("input", runClFilter);
+    clBtns.forEach((btn) => btn.addEventListener("click", () => {
+      activeCat = btn.dataset.clFilter || "all";
+      clBtns.forEach((b) => b.classList.toggle("active", b === btn));
+      runClFilter();
+    }));
+
+    if (location.hash) {
+      const target = clEntries.find((el) => el.id === decodeURIComponent(location.hash.slice(1)));
+      if (target) {
+        setTimeout(() => target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }), 120);
+      }
     }
   }
 
@@ -796,14 +1000,14 @@
      Command palette (Ctrl+K) — same idea as in the launcher
      ========================================================= */
   const pal = $("#palette"), palInput = $("#paletteInput"), palList = $("#paletteList");
-  const ICONS = { home: "🏠", features: "✨", screenshots: "🖼️", download: "⬇️", faq: "❓" };
+  const ICONS = { home: "🏠", features: "✨", screenshots: "🖼️", download: "⬇️", changelog: "📋", faq: "❓" };
   function paletteItems() {
     const go = (href) => () => {
       const a = document.createElement("a");
       a.href = href; document.body.appendChild(a); a.click(); a.remove();
     };
     const items = PAGES.map(([id, href, key]) => ({
-      group: t("pal.pages"), icon: ICONS[id], label: t(key), kw: `${id} ${EN[key]} ${RU[key]}`, run: go(href),
+      group: t("pal.pages"), icon: ICONS[id], label: t(key), kw: `${id} ${EN[key]} ${RU[key]} ченджлог чейнджлог обновления релизы`, run: go(href),
     }));
     items.push(
       { group: t("pal.actions"), icon: "🪟", label: t("pal.dlWin"), kw: "windows exe скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = DL.win; } },
@@ -813,6 +1017,23 @@
       { group: t("pal.actions"), icon: "🌐", label: t("pal.lang"), kw: "language язык english русский", run: () => $("#langBtn").click() },
       { group: t("pal.actions"), icon: "⬆️", label: t("pal.top"), kw: "top наверх", run: () => scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }) },
     );
+    if (clEntries.length) {
+      clEntries.forEach((entry) => {
+        const ver = $(".cl-ver", entry)?.textContent || "";
+        const title = $(".cl-title", entry)?.dataset.clOrig || $(".cl-title", entry)?.textContent || "";
+        items.push({
+          group: t("pal.cl"), icon: "🚀", label: `${ver} — ${title}`,
+          kw: `${ver} ${title} bore боре dedicated дедикейтед сервер серый ip cgnat upnp`,
+          run: () => { entry.hidden = false; entry.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }); },
+        });
+      });
+    } else {
+      items.push({
+        group: t("pal.cl"), icon: "🚀", label: t("pal.cl018"),
+        kw: "v0.1.8 bore боре dedicated дедикейтед серверы серый айпи ip cgnat upnp paper fabric forge",
+        run: go("changelog.html#v0.1.8"),
+      });
+    }
     faqItems.forEach((d) => {
       const label = d.dataset.qOrig || $("summary", d).textContent;
       items.push({
@@ -864,7 +1085,7 @@
     if (!pal.classList.contains("open")) {
       if (e.key === "Escape") closeMenu();
       if (e.key === "/" && !typing) {
-        const s = $("#faqSearch");
+        const s = $("#faqSearch") || $("#clSearch");
         if (s) { e.preventDefault(); s.focus(); }
         else { e.preventDefault(); openPalette(); }
       }

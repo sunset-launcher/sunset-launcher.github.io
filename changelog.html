@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Чейнджлог — Sunset Launcher</title>
+  <meta name="theme-color" content="#120e18" />
+  <meta name="description" content="История обновлений Sunset Launcher: поддержка выделенных серверов (Dedicated Servers), открытие серверов с серым IP через туннель bore, новые функции и исправления." />
+  <link rel="canonical" href="https://sunset-launcher.github.io/changelog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sunset Launcher" />
+  <meta property="og:title" content="Чейнджлог — Sunset Launcher" />
+  <meta property="og:description" content="Что нового в Sunset Launcher: менеджер Dedicated-серверов, публичный туннель bore для серых IP (CGNAT), безопасность и улучшения." />
+  <meta property="og:url" content="https://sunset-launcher.github.io/changelog.html" />
+  <meta property="og:image" content="https://sunset-launcher.github.io/assets/screenshots/library.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/logo.ico" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="changelog">
+  <div id="app-header"></div>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow enter" style="--d:0">Changelog</span>
+        <h1 class="enter" style="--d:1">
+          <span data-i18n="cp.title1">История</span>
+          <span class="grad shimmer" data-i18n="cp.title2">обновлений</span>
+        </h1>
+        <p class="lead enter" style="--d:2" data-i18n="cp.lead">
+          Все релизы, новые функции и технические улучшения Sunset Launcher — от свежих версий к самому первому запуску.
+        </p>
+
+        <div class="search enter" style="--d:3">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <input id="clSearch" type="search" placeholder="Поиск по версиям, bore, серверам, функциям…" data-i18n-ph="cp.search" />
+        </div>
+
+        <div class="filter-bar cl-filters enter" style="--d:4" role="tablist" aria-label="Filter changelog">
+          <button class="filter-btn active" type="button" data-cl-filter="all" data-i18n="cp.fAll">Все изменения</button>
+          <button class="filter-btn" type="button" data-cl-filter="new" data-i18n="cp.fNew">Новое</button>
+          <button class="filter-btn" type="button" data-cl-filter="net" data-i18n="cp.fNet">Серверы и сеть</button>
+          <button class="filter-btn" type="button" data-cl-filter="imp" data-i18n="cp.fImp">Улучшения и защита</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container narrow">
+        <div id="clLiveExtra" class="cl-timeline" hidden></div>
+
+        <div class="cl-timeline" id="clTimeline">
+          <!-- v0.1.8 -->
+          <article class="cl-entry latest reveal" id="v0.1.8" data-version="v0.1.8" data-cats="new net imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.8" class="cl-ver">v0.1.8</a>
+                  <span class="cl-pill latest-pill" data-i18n="cp.latest">Актуальный релиз</span>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-20" data-i18n="cp.d018">20 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.8" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+
+              <h2 class="cl-title" data-i18n="cp.v018.t">Выделенные серверы Minecraft и публичный туннель bore для «серых» IP</h2>
+
+              <div class="cl-spotlight" data-cl-cat="net">
+                <div class="cl-spot-badge">
+                  <span>🌐</span>
+                  <span data-i18n="cp.v018.spotBadge">Главное нововведение · Dedicated Servers + bore</span>
+                </div>
+                <h3 data-i18n="cp.v018.spotTitle">Свой сервер в пару кликов — даже за провайдерским NAT и серым IP</h3>
+                <p data-i18n="cp.v018.spotP1">
+                  В лаунчере появилась полноценная вкладка управления выделенными (Dedicated) серверами. Создавайте и запускайте серверы на ядрах Vanilla, Paper, Purpur, Folia, Fabric, Quilt, Forge, NeoForge и Arclight с автоматическим подбором нужной версии Java, живой серверной консолью, редактированием server.properties и установкой модов или плагинов напрямую с Modrinth.
+                </p>
+                <p data-i18n="cp.v018.spotP2">
+                  Чтобы друзья могли зайти к вам без Hamachi и Radmin VPN, добавлено два режима публикации порта: автопроброс через UPnP для «белых» IP и встроенное TCP-туннелирование через открытый клиент bore (bore.pub) специально для «серых» IP (CGNAT). Лаунчер автоматически скачивает bore, открывает порт в сеть и сразу показывает готовый публичный адрес для подключения.
+                </p>
+
+                <div class="terminal cl-term">
+                  <div class="term-head">
+                    <span data-i18n="cp.v018.termHead">Публичный туннель для серого IP (CGNAT) — bore</span>
+                    <span class="cl-term-tag">MIT · ekzhang/bore</span>
+                  </div>
+                  <pre><span class="c">[Server]</span> Starting Paper 1.21.4 dedicated server on 0.0.0.0:25565…
+<span class="c">[Network]</span> Launching bore tunnel: bore local 25565 --to bore.pub
+<span class="c">[Tunnel]</span> Public address ready → bore.pub:48291 (copied in 1 click)</pre>
+                </div>
+
+                <div class="cl-tags" aria-label="Supported server technologies">
+                  <span>Vanilla</span><span>Paper</span><span>Purpur</span><span>Folia</span>
+                  <span>Fabric</span><span>Quilt</span><span>Forge</span><span>NeoForge</span><span>Arclight</span>
+                  <span class="accent" data-i18n="cp.v018.boreTag">bore (CGNAT / серый IP)</span><span class="accent">UPnP IGD</span>
+                </div>
+              </div>
+
+              <ul class="cl-list">
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v018.i1">Менеджер выделенных серверов (Dedicated Servers): создание, настройка RAM/JVM, живой лог, отправка команд в stdin, плавная остановка и автоподбор Java 8/16/17/21.</span>
+                </li>
+                <li data-cl-cat="net">
+                  <span class="cl-tag net" data-i18n="cp.tagNet">Сеть</span>
+                  <span data-i18n="cp.v018.i2">Встроенный клиент bore (ekzhang/bore) для открытия сервера в интернет при «сером» IP (за NAT / CGNAT) через bore.pub, а также автопроброс портов по UPnP с автозакрытием при выключении сервера.</span>
+                </li>
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v018.i3">Установка серверных модов и плагинов напрямую из Modrinth с учётом выбранного ядра (Paper, Purpur, Folia, Fabric, Forge, NeoForge, Arclight) и редактор основных параметров server.properties.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag sec" data-i18n="cp.tagSec">Защита</span>
+                  <span data-i18n="cp.v018.i4">Хранение токенов аккаунтов в системном хранилище ключей ОС (OS Keyring), атомарная запись JSON-конфигов с правами 0600, проверка SHA-256 при автообновлении и защита от уязвимостей Log4j.</span>
+                </li>
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v018.i5">Поддержка классических версий Minecraft (установщики Forge ≤ 1.12.2, виртуальные ассеты версий до 1.7.3) и импорт модпаков из Prism Launcher и CurseForge.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag imp" data-i18n="cp.tagImp">Улучшено</span>
+                  <span data-i18n="cp.v018.i6">Пакетное обновление модов по хешам, управление датапаками миров, превью скриншотов, отмена активных загрузок, модульная архитектура UI и сборки для Linux ARM64 (.deb) и macOS.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag fix" data-i18n="cp.tagFix">Исправлено</span>
+                  <span data-i18n="cp.v018.i7">Ограничена длина пути Unix-сокета контроля единственного экземпляра лаунчера в пределах системного лимита sun_path.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.7 -->
+          <article class="cl-entry reveal" id="v0.1.7" data-version="v0.1.7" data-cats="imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.7" class="cl-ver">v0.1.7</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-19" data-i18n="cp.d017">19 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.7" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+              <h2 class="cl-title" data-i18n="cp.v017.t">Оптимизация интерфейса и виртуализация списков</h2>
+              <ul class="cl-list">
+                <li data-cl-cat="imp">
+                  <span class="cl-tag imp" data-i18n="cp.tagImp">Улучшено</span>
+                  <span data-i18n="cp.v017.i1">Виртуализация рендеринга в живой консоли и списке модов — высокая плавность даже при тысячах строк логов и сотнях установленных модов.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag imp" data-i18n="cp.tagImp">Улучшено</span>
+                  <span data-i18n="cp.v017.i2">Скрытие нижней статусной панели в режиме простоя и аккуратный блок автора в боковом меню.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag fix" data-i18n="cp.tagFix">Исправлено</span>
+                  <span data-i18n="cp.v017.i3">Устранена обрезка элементов компоновки на узких размерах окна.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.6 -->
+          <article class="cl-entry reveal" id="v0.1.6" data-version="v0.1.6" data-cats="imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.6" class="cl-ver">v0.1.6</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-18" data-i18n="cp.d016">18 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.6" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+              <h2 class="cl-title" data-i18n="cp.v016.t">Читаемые папки сборок и структура данных</h2>
+              <ul class="cl-list">
+                <li data-cl-cat="imp">
+                  <span class="cl-tag imp" data-i18n="cp.tagImp">Улучшено</span>
+                  <span data-i18n="cp.v016.i1">Сборки теперь создаются в понятных папках instances/&lt;имя&gt; вместо UUID-идентификаторов, чтобы находить моды, скриншоты и конфиги на диске было проще.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag imp" data-i18n="cp.tagImp">Улучшено</span>
+                  <span data-i18n="cp.v016.i2">Основная директория данных унифицирована под именем sunset-launcher с сохранением обратной совместимости.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.5 -->
+          <article class="cl-entry reveal" id="v0.1.5" data-version="v0.1.5" data-cats="new imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.5" class="cl-ver">v0.1.5</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-18" data-i18n="cp.d015">18 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.5" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+              <h2 class="cl-title" data-i18n="cp.v015.t">Ребрендинг в Sunset Launcher и фирменная тема Sunset</h2>
+              <ul class="cl-list">
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v015.i1">Добавлена тёплая закатная тема оформления Sunset по умолчанию и обновлён логотип приложения.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag imp" data-i18n="cp.tagImp">Улучшено</span>
+                  <span data-i18n="cp.v015.i2">Проект получил имя Sunset Launcher и переехал в организацию sunset-launcher на GitHub с поддержкой автообновления.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.4 -->
+          <article class="cl-entry reveal" id="v0.1.4" data-version="v0.1.4" data-cats="new imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.4" class="cl-ver">v0.1.4</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-18" data-i18n="cp.d014">18 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.4" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+              <h2 class="cl-title" data-i18n="cp.v014.t">Интеграция с Windows и нативный выбор файлов</h2>
+              <ul class="cl-list">
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v014.i1">Системные диалоги выбора файлов (.mrpack, иконки, путь к Java) и встроенные PE-метаданные и иконка для исполняемого файла Windows.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.1 – v0.1.3 -->
+          <article class="cl-entry reveal" id="v0.1.3" data-version="v0.1.3" data-cats="new imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.3" class="cl-ver">v0.1.1 — v0.1.3</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-15" data-i18n="cp.d013">15 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+              <h2 class="cl-title" data-i18n="cp.v013.t">9 языков, авто-менеджер Java, пресеты тем и Discord RPC</h2>
+              <ul class="cl-list">
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v013.i1">Полный перевод интерфейса на 9 языков, командная палитра Ctrl+K, пресеты тем, автоматическая загрузка Adoptium Java, экспорт .mrpack и интеграция Discord Rich Presence.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.0 -->
+          <article class="cl-entry reveal" id="v0.1.0" data-version="v0.1.0" data-cats="new">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.0" class="cl-ver">v0.1.0</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-13" data-i18n="cp.d010">13 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.0" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+              <h2 class="cl-title" data-i18n="cp.v010.t">Первый публичный релиз</h2>
+              <ul class="cl-list">
+                <li data-cl-cat="new">
+                  <span class="cl-tag new" data-i18n="cp.tagNew">Новое</span>
+                  <span data-i18n="cp.v010.i1">Нативный лаунчер на чистом Rust и egui: поддержка Vanilla, Fabric, Quilt, Forge и NeoForge, каталог Modrinth, аккаунты Microsoft / Ely.by / Offline и совместимые сборки для Windows и Linux.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="muted center empty" id="clEmpty" hidden data-i18n="cp.empty">По вашему запросу изменений не найдено 🤔</p>
+
+        <div class="center reveal">
+          <a class="btn btn-ghost" href="https://github.com/sunset-launcher/sunset-launcher/releases" target="_blank" rel="noopener">
+            <span data-i18n="dl.all">Все релизы</span> ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="dl-sun" aria-hidden="true"></div>
+          <img src="assets/logo.png" alt="" class="dl-logo" width="80" height="80" />
+          <h2 data-i18n="cp.ctaTitle">Обновитесь до свежей версии</h2>
+          <p data-i18n="cp.ctaSub">Попробуйте менеджер выделенных серверов и туннель bore для серых IP уже сейчас.</p>
+          <div class="hero-cta center-row">
+            <a href="download.html" class="btn btn-primary btn-lg magnetic" data-i18n="nav.download">Скачать</a>
+            <a href="features.html" class="btn btn-ghost btn-lg" data-i18n="nav.features">Возможности</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
