@@ -113,11 +113,15 @@
     "a11y.skip": "Skip to content", "pal.ph": "Where to go?", "pal.nav": "select", "pal.open": "open", "pal.empty": "Nothing found",
     "pal.pages": "Pages", "pal.actions": "Actions", "pal.cl": "Changelog",
     "pal.cl018": "v0.1.8 — Dedicated Servers & bore tunnel (CGNAT)",
-    "pal.dlWin": "Download for Windows", "pal.dlLinux": "Download for Linux",
+    "pal.dlWin": "Download for Windows (.exe)",
+    "pal.dlLinuxDeb": "Download for Linux (.deb package)",
+    "pal.dlLinuxBin": "Download for Linux (binary)",
+    "pal.dlMacArm": "Download for macOS (.app Apple Silicon)",
+    "pal.dlMacIntel": "Download for macOS (.app Intel x64)",
     "pal.gh": "Open GitHub repository", "pal.issue": "Report a bug", "pal.lang": "Switch language to Russian", "pal.top": "Scroll to top",
     "stats.downloads": "downloads", "stats.stars": "GitHub stars",
     "how.eyebrow": "Getting started", "how.title": "From download to playing — 3 steps",
-    "how.s1t": "Download", "how.s1d": "One file for Windows or Linux. No installers and no extra dependencies.",
+    "how.s1t": "Download", "how.s1d": "Pick the format you prefer: .exe for Windows, .deb or binary for Linux, or .app for macOS.",
     "how.s2t": "Create an instance", "how.s2d": "Pick a version and a loader, or install a Modrinth modpack in one click.",
     "how.s3t": "Play", "how.s3d": "Sign in with Microsoft, Ely.by or offline — and hit Play.",
     "nf.lead": "This chunk hasn't been generated yet. Looks like the page got lost somewhere in the Nether.", "nf.home": "Back home",
@@ -170,11 +174,24 @@
     "scr.d1": "All instances and quick launch", "scr.d2": "Mods and modpacks catalog", "scr.d3": "Instance content",
     "scr.d4": "Microsoft, Ely.by, Offline", "scr.d5": "Themes, Java, language", "scr.d6": "Live game log",
     "dp.title1": "Download", "dp.rec": "Recommended", "dp.get": "Download", "dp.install": "Install", "dp.howto": "How to install",
-    "dp.l1": "Download the sunset-launcher-linux-x64 file.", "dp.l2": "Make it executable and run it:",
-    "dp.l3": "On first launch the launcher adds its icon and an application menu entry automatically.",
+    "dl.chooseFmt": "Choose download format", "dl.debShort": ".deb package", "dl.anyLinux": "Any distro",
+    "dl.allFormats": "All builds, SHA-256 & install guide",
+    "dp.binLabel": "binary",
+    "dp.winExeSub": "Standalone .exe", "dp.winZipSub": "Portable archive",
+    "dp.debSub": "Ubuntu / Debian / Mint", "dp.binSub": "Any distro · glibc",
+    "dp.macAppSub": "macOS .app bundle", "dp.macBinSub": "Standalone binary",
+    "dp.srcDesc": "Open-source sunset-launcher/sunset-launcher repo · Rust 2021 · MIT License",
+    "dp.l1": "On Ubuntu / Debian / Mint install the .deb package; on any other distro run the standalone binary.",
+    "dp.l2": "Choose your preferred method in the terminal:",
+    "dp.termDeb": "Ubuntu / Debian — install .deb package",
+    "dp.termBin": "Any distro — run standalone binary",
+    "dp.l3": "Installing the .deb or launching the binary for the first time adds Sunset to your application menu automatically.",
     "dp.verifyLinux": "Verify SHA-256 (optional)",
-    "dp.w1": "Download sunset-launcher-windows-x64.exe.", "dp.w2": "Run the .exe — a Start Menu shortcut is created automatically.",
+    "dp.w1": "Download sunset-launcher-windows-x64.exe (or extract Portable .zip anywhere).", "dp.w2": "Run the .exe — a Start Menu shortcut is created automatically.",
     "dp.w3": "If SmartScreen appears: \"More info\" → \"Run anyway\".", "dp.verify": "PowerShell — verify SHA-256",
+    "dp.m1": "Download sunset-launcher-macos-arm64.app.zip (Apple Silicon M1–M4) or sunset-launcher-macos-x64.app.zip (Intel).",
+    "dp.m2": "Extract the archive and move Sunset Launcher.app to /Applications.",
+    "dp.m3": "Clear Gatekeeper quarantine before first launch of the unsigned build:",
     "dp.s1": "Install Rust via rustup.", "dp.s2": "Clone the repository and build a release:",
     "dp.req": "System requirements", "dp.r1": "OS", "dp.r2": "Memory", "dp.r2v": "4 GB+ (8 GB for modpacks)",
     "dp.r3v": "Auto-detect / Adoptium", "dp.r4": "Internet", "dp.r4v": "For the first version download",
@@ -238,8 +255,8 @@
     "q2": "Do I need a Minecraft license?", "a2": "Microsoft sign-in requires an owned copy of the game. Ely.by accounts and offline mode are also supported.",
     "q3": "Windows says \"Unknown publisher\". Is it dangerous?", "a3": "Releases are not code-signed yet, so SmartScreen shows a warning. Click \"More info\" → \"Run anyway\". You can verify integrity with the .sha256 file or build from source.",
     "q4": "Do you collect my data?", "a4": "No. No telemetry or analytics. Tokens and accounts are stored locally only. Network requests go only to required services: Mojang, Modrinth, mod loaders, Adoptium, Microsoft / Ely.by and GitHub for updates.",
-    "q5": "Where are game files stored?", "a5": "Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\\sunset-launcher. Inside are profiles, accounts, versions, libraries, assets and isolated instance folders.",
-    "q6": "Will there be a macOS version?", "a6": "Linux and Windows are officially supported right now. You can build for other platforms from source with cargo.",
+    "q5": "Where are game files stored?", "a5": "Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\\sunset-launcher. macOS: ~/Library/Application Support/sunset-launcher. Inside are profiles, accounts, versions, libraries, assets and isolated instance folders.",
+    "q6": "Are macOS builds and a Linux .deb package available?", "a6": "Yes! Windows (.exe, .zip), Linux (.deb packages and binaries for x64 & ARM64) and macOS (.app bundles and binaries for Apple Silicon & Intel) are available on the Download page and in sunset-launcher/sunset-launcher releases.",
     "q7": "How do I install a modpack?", "a7": "Open the Discover tab, find a modpack on Modrinth and click Install — or import a .mrpack file. The launcher creates the instance and downloads everything.",
     "q8": "Do I need to install Java manually?", "a8": "No. The launcher finds installed Java automatically and can download a suitable Adoptium build into its own folder.",
     "q9": "The game crashes. What should I do?", "a9": "Open the Console tab — you'll see a crash banner and a button to copy the crash report. Increasing RAM or picking a JVM preset in instance settings often helps.",
@@ -256,7 +273,12 @@
     "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "pal.cl": "Чейнджлог",
     "pal.cl018": "v0.1.8 — Выделенные серверы и туннель bore (серый IP)",
     "fp.langsEyebrow": "Локализация",
-    "pal.dlWin": "Скачать для Windows", "pal.dlLinux": "Скачать для Linux", "pal.gh": "Открыть репозиторий на GitHub",
+    "pal.dlWin": "Скачать для Windows (.exe)",
+    "pal.dlLinuxDeb": "Скачать для Linux (.deb пакет)",
+    "pal.dlLinuxBin": "Скачать для Linux (бинарник)",
+    "pal.dlMacArm": "Скачать для macOS (.app Apple Silicon)",
+    "pal.dlMacIntel": "Скачать для macOS (.app Intel x64)",
+    "pal.gh": "Открыть репозиторий на GitHub",
     "pal.issue": "Сообщить о баге", "pal.lang": "Switch language to English", "pal.top": "Наверх",
     "scr.t1": "Библиотека", "scr.t2": "Modrinth", "scr.t3": "Моды", "scr.t4": "Аккаунты", "scr.t5": "Настройки", "scr.t6": "Консоль",
     "scr.d1": "Все сборки и быстрый запуск", "scr.d2": "Каталог модов и модпаков", "scr.d3": "Контент сборки",
@@ -486,27 +508,150 @@
     toastTimer = setTimeout(() => toastEl.classList.remove("show"), 1900);
   }
 
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const fmtSize = (b) => (b > 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.round(b / 1024) + " KB");
+
   const ua = navigator.userAgent;
-  const os = /Windows/i.test(ua) ? "win" : /Linux|X11/i.test(ua) && !/Android/i.test(ua) ? "linux" : null;
-  const DL = {
-    win: `https://github.com/${REPO}/releases/latest/download/sunset-launcher-windows-x64.exe`,
-    linux: `https://github.com/${REPO}/releases/latest/download/sunset-launcher-linux-x64`,
+  const os = /Windows/i.test(ua)
+    ? "win"
+    : /Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPad|iPod/i.test(ua)
+      ? "mac"
+      : /Linux|X11/i.test(ua) && !/Android/i.test(ua)
+        ? "linux"
+        : null;
+
+  const DL_BASE = `https://github.com/${REPO}/releases/latest/download`;
+  const ASSET_SPECS = {
+    "win-exe": { file: "sunset-launcher-windows-x64.exe", re: /^sunset-launcher-windows-x64\.exe$/ },
+    "win-zip": { file: "sunset-launcher-windows-x64-portable.zip", re: /^sunset-launcher-windows-x64-portable\.zip$/ },
+    "linux-deb-x64": { file: "sunset-launcher_0.1.8_amd64.deb", re: /^sunset-launcher_.*_amd64\.deb$/ },
+    "linux-deb-arm64": { file: "sunset-launcher_0.1.8_arm64.deb", re: /^sunset-launcher_.*_arm64\.deb$/ },
+    "linux-bin-x64": { file: "sunset-launcher-linux-x64", re: /^sunset-launcher-linux-x64$/ },
+    "linux-bin-arm64": { file: "sunset-launcher-linux-arm64", re: /^sunset-launcher-linux-arm64$/ },
+    "mac-app-arm64": { file: "sunset-launcher-macos-arm64.app.zip", re: /^sunset-launcher-macos-arm64\.app\.zip$/ },
+    "mac-app-x64": { file: "sunset-launcher-macos-x64.app.zip", re: /^sunset-launcher-macos-x64\.app\.zip$/ },
+    "mac-bin-arm64": { file: "sunset-launcher-macos-arm64", re: /^sunset-launcher-macos-arm64$/ },
+    "mac-bin-x64": { file: "sunset-launcher-macos-x64", re: /^sunset-launcher-macos-x64$/ },
   };
-  function updateDownloadCTA() {
-    const txt = $("#heroDownloadText");
-    if (txt && os) txt.textContent = `${t("dl.for")} ${os === "win" ? "Windows" : "Linux"}`;
+  const resolvedAssets = Object.fromEntries(
+    Object.entries(ASSET_SPECS).map(([k, v]) => [k, {
+      name: v.file,
+      url: `${DL_BASE}/${v.file}`,
+      shaUrl: `${DL_BASE}/${v.file}.sha256`,
+      size: null,
+    }]),
+  );
+
+  function syncAssetDom() {
+    $$("[data-dl-key]").forEach((el) => {
+      const r = resolvedAssets[el.dataset.dlKey];
+      if (r) el.href = r.url;
+    });
+    $$("[data-sha-key]").forEach((el) => {
+      const r = resolvedAssets[el.dataset.shaKey];
+      if (r) el.href = r.shaUrl;
+    });
+    $$("[data-asset-key]").forEach((el) => {
+      const r = resolvedAssets[el.dataset.assetKey];
+      if (r) el.textContent = r.size ? "· " + fmtSize(r.size) : "";
+    });
+    $$('[data-deb-file="amd64"]').forEach((el) => {
+      el.textContent = resolvedAssets["linux-deb-x64"].name;
+    });
   }
+
+  function updateAssetsFromRelease(assets) {
+    if (!Array.isArray(assets) || !assets.length) return;
+    for (const [key, spec] of Object.entries(ASSET_SPECS)) {
+      const a = assets.find((x) => spec.re.test(x.name) && !x.name.endsWith(".sha256"));
+      if (!a) continue;
+      const sha = assets.find((x) => x.name === `${a.name}.sha256`);
+      resolvedAssets[key] = {
+        name: a.name,
+        url: a.browser_download_url,
+        shaUrl: sha ? sha.browser_download_url : `${a.browser_download_url}.sha256`,
+        size: a.size,
+      };
+    }
+    syncAssetDom();
+  }
+
+  function updateDownloadCTA() { /* #heroDownloadText uses data-i18n="hero.download" */ }
+
   if (os === "win") $("#cardWin")?.classList.add("recommended");
   if (os === "linux") $("#cardLinux")?.classList.add("recommended");
+  if (os === "mac") $("#cardMac")?.classList.add("recommended");
   if (os) {
     const cards = $(".os-cards"), rec = $(".os-card.recommended");
     if (cards && rec) cards.prepend(rec);
   }
-  const heroBtn = $("#heroDownload");
-  if (heroBtn && os) {
-    heroBtn.href = DL[os];
-    heroBtn.dataset.dl = "1";
+
+  /* Hero download dropdown menu (choose .exe, .deb, binary, or macOS) */
+  const heroDlDropdown = $("#heroDlDropdown"), heroBtn = $("#heroDownload"), heroDlMenu = $("#heroDlMenu"), heroDlList = $("#heroDlList");
+  if (heroDlDropdown && heroBtn && heroDlMenu) {
+    if (os && heroDlList) {
+      const matching = $$(`[data-os-group="${os}"]`, heroDlList);
+      matching.forEach((row) => row.classList.add("is-os-match"));
+      for (let i = matching.length - 1; i >= 0; i--) heroDlList.prepend(matching[i]);
+    }
+    const setHeroMenu = (open) => {
+      heroDlDropdown.classList.toggle("open", open);
+      heroDlMenu.hidden = !open;
+      heroBtn.setAttribute("aria-expanded", String(open));
+    };
+    heroBtn.addEventListener("click", (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      e.stopPropagation();
+      setHeroMenu(heroDlMenu.hidden);
+    });
+    document.addEventListener("click", (e) => {
+      if (!heroDlMenu.hidden && !e.target.closest("#heroDlDropdown")) setHeroMenu(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !heroDlMenu.hidden) {
+        setHeroMenu(false);
+        heroBtn.focus();
+      }
+    });
+    heroDlMenu.addEventListener("click", (e) => {
+      if (e.target.closest("[data-dl]")) setHeroMenu(false);
+    });
   }
+
+  /* Architecture switches on download.html */
+  function setCardArch(cardOs, arch) {
+    const sw = $(`[data-arch-card="${cardOs}"]`);
+    if (!sw) return;
+    $$(".arch-btn", sw).forEach((b) => b.classList.toggle("active", b.dataset.arch === arch));
+    if (cardOs === "linux") {
+      const debKey = `linux-deb-${arch}`, binKey = `linux-bin-${arch}`;
+      const btnDeb = $("#btnLinuxDeb"), sizeDeb = $("#sizeLinuxDeb"), shaDeb = $("#shaLinuxDeb");
+      const btnBin = $("#btnLinuxBin"), sizeBin = $("#sizeLinuxBin"), shaBin = $("#shaLinuxBin");
+      if (btnDeb) btnDeb.dataset.dlKey = debKey;
+      if (sizeDeb) sizeDeb.dataset.assetKey = debKey;
+      if (shaDeb) shaDeb.dataset.shaKey = debKey;
+      if (btnBin) btnBin.dataset.dlKey = binKey;
+      if (sizeBin) sizeBin.dataset.assetKey = binKey;
+      if (shaBin) shaBin.dataset.shaKey = binKey;
+    } else if (cardOs === "mac") {
+      const appKey = `mac-app-${arch}`, binKey = `mac-bin-${arch}`;
+      const btnApp = $("#btnMacApp"), sizeApp = $("#sizeMacApp"), shaApp = $("#shaMacApp");
+      const btnBin = $("#btnMacBin"), sizeBin = $("#sizeMacBin"), shaBin = $("#shaMacBin");
+      if (btnApp) btnApp.dataset.dlKey = appKey;
+      if (sizeApp) sizeApp.dataset.assetKey = appKey;
+      if (shaApp) shaApp.dataset.shaKey = appKey;
+      if (btnBin) btnBin.dataset.dlKey = binKey;
+      if (sizeBin) sizeBin.dataset.assetKey = binKey;
+      if (shaBin) shaBin.dataset.shaKey = binKey;
+    }
+    syncAssetDom();
+  }
+  $$("[data-arch-card]").forEach((sw) => {
+    $$(".arch-btn", sw).forEach((btn) => btn.addEventListener("click", () => setCardArch(sw.dataset.archCard, btn.dataset.arch)));
+  });
+  if (os === "linux" && /aarch64|arm64/i.test(ua)) setCardArch("linux", "arm64");
+
   document.addEventListener("click", (e) => {
     if (e.target.closest("[data-dl]")) toast("⬇️ " + t("dl.started"));
   });
@@ -514,8 +659,6 @@
   /* =========================================================
      GitHub release data (cached + fallback)
      ========================================================= */
-  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const fmtSize = (b) => (b > 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.round(b / 1024) + " KB");
   function md(src) {
     const inline = (s) => esc(s)
       .replace(/`([^`]+)`/g, "<code>$1</code>")
@@ -621,6 +764,7 @@
           formatRelDate();
         }
       }
+      updateAssetsFromRelease(d.assets || []);
       (d.assets || []).forEach((a) => $$(`[data-asset="${a.name}"]`).forEach((el) => (el.textContent = "· " + fmtSize(a.size))));
 
       const assetsHtml = d.assets?.length ? `<div class="assets">${d.assets.map((a) =>
@@ -723,6 +867,7 @@
     };
     $$(".seg-btn", seg).forEach((b) => b.addEventListener("click", () => select(b.dataset.os)));
     if (os === "win") select("windows");
+    else if (os === "mac") select("macos");
     addEventListener("resize", moveSeg);
     if (typeof ResizeObserver !== "undefined") new ResizeObserver(moveSeg).observe(seg);
     document.fonts?.ready.then(moveSeg);
@@ -1010,8 +1155,11 @@
       group: t("pal.pages"), icon: ICONS[id], label: t(key), kw: `${id} ${EN[key]} ${RU[key]} ченджлог чейнджлог обновления релизы`, run: go(href),
     }));
     items.push(
-      { group: t("pal.actions"), icon: "🪟", label: t("pal.dlWin"), kw: "windows exe скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = DL.win; } },
-      { group: t("pal.actions"), icon: "🐧", label: t("pal.dlLinux"), kw: "linux скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = DL.linux; } },
+      { group: t("pal.actions"), icon: "🪟", label: t("pal.dlWin"), kw: "windows exe скачать download екзе", run: () => { toast("⬇️ " + t("dl.started")); location.href = resolvedAssets["win-exe"].url; } },
+      { group: t("pal.actions"), icon: "📦", label: t("pal.dlLinuxDeb"), kw: "linux deb debian ubuntu mint деб пакет скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = resolvedAssets["linux-deb-x64"].url; } },
+      { group: t("pal.actions"), icon: "🐧", label: t("pal.dlLinuxBin"), kw: "linux binary бинарник скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = resolvedAssets["linux-bin-x64"].url; } },
+      { group: t("pal.actions"), icon: "🍎", label: t("pal.dlMacArm"), kw: "macos mac apple silicon arm64 m1 m2 m3 m4 мак макос скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = resolvedAssets["mac-app-arm64"].url; } },
+      { group: t("pal.actions"), icon: "🍎", label: t("pal.dlMacIntel"), kw: "macos mac intel x64 мак макос скачать download", run: () => { toast("⬇️ " + t("dl.started")); location.href = resolvedAssets["mac-app-x64"].url; } },
       { group: t("pal.actions"), icon: "🐙", label: t("pal.gh"), kw: "github source код исходники", run: () => open(`https://github.com/${REPO}`, "_blank", "noopener") },
       { group: t("pal.actions"), icon: "🐞", label: t("pal.issue"), kw: "bug issue баг ошибка", run: () => open(`https://github.com/${REPO}/issues`, "_blank", "noopener") },
       { group: t("pal.actions"), icon: "🌐", label: t("pal.lang"), kw: "language язык english русский", run: () => $("#langBtn").click() },
