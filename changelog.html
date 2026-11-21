@@ -58,7 +58,7 @@
 
         <div class="cl-timeline" id="clTimeline">
           <!-- v0.2.0 -->
-          <article class="cl-entry latest reveal" id="v0.2.0" data-version="v0.2.0" data-cats="new imp">
+          <article class="cl-entry latest reveal" id="v0.2.0" data-version="v0.2.0" data-cats="new net imp">
             <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
             <div class="cl-card">
               <header class="cl-head">
@@ -67,8 +67,41 @@
                   <span class="cl-pill latest-pill" data-i18n="cp.latest">Актуальный релиз</span>
                 </div>
                 <div class="cl-meta">
-                  <time datetime="2026-11-21" data-i18n="cp.d019">21 ноября 2026</time>
+                  <time datetime="2026-11-21" data-i18n="cp.d020">21 ноября 2026</time>
                   <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.2.0" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+              </header>
+
+              <h2 class="cl-title" data-i18n="cp.v020.t">Встроенный клиент bore на чистом Rust, фикс туннеля на Windows и AppImage</h2>
+
+              <ul class="cl-list">
+                <li data-cl-cat="net">
+                  <span class="cl-tag net" data-i18n="cp.tagNet">Сеть</span>
+                  <span data-i18n="cp.v020.i1">Реализован встроенный Rust-клиент протокола bore (bore.pub:7835) прямо в лаунчере — больше не нужно скачивать внешний бинарник bore.</span>
+                </li>
+                <li data-cl-cat="net">
+                  <span class="cl-tag fix" data-i18n="cp.tagFix">Исправлено</span>
+                  <span data-i18n="cp.v020.i2">Исправлен резервный SSH-туннель Pinggy (порт 443) на Windows: автогенерация Ed25519-ключа в tools/tunnel_ed25519, безопасный known_hosts и вывод текста ошибки из stderr вместо кода 255.</span>
+                </li>
+                <li data-cl-cat="imp">
+                  <span class="cl-tag fix" data-i18n="cp.tagFix">Исправлено</span>
+                  <span data-i18n="cp.v020.i3">Исправлен запуск Linux AppImage из меню приложений (в .desktop теперь сохраняется путь из APPIMAGE) и добавлен Wayland app_id / StartupWMClass=sunset-launcher.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- v0.1.9 -->
+          <article class="cl-entry reveal" id="v0.1.9" data-version="v0.1.9" data-cats="new imp">
+            <div class="cl-rail" aria-hidden="true"><span class="cl-dot"></span></div>
+            <div class="cl-card">
+              <header class="cl-head">
+                <div class="cl-ver-wrap">
+                  <a href="#v0.1.9" class="cl-ver">v0.1.9</a>
+                </div>
+                <div class="cl-meta">
+                  <time datetime="2026-11-21" data-i18n="cp.d019">21 ноября 2026</time>
+                  <a class="cl-gh" href="https://github.com/sunset-launcher/sunset-launcher/releases/tag/v0.1.9" target="_blank" rel="noopener">GitHub ↗</a>
                 </div>
               </header>
 
@@ -379,6 +412,6 @@
   </main>
 
   <div id="app-footer"></div>
-  <script src="script.js?v=20261121a"></script>
+  <script src="script.js?v=20261121b"></script>
 </body>
 </html>

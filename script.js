@@ -225,6 +225,11 @@
     "cp.fAll": "All changes", "cp.fNew": "New", "cp.fNet": "Servers & Network", "cp.fImp": "Improvements & Security",
     "cp.latest": "Latest release",
     "cp.tagNew": "New", "cp.tagNet": "Network", "cp.tagSec": "Security", "cp.tagImp": "Improved", "cp.tagFix": "Fixed",
+    "cp.d020": "November 21, 2026",
+    "cp.v020.t": "Built-in Pure-Rust bore Client, Windows Tunnel & AppImage Fixes",
+    "cp.v020.i1": "Implemented a built-in pure-Rust bore protocol client (bore.pub:7835) inside the launcher — no external bore binary download required.",
+    "cp.v020.i2": "Fixed the Pinggy SSH fallback tunnel (port 443) on Windows: auto-generated Ed25519 key in tools/tunnel_ed25519, quoted known_hosts path and detailed stderr error reporting instead of exit code 255.",
+    "cp.v020.i3": "Fixed Linux AppImage desktop entry persistence (using the APPIMAGE path) and set Wayland app_id / StartupWMClass=sunset-launcher.",
     "cp.d019": "November 21, 2026",
     "cp.v019.t": "CurseForge, Native OS Installers, Launch Hooks & Responsive UI",
     "cp.v019.spotBadge": "Release Highlight · CurseForge + Native Installers",
@@ -760,7 +765,7 @@
     return 0;
   };
 
-  const CACHE_KEY = "gh-cache-v4", CACHE_TTL = 15 * 60 * 1000;
+  const CACHE_KEY = "gh-cache-v5", CACHE_TTL = 15 * 60 * 1000;
   async function loadGitHub() {
     try {
       const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
