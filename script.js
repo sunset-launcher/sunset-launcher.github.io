@@ -752,7 +752,7 @@
     return out + (inList ? "</ul>" : "");
   }
 
-  const LOCAL_VER = "v0.1.8";
+  const LOCAL_VER = "v0.2.0";
   const parseVer = (v) => String(v || "").replace(/^v/i, "").split(/[.-]/).map((n) => parseInt(n, 10) || 0);
   const cmpVer = (a, b) => {
     const pa = parseVer(a), pb = parseVer(b);
@@ -760,7 +760,7 @@
     return 0;
   };
 
-  const CACHE_KEY = "gh-cache-v3", CACHE_TTL = 15 * 60 * 1000;
+  const CACHE_KEY = "gh-cache-v4", CACHE_TTL = 15 * 60 * 1000;
   async function loadGitHub() {
     try {
       const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
