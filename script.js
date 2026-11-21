@@ -112,6 +112,7 @@
     "nav.home": "Home", "nav.features": "Features", "nav.screens": "Screenshots", "nav.download": "Download", "nav.changelog": "Changelog", "nav.faq": "FAQ", "nav.search": "Search",
     "a11y.skip": "Skip to content", "pal.ph": "Where to go?", "pal.nav": "select", "pal.open": "open", "pal.empty": "Nothing found",
     "pal.pages": "Pages", "pal.actions": "Actions", "pal.cl": "Changelog",
+    "pal.cl019": "v0.1.9 — CurseForge, OS installers & launch hooks",
     "pal.cl018": "v0.1.8 — Dedicated Servers & bore tunnel (CGNAT)",
     "pal.dlWin": "Download for Windows (.exe)",
     "pal.dlLinuxDeb": "Download for Linux (.deb package)",
@@ -175,8 +176,8 @@
     "scr.d4": "Microsoft, Ely.by, Offline", "scr.d5": "Themes, Java, language", "scr.d6": "Live game log",
     "dp.title1": "Download", "dp.rec": "Recommended", "dp.get": "Download", "dp.install": "Install", "dp.howto": "How to install",
     "hero.meta2": "MIT · Open Source",
-    "dl.chooseFmt": "Choose download format", "dl.debShort": ".deb package", "dl.anyLinux": "Any distro",
-    "dl.winExeLabel": ".exe installer", "dl.macAppLabel": ".app bundle", "dl.binChip": "bin",
+    "dl.chooseFmt": "Choose download format", "dl.debShort": ".deb package", "dl.rpmShort": ".rpm package", "dl.appImageShort": ".AppImage", "dl.dmgShort": ".dmg", "dl.anyLinux": "Any distro",
+    "dl.winExeLabel": ".exe installer", "dl.winSetupLabel": "installer", "dl.macAppLabel": ".app bundle", "dl.binChip": "bin",
     "dl.tipZip": "Portable .zip archive for Windows",
     "dl.tipDebArm": ".deb package for Linux ARM64",
     "dl.tipBinArm": "Standalone binary for Linux ARM64",
@@ -186,26 +187,33 @@
     "dp.bit64": "64-bit", "dp.archLabel": "Architecture",
     "dp.macSub": "macOS 11+ · Apple Silicon & Intel",
     "dp.binLabel": "binary",
-    "dp.winExeSub": "Standalone .exe", "dp.winZipSub": "Portable archive",
-    "dp.debSub": "Ubuntu / Debian / Mint", "dp.binSub": "Any distro · glibc",
-    "dp.macAppSub": "macOS .app bundle", "dp.macBinSub": "Standalone binary",
+    "dp.winSetupSub": "Setup wizard (.exe)", "dp.winExeSub": "Standalone .exe", "dp.winZipSub": "Portable archive",
+    "dp.debSub": "Ubuntu / Debian / Mint", "dp.rpmSub": "Fedora / RHEL / openSUSE", "dp.appImageSub": "Portable AppImage", "dp.binSub": "Any distro · glibc",
+    "dp.macDmgSub": "macOS .dmg disk image", "dp.macAppSub": "macOS .app bundle", "dp.macBinSub": "Standalone binary",
     "dp.srcDesc": "Open-source sunset-launcher/sunset-launcher repo · Rust 2021 · MIT License",
-    "dp.l1": "On Ubuntu / Debian / Mint install the .deb package; on any other distro run the standalone binary.",
+    "dp.l1": "On Ubuntu / Debian / Mint install .deb, on Fedora / RHEL / openSUSE install .rpm, or use the portable AppImage or standalone binary.",
     "dp.l2": "Choose your preferred method in the terminal:",
     "dp.termDeb": "Ubuntu / Debian — install .deb package",
+    "dp.termRpm": "Fedora / RHEL / openSUSE — install .rpm package",
+    "dp.termAppImage": "Any distro — run AppImage",
     "dp.termBin": "Any distro — run standalone binary",
-    "dp.l3": "Installing the .deb or launching the binary for the first time adds Sunset to your application menu automatically.",
+    "dp.l3": "Installing the .deb/.rpm or launching the binary for the first time adds Sunset to your application menu automatically.",
     "dp.verifyLinux": "Verify SHA-256 (optional)",
-    "dp.w1": "Download sunset-launcher-windows-x64.exe (or extract the portable .zip anywhere).", "dp.w2": "Run the .exe — a Start Menu shortcut is created automatically.",
+    "dp.w1": "Download the sunset-launcher-windows-x64-setup.exe installer (or the standalone .exe / portable .zip).", "dp.w2": "Run the setup wizard (or launch the standalone .exe directly — a Start Menu shortcut is created automatically).",
     "dp.w3": "If SmartScreen appears: \"More info\" → \"Run anyway\".", "dp.verify": "PowerShell — verify SHA-256",
-    "dp.m1": "Download sunset-launcher-macos-arm64.app.zip (Apple Silicon M1–M4) or sunset-launcher-macos-x64.app.zip (Intel).",
-    "dp.m2": "Extract the archive and move Sunset Launcher.app to /Applications.",
+    "dp.m1": "Download sunset-launcher-macos-arm64.dmg (Apple Silicon M1–M4) or sunset-launcher-macos-x64.dmg (Intel), or .app.zip.",
+    "dp.m2": "Open the .dmg (or extract the .app.zip) and move Sunset Launcher.app to /Applications.",
     "dp.m3": "Clear Gatekeeper quarantine before first launch of the unsigned build:",
     "dp.s1": "Install Rust via rustup.", "dp.s2": "Clone the repository and build a release:",
     "dp.req": "System requirements", "dp.r1": "OS", "dp.r2": "Memory", "dp.r2v": "4 GB+ (8 GB for modpacks)",
     "dp.r3v": "Auto-detect / Adoptium", "dp.r4": "Internet", "dp.r4v": "For the first version download",
     "dp.changes": "What's new", "dp.loading": "Loading release notes from GitHub…", "dp.noNotes": "Couldn't load release notes. See them on GitHub.",
     "dp.history": "Previous releases", "dp.fullCl": "Full changelog",
+    "dp.v019.h": "Sunset Launcher v0.1.9 — CurseForge, OS Installers & Launch Hooks",
+    "dp.v019.b1": "CurseForge catalog integration alongside Modrinth: search, loader/version filtering and dependency installation.",
+    "dp.v019.b2": "Expanded distribution formats: Windows Inno Setup wizard (-setup.exe), Linux .rpm & .AppImage (x64 & ARM64), and macOS .dmg disk images.",
+    "dp.v019.b3": "Launch hooks (wrapper, pre-launch, post-exit), custom environment variables, instance log viewer and configurable .mrpack export.",
+    "dp.v019.b4": "Offline Mode, global default instance settings and responsive UI layout fixes across narrow windows.",
     "dp.v018.h": "Sunset Launcher v0.1.8 — Dedicated Servers & bore Tunnel",
     "dp.v018.b1": "Dedicated Server manager right inside the launcher: Vanilla, Paper, Purpur, Folia, Fabric, Quilt, Forge, NeoForge and Arclight with a live console and Modrinth mods/plugins.",
     "dp.v018.b2": "Expose your server to the network behind a private / CGNAT IP using the built-in bore public TCP tunnel (bore.pub), plus automatic UPnP port forwarding.",
@@ -217,6 +225,17 @@
     "cp.fAll": "All changes", "cp.fNew": "New", "cp.fNet": "Servers & Network", "cp.fImp": "Improvements & Security",
     "cp.latest": "Latest release",
     "cp.tagNew": "New", "cp.tagNet": "Network", "cp.tagSec": "Security", "cp.tagImp": "Improved", "cp.tagFix": "Fixed",
+    "cp.d019": "November 21, 2026",
+    "cp.v019.t": "CurseForge, Native OS Installers, Launch Hooks & Responsive UI",
+    "cp.v019.spotBadge": "Release Highlight · CurseForge + Native Installers",
+    "cp.v019.spotTitle": "CurseForge mod discovery and packages for every major platform",
+    "cp.v019.spotP1": "The Discover tab now integrates CurseForge alongside Modrinth: search mods, resource packs, shaders and modpacks, filter by instance loader and Minecraft version, install dependencies automatically and see each file's source.",
+    "cp.v019.spotP2": "Packaging now covers every major OS: added a Windows Setup wizard (-setup.exe via Inno Setup), Linux .rpm packages and portable .AppImage builds (x64 & ARM64), plus macOS .dmg disk images with an app icon.",
+    "cp.v019.i1": "CurseForge catalog integration in Discover: project search, compatible file selection, dependency installation and source badges.",
+    "cp.v019.i2": "New installers and package formats: Windows Setup wizard (Inno Setup), Linux .rpm & .AppImage (x64 & ARM64), and macOS .dmg with .icns icon.",
+    "cp.v019.i3": "Launch hooks (wrapper command like gamemoderun/mangohud, pre-launch and post-exit commands), custom environment variables and an instance log viewer.",
+    "cp.v019.i4": "Configurable .mrpack export dialog (configs, options, resource packs, shaders, worlds, exclusions), global default instance settings (RAM, Java, JVM, resolution) and Offline Mode.",
+    "cp.v019.i5": "Responsive UI improvements for narrow windows and long localized labels: wrapping checkboxes, adaptive Instance Settings cards, Content toolbar/list and instance header.",
     "cp.d018": "November 20, 2026",
     "cp.v018.t": "Dedicated Minecraft Servers & bore Public Tunnel for Private / CGNAT IPs",
     "cp.v018.spotBadge": "Release Highlight · Dedicated Servers + bore",
@@ -280,6 +299,7 @@
     "dp.noNotes": "Не удалось загрузить заметки. Смотрите их на GitHub.", "dp.history": "Предыдущие релизы",
     "stats.dl": "потоков скачивания", "stats.rust": "чистый Rust",
     "pal.empty": "Ничего не найдено", "pal.pages": "Страницы", "pal.actions": "Действия", "pal.cl": "Чейнджлог",
+    "pal.cl019": "v0.1.9 — CurseForge, установщики ОС и хуки запуска",
     "pal.cl018": "v0.1.8 — Выделенные серверы и туннель bore (серый IP)",
     "fp.langsEyebrow": "Локализация",
     "pal.dlWin": "Скачать для Windows (.exe)",
@@ -294,8 +314,8 @@
     "scr.d4": "Microsoft, Ely.by, Offline", "scr.d5": "Темы, Java, язык", "scr.d6": "Живой лог игры",
     "hero.meta2": "MIT · Открытый код",
     "how.s1d": "Выберите удобный вариант: .exe для Windows, .deb или бинарник для Linux, либо сборку для macOS.",
-    "dl.chooseFmt": "Выберите формат загрузки", "dl.debShort": ".deb пакет", "dl.anyLinux": "Любой дистрибутив",
-    "dl.winExeLabel": ".exe файл", "dl.macAppLabel": "приложение .app", "dl.binChip": "бин",
+    "dl.chooseFmt": "Выберите формат загрузки", "dl.debShort": ".deb пакет", "dl.rpmShort": ".rpm пакет", "dl.appImageShort": ".AppImage", "dl.dmgShort": ".dmg", "dl.anyLinux": "Любой дистрибутив",
+    "dl.winExeLabel": ".exe файл", "dl.winSetupLabel": "установщик", "dl.macAppLabel": "приложение .app", "dl.binChip": "бин",
     "dl.tipZip": "Портативный архив .zip для Windows",
     "dl.tipDebArm": "Пакет .deb для Linux ARM64",
     "dl.tipBinArm": "Бинарник для Linux ARM64",
@@ -305,18 +325,22 @@
     "dp.bit64": "64-бит", "dp.archLabel": "Архитектура",
     "dp.macSub": "macOS 11+ · Apple Silicon и Intel",
     "dp.binLabel": "бинарник",
-    "dp.winExeSub": "Исполняемый файл .exe", "dp.winZipSub": "Портативный архив",
-    "dp.debSub": "Ubuntu / Debian / Mint", "dp.binSub": "Любой дистрибутив · glibc",
-    "dp.macAppSub": "Пакет приложения .app", "dp.macBinSub": "Отдельный бинарник",
+    "dp.winSetupSub": "Мастер установки (.exe)", "dp.winExeSub": "Исполняемый файл .exe", "dp.winZipSub": "Портативный архив",
+    "dp.debSub": "Ubuntu / Debian / Mint", "dp.rpmSub": "Fedora / RHEL / openSUSE", "dp.appImageSub": "Портативный AppImage", "dp.binSub": "Любой дистрибутив · glibc",
+    "dp.macDmgSub": "Образ диска .dmg", "dp.macAppSub": "Пакет приложения .app", "dp.macBinSub": "Отдельный бинарник",
     "dp.srcDesc": "Открытый репозиторий sunset-launcher/sunset-launcher · Rust 2021 · MIT License",
-    "dp.l1": "На Ubuntu / Debian / Mint установите готовый .deb-пакет, а на любом другом дистрибутиве — запустите бинарник.",
+    "dp.l1": "На Ubuntu / Debian / Mint установите .deb, на Fedora / RHEL / openSUSE — .rpm, либо используйте портативный AppImage или бинарник.",
     "dp.l2": "Выберите нужный вариант установки в терминале:",
     "dp.termDeb": "Ubuntu / Debian — установка .deb пакета",
+    "dp.termRpm": "Fedora / RHEL / openSUSE — установка .rpm пакета",
+    "dp.termAppImage": "Любой дистрибутив — запуск AppImage",
     "dp.termBin": "Любой дистрибутив — запуск бинарника",
-    "dp.l3": "При установке .deb или первом запуске бинарника лаунчер автоматически появится в меню приложений.",
-    "dp.w1": "Скачайте sunset-launcher-windows-x64.exe (или распакуйте портативный .zip в любую папку).",
-    "dp.m1": "Скачайте sunset-launcher-macos-arm64.app.zip (Apple Silicon M1–M4) или sunset-launcher-macos-x64.app.zip (Intel).",
-    "dp.m2": "Распакуйте архив и перенесите Sunset Launcher.app в папку /Applications.",
+    "dp.l3": "При установке .deb/.rpm или первом запуске бинарника лаунчер автоматически появится в меню приложений.",
+    "dp.verifyLinux": "Проверка SHA-256 (по желанию)",
+    "dp.w1": "Скачайте установщик sunset-launcher-windows-x64-setup.exe (либо автономный .exe / портативный .zip).",
+    "dp.w2": "Пройдите мастер установки (или просто запустите .exe — ярлык в меню «Пуск» создастся автоматически).",
+    "dp.m1": "Скачайте sunset-launcher-macos-arm64.dmg (Apple Silicon M1–M4) или sunset-launcher-macos-x64.dmg (Intel), либо .app.zip.",
+    "dp.m2": "Откройте .dmg (или распакуйте .app.zip) и перенесите Sunset Launcher.app в папку /Applications.",
     "dp.m3": "Снимите карантин Gatekeeper перед первым запуском неподписанной сборки:",
     "q5": "Где хранятся файлы игры?",
     "a5": "Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\\sunset-launcher. macOS: ~/Library/Application Support/sunset-launcher. Внутри — профили, аккаунты, версии, библиотеки, ассеты и изолированные папки сборок.",
@@ -565,12 +589,19 @@
 
   const DL_BASE = `https://github.com/${REPO}/releases/latest/download`;
   const ASSET_SPECS = {
+    "win-setup": { file: "sunset-launcher-windows-x64-setup.exe", re: /^sunset-launcher-windows-x64-setup\.exe$/ },
     "win-exe": { file: "sunset-launcher-windows-x64.exe", re: /^sunset-launcher-windows-x64\.exe$/ },
     "win-zip": { file: "sunset-launcher-windows-x64-portable.zip", re: /^sunset-launcher-windows-x64-portable\.zip$/ },
-    "linux-deb-x64": { file: "sunset-launcher_0.1.8_amd64.deb", re: /^sunset-launcher_.*_amd64\.deb$/ },
-    "linux-deb-arm64": { file: "sunset-launcher_0.1.8_arm64.deb", re: /^sunset-launcher_.*_arm64\.deb$/ },
+    "linux-deb-x64": { file: "sunset-launcher_0.1.9_amd64.deb", re: /^sunset-launcher_.*_amd64\.deb$/ },
+    "linux-deb-arm64": { file: "sunset-launcher_0.1.9_arm64.deb", re: /^sunset-launcher_.*_arm64\.deb$/ },
+    "linux-rpm-x64": { file: "sunset-launcher-0.1.9-1.x86_64.rpm", re: /^sunset-launcher-.*-1\.x86_64\.rpm$/ },
+    "linux-rpm-arm64": { file: "sunset-launcher-0.1.9-1.aarch64.rpm", re: /^sunset-launcher-.*-1\.aarch64\.rpm$/ },
+    "linux-appimage-x64": { file: "sunset-launcher-0.1.9-x86_64.AppImage", re: /^sunset-launcher-.*-x86_64\.AppImage$/ },
+    "linux-appimage-arm64": { file: "sunset-launcher-0.1.9-aarch64.AppImage", re: /^sunset-launcher-.*-aarch64\.AppImage$/ },
     "linux-bin-x64": { file: "sunset-launcher-linux-x64", re: /^sunset-launcher-linux-x64$/ },
     "linux-bin-arm64": { file: "sunset-launcher-linux-arm64", re: /^sunset-launcher-linux-arm64$/ },
+    "mac-dmg-arm64": { file: "sunset-launcher-macos-arm64.dmg", re: /^sunset-launcher-macos-arm64\.dmg$/ },
+    "mac-dmg-x64": { file: "sunset-launcher-macos-x64.dmg", re: /^sunset-launcher-macos-x64\.dmg$/ },
     "mac-app-arm64": { file: "sunset-launcher-macos-arm64.app.zip", re: /^sunset-launcher-macos-arm64\.app\.zip$/ },
     "mac-app-x64": { file: "sunset-launcher-macos-x64.app.zip", re: /^sunset-launcher-macos-x64\.app\.zip$/ },
     "mac-bin-arm64": { file: "sunset-launcher-macos-arm64", re: /^sunset-launcher-macos-arm64$/ },
@@ -600,6 +631,12 @@
     });
     $$('[data-deb-file="amd64"]').forEach((el) => {
       el.textContent = resolvedAssets["linux-deb-x64"].name;
+    });
+    $$('[data-rpm-file="x86_64"]').forEach((el) => {
+      el.textContent = resolvedAssets["linux-rpm-x64"].name;
+    });
+    $$('[data-appimage-file="x86_64"]').forEach((el) => {
+      el.textContent = resolvedAssets["linux-appimage-x64"].name;
     });
   }
 
@@ -667,26 +704,21 @@
     const sw = $(`[data-arch-card="${cardOs}"]`);
     if (!sw) return;
     $$(".arch-btn", sw).forEach((b) => b.classList.toggle("active", b.dataset.arch === arch));
+    const bindAsset = (btnId, sizeId, shaId, key) => {
+      const btn = $(btnId), size = $(sizeId), sha = $(shaId);
+      if (btn) btn.dataset.dlKey = key;
+      if (size) size.dataset.assetKey = key;
+      if (sha) sha.dataset.shaKey = key;
+    };
     if (cardOs === "linux") {
-      const debKey = `linux-deb-${arch}`, binKey = `linux-bin-${arch}`;
-      const btnDeb = $("#btnLinuxDeb"), sizeDeb = $("#sizeLinuxDeb"), shaDeb = $("#shaLinuxDeb");
-      const btnBin = $("#btnLinuxBin"), sizeBin = $("#sizeLinuxBin"), shaBin = $("#shaLinuxBin");
-      if (btnDeb) btnDeb.dataset.dlKey = debKey;
-      if (sizeDeb) sizeDeb.dataset.assetKey = debKey;
-      if (shaDeb) shaDeb.dataset.shaKey = debKey;
-      if (btnBin) btnBin.dataset.dlKey = binKey;
-      if (sizeBin) sizeBin.dataset.assetKey = binKey;
-      if (shaBin) shaBin.dataset.shaKey = binKey;
+      bindAsset("#btnLinuxDeb", "#sizeLinuxDeb", "#shaLinuxDeb", `linux-deb-${arch}`);
+      bindAsset("#btnLinuxRpm", "#sizeLinuxRpm", "#shaLinuxRpm", `linux-rpm-${arch}`);
+      bindAsset("#btnLinuxAppImage", "#sizeLinuxAppImage", "#shaLinuxAppImage", `linux-appimage-${arch}`);
+      bindAsset("#btnLinuxBin", "#sizeLinuxBin", "#shaLinuxBin", `linux-bin-${arch}`);
     } else if (cardOs === "mac") {
-      const appKey = `mac-app-${arch}`, binKey = `mac-bin-${arch}`;
-      const btnApp = $("#btnMacApp"), sizeApp = $("#sizeMacApp"), shaApp = $("#shaMacApp");
-      const btnBin = $("#btnMacBin"), sizeBin = $("#sizeMacBin"), shaBin = $("#shaMacBin");
-      if (btnApp) btnApp.dataset.dlKey = appKey;
-      if (sizeApp) sizeApp.dataset.assetKey = appKey;
-      if (shaApp) shaApp.dataset.shaKey = appKey;
-      if (btnBin) btnBin.dataset.dlKey = binKey;
-      if (sizeBin) sizeBin.dataset.assetKey = binKey;
-      if (shaBin) shaBin.dataset.shaKey = binKey;
+      bindAsset("#btnMacDmg", "#sizeMacDmg", "#shaMacDmg", `mac-dmg-${arch}`);
+      bindAsset("#btnMacApp", "#sizeMacApp", "#shaMacApp", `mac-app-${arch}`);
+      bindAsset("#btnMacBin", "#sizeMacBin", "#shaMacBin", `mac-bin-${arch}`);
     }
     syncAssetDom();
   }
@@ -1220,9 +1252,9 @@
       });
     } else {
       items.push({
-        group: t("pal.cl"), icon: "🚀", label: t("pal.cl018"),
-        kw: "v0.1.8 bore боре dedicated дедикейтед серверы серый айпи ip cgnat upnp paper fabric forge",
-        run: go("changelog.html#v0.1.8"),
+        group: t("pal.cl"), icon: "🚀", label: t("pal.cl019"),
+        kw: "v0.1.9 curseforge rpm appimage dmg setup installer hooks offline mode responsive",
+        run: go("changelog.html#v0.1.9"),
       });
     }
     faqItems.forEach((d) => {
