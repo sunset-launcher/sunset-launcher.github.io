@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 — Sunset Launcher</title>
   <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#120e18" />
+  <meta name="theme-color" content="#151413" />
   <base href="/" />
   <link rel="icon" href="assets/logo.ico" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
@@ -13,8 +13,8 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261120c" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20261125a" />
 </head>
 <body data-page="404">
   <div id="app-header"></div>
@@ -22,19 +22,15 @@
   <main class="page">
     <section class="page-hero notfound">
       <div class="container">
-        <div class="enter" style="--d:0">
-          <div class="cube-wrap static" aria-hidden="true">
-            <div class="cube broken">
-              <i class="f top"></i><i class="f front"></i><i class="f right"></i>
-              <i class="f back"></i><i class="f left"></i><i class="f bottom"></i>
-            </div>
-          </div>
+        <div class="notfound-code enter" style="--d:0">HTTP 404</div>
+        <h1 class="enter" style="--d:1" data-i18n="nf.title">Чанк не сгенерирован</h1>
+        <p class="lead enter" style="--d:2" data-i18n="nf.lead">Запрошенная страница не существует или переехала по другому адресу</p>
+        <div class="terminal enter" style="--d:3">
+          <div class="term-head"><span>Console</span></div>
+          <pre><span class="c">[ChunkServer]</span> Region (404, -1) not found in saves/world/region</pre>
         </div>
-        <h1 class="enter big404" style="--d:1"><span class="grad shimmer">404</span></h1>
-        <p class="lead enter" style="--d:2" data-i18n="nf.lead">Этот чанк ещё не сгенерирован. Похоже, страница потерялась где-то в Незере.</p>
-        <div class="cmdline enter" style="--d:3"><span class="c">$</span> /tp @s <span class="typed">~ ~ ~</span><span class="caret"></span></div>
-        <div class="hero-cta center-row enter" style="--d:4">
-          <a href="index.html" class="btn btn-primary btn-lg magnetic" data-i18n="nf.home">На главную</a>
+        <div class="hero-cta enter" style="--d:4">
+          <a href="index.html" class="btn btn-primary btn-lg" data-i18n="nf.home">На главную</a>
           <a href="download.html" class="btn btn-ghost btn-lg" data-i18n="nav.download">Скачать</a>
         </div>
       </div>
@@ -42,7 +38,6 @@
   </main>
 
   <div id="app-footer"></div>
-  <script src="script.js?v=20261121a"></script>
+  <script src="script.js?v=20261125a"></script>
 </body>
 </html>
-

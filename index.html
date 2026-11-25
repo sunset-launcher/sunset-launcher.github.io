@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunset Launcher — быстрый нативный лаунчер Minecraft на Rust</title>
-  <meta name="description" content="Sunset Launcher — бесплатный open-source лаунчер Minecraft на Rust. Vanilla, Fabric, Quilt, Forge, NeoForge, Modrinth, .mrpack, Microsoft / Ely.by / Offline." />
-  <meta name="theme-color" content="#120e18" />
+  <title>Sunset Launcher — нативный лаунчер Minecraft на Rust</title>
+  <meta name="description" content="Sunset Launcher — бесплатный open-source лаунчер Minecraft на Rust. Vanilla, Fabric, Quilt, Forge, NeoForge, Modrinth, CurseForge, .mrpack, Microsoft / Ely.by / Offline." />
+  <meta name="theme-color" content="#151413" />
   <link rel="canonical" href="https://sunset-launcher.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sunset Launcher" />
   <meta property="og:url" content="https://sunset-launcher.github.io/" />
-  <meta property="og:title" content="Sunset Launcher — лаунчер Minecraft на Rust" />
-  <meta property="og:description" content="Быстрый нативный лаунчер Minecraft: Fabric, Forge, NeoForge, Quilt, Modrinth и Ely.by. Без телеметрии, open source." />
+  <meta property="og:title" content="Sunset Launcher — нативный лаунчер Minecraft на Rust" />
+  <meta property="og:description" content="Изолированные сборки, каталоги Modrinth и CurseForge, аккаунты Microsoft и Ely.by и локальные серверы с туннелем bore. Без телеметрии, MIT." />
   <meta property="og:image" content="https://sunset-launcher.github.io/assets/screenshots/library.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
     "name": "Sunset Launcher",
     "operatingSystem": "Windows, Linux, macOS",
     "applicationCategory": "GameApplication",
-    "description": "Fast native Minecraft launcher written in Rust with Vanilla, Fabric, Quilt, Forge, NeoForge and Modrinth support.",
+    "description": "Native Minecraft launcher written in Rust with Vanilla, Fabric, Quilt, Forge, NeoForge, Modrinth, CurseForge and dedicated server support.",
     "url": "https://sunset-launcher.github.io/",
     "downloadUrl": "https://github.com/sunset-launcher/sunset-launcher/releases/latest",
     "license": "https://opensource.org/licenses/MIT",
@@ -34,8 +34,8 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261120c" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20261125a" />
 </head>
 <body data-page="home">
   <div id="app-header"></div>
@@ -45,41 +45,33 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
-          <a class="pill enter" style="--d:0" href="changelog.html">
-            <span class="dot"></span>
-            <span data-i18n="hero.pill">Новая версия</span>
-            <b class="version">v0.2.0</b>
-            <span class="arrow">→</span>
+          <a class="release-link enter" style="--d:0" href="changelog.html">
+            <span class="version">v0.2.0</span>
+            <span data-i18n="hero.pill">CurseForge, установщики ОС и встроенный туннель bore</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </a>
-          <h1>
-            <span class="line enter" style="--d:1" data-i18n="hero.title1">Minecraft-лаунчер,</span>
-            <span class="line enter grad shimmer" style="--d:2" data-i18n="hero.title2">который просто летает</span>
-          </h1>
-          <div class="cmdline enter" style="--d:3">
-            <span class="c">$</span> sunset launch --loader <span id="typed" class="typed">Fabric</span><span class="caret"></span>
-          </div>
-          <p class="lead enter" style="--d:4" data-i18n="hero.lead">
-            Нативный лаунчер на чистом Rust. Моды и модпаки с Modrinth, Microsoft, Ely.by и офлайн-аккаунты —
-            без Electron, без телеметрии, без лишнего.
+          <h1 class="enter" style="--d:1" data-i18n="hero.title">Нативный лаунчер Minecraft на Rust</h1>
+          <p class="lead enter" style="--d:2" data-i18n="hero.lead">
+            Изолированные сборки, каталоги Modrinth и CurseForge, аккаунты Microsoft и Ely.by и локальные серверы в одном бинарнике без Electron и телеметрии
           </p>
-          <div class="hero-cta enter" style="--d:5">
+          <div class="hero-cta enter" style="--d:3">
             <div class="dl-dropdown" id="heroDlDropdown">
-              <a href="download.html" class="btn btn-primary btn-lg magnetic" id="heroDownload" aria-haspopup="true" aria-expanded="false" aria-controls="heroDlMenu">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
-                <span id="heroDownloadText" data-i18n="hero.download">Скачать бесплатно</span>
-                <svg class="dl-caret" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5"/></svg>
+              <a href="download.html" class="btn btn-primary btn-lg" id="heroDownload" aria-haspopup="true" aria-expanded="false" aria-controls="heroDlMenu">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
+                <span id="heroDownloadText" data-i18n="hero.download">Скачать Sunset</span>
+                <svg class="dl-caret" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
-              <div class="dl-menu" id="heroDlMenu" role="menu" data-i18n-aria="dl.chooseFmt" aria-label="Выберите формат загрузки" hidden>
-                <div class="dl-menu-head" data-i18n="dl.chooseFmt">Выберите формат загрузки</div>
+              <div class="dl-menu" id="heroDlMenu" role="menu" data-i18n-aria="dl.chooseFmt" aria-label="Выберите формат пакета" hidden>
+                <div class="dl-menu-head" data-i18n="dl.chooseFmt">Выберите формат пакета</div>
                 <div class="dl-menu-list" id="heroDlList">
                   <div class="dl-menu-row" data-os-group="win">
-                    <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="win-exe" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64.exe">
+                    <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="win-setup" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64-setup.exe">
                       <span class="dl-ico" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 5.5l7.5-1v7H3v-6zm0 13l7.5 1v-7H3v6zm8.5 1.1L21 21v-8.5h-9.5v7.1zm0-15.2v7.1H21V3l-9.5 1.4z"/></svg>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                       </span>
                       <span class="dl-info">
-                        <b>Windows · <span data-i18n="dl.winExeLabel">.exe файл</span></b>
-                        <small>Windows 10 / 11 (x64) <span class="size" data-asset-key="win-exe"></span></small>
+                        <b>Windows · <span data-i18n="dl.winSetupLabel">установщик</span></b>
+                        <small>Windows 10 / 11 (x64) <span class="size" data-asset-key="win-setup"></span></small>
                       </span>
                     </a>
                     <div class="dl-alts">
@@ -90,7 +82,7 @@
                   <div class="dl-menu-row" data-os-group="linux">
                     <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="linux-deb-x64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher_0.2.0_amd64.deb">
                       <span class="dl-ico" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></svg>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
                       </span>
                       <span class="dl-info">
                         <b>Linux · <span data-i18n="dl.debShort">.deb пакет</span></b>
@@ -103,127 +95,112 @@
                   </div>
 
                   <div class="dl-menu-row" data-os-group="linux">
-                    <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="linux-bin-x64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-linux-x64">
+                    <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="linux-appimage-x64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-0.2.0-x86_64.AppImage">
                       <span class="dl-ico" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.5 2c-2.2 0-3.4 1.8-3.4 4.2 0 1.4.2 2.3-.6 3.6-.9 1.4-2.6 3.4-2.9 5.8-.1.9 0 1.5.3 2-.6.4-1.6.6-2 1.3-.4.8.3 1.6.4 2.3.1.6-.2 1.3.5 1.6.8.3 2.2-.1 3.4.3 1.2.4 2.2.9 3 .3.4-.3.6-.8.6-.8h2.6s.3.7 1 1c.9.4 2-.1 3-.7 1-.6 2.4-.8 2.7-1.6.2-.6-.4-1.3-.7-2 .4-.8.5-1.8.2-2.8-.5-1.8-2-3.6-2.9-5-.9-1.3-.6-2.3-.6-3.8C17 4 15.2 2 12.5 2z"/></svg>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 4-5 4"/><path d="M12 16h7"/></svg>
                       </span>
                       <span class="dl-info">
-                        <b>Linux · <span data-i18n="dp.binLabel">бинарник</span></b>
-                        <small><span data-i18n="dl.anyLinux">Любой дистрибутив</span> · x64 <span class="size" data-asset-key="linux-bin-x64"></span></small>
+                        <b>Linux · <span data-i18n="dl.appImageShort">.AppImage</span></b>
+                        <small><span data-i18n="dl.anyLinux">Любой дистрибутив</span> · x64 <span class="size" data-asset-key="linux-appimage-x64"></span></small>
                       </span>
                     </a>
                     <div class="dl-alts">
-                      <a class="dl-chip" data-dl data-dl-key="linux-bin-arm64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-linux-arm64" data-i18n-title="dl.tipBinArm" title="Бинарник для Linux ARM64">ARM64</a>
+                      <a class="dl-chip" data-dl data-dl-key="linux-appimage-arm64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-0.2.0-aarch64.AppImage">ARM64</a>
                     </div>
                   </div>
 
                   <div class="dl-menu-row" data-os-group="mac">
-                    <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="mac-app-arm64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.app.zip">
+                    <a class="dl-menu-main" role="menuitem" data-dl data-dl-key="mac-dmg-arm64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.dmg">
                       <span class="dl-ico" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.4 13.1c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7 1.2 0 1.9-1 2.6-2.1.8-1.2 1.2-2.3 1.2-2.4-.1 0-2.6-1-2.6-3.4zM14.2 6.8c.6-.7 1-1.7.9-2.8-.9 0-1.9.6-2.5 1.3-.5.6-1 1.7-.9 2.7 1 .1 1.9-.5 2.5-1.2z"/></svg>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
                       </span>
                       <span class="dl-info">
-                        <b>macOS · <span data-i18n="dl.macAppLabel">приложение .app</span></b>
-                        <small>Apple Silicon (M1–M4) <span class="size" data-asset-key="mac-app-arm64"></span></small>
+                        <b>macOS · <span data-i18n="dl.dmgShort">.dmg</span></b>
+                        <small>Apple Silicon (M1–M4) <span class="size" data-asset-key="mac-dmg-arm64"></span></small>
                       </span>
                     </a>
                     <div class="dl-alts">
-                      <a class="dl-chip" data-dl data-dl-key="mac-app-x64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-x64.app.zip" data-i18n-title="dl.tipMacIntel" title="Сборка .app для macOS Intel (x64)">Intel</a>
-                      <a class="dl-chip" data-dl data-dl-key="mac-bin-arm64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64" data-i18n="dl.binChip" data-i18n-title="dl.tipMacBin" title="Отдельный бинарник для macOS">бин</a>
+                      <a class="dl-chip" data-dl data-dl-key="mac-dmg-x64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-x64.dmg">Intel</a>
+                      <a class="dl-chip" data-dl data-dl-key="mac-app-arm64" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.app.zip">.app.zip</a>
                     </div>
                   </div>
                 </div>
                 <a class="dl-menu-foot" href="download.html">
-                  <span data-i18n="dl.allFormats">Все сборки, SHA-256 и инструкции</span>
+                  <span data-i18n="dl.allFormats">Все пакеты, SHA-256 и инструкция</span>
                   <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
             <a href="features.html" class="btn btn-ghost btn-lg" data-i18n="hero.more">Возможности</a>
           </div>
-          <ul class="hero-meta enter" style="--d:6">
-            <li><b>Windows</b> · <b>Linux</b> · <b>macOS</b></li>
-            <li data-i18n="hero.meta2">MIT · Открытый код</li>
-            <li data-i18n="hero.meta3">0 телеметрии</li>
-          </ul>
         </div>
 
-        <div class="hero-visual enter" style="--d:3">
-          <div class="sun" aria-hidden="true"></div>
-          <div class="window tilt" id="heroWindow">
+        <div class="hero-visual enter" style="--d:2">
+          <div class="window hero-window" id="heroWindow">
             <div class="window-bar">
-              <span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span>
-              <span class="window-title">Sunset Launcher</span>
+              <div class="window-dots">
+                <span class="wdot" aria-hidden="true"></span>
+                <span class="wdot" aria-hidden="true"></span>
+                <span class="wdot" aria-hidden="true"></span>
+                <span class="window-title">Sunset Launcher</span>
+              </div>
+              <div class="window-tabs" role="tablist" aria-label="Sunset Launcher views">
+                <button class="wtab active" type="button" role="tab" aria-selected="true" data-preview-tab="library" data-i18n="scr.t1">Библиотека</button>
+                <button class="wtab" type="button" role="tab" aria-selected="false" data-preview-tab="discover" data-i18n="scr.t2">Modrinth</button>
+                <button class="wtab" type="button" role="tab" aria-selected="false" data-preview-tab="mods" data-i18n="scr.t3">Моды</button>
+                <button class="wtab" type="button" role="tab" aria-selected="false" data-preview-tab="accounts" data-i18n="scr.t4">Аккаунты</button>
+              </div>
+              <button class="window-kbd" id="heroPreviewKbd" type="button" aria-label="Search (Ctrl+K)">
+                <kbd>Ctrl</kbd><kbd>K</kbd>
+              </button>
             </div>
-            <img src="assets/screenshots/library.jpg" alt="Sunset Launcher — библиотека сборок Minecraft" />
-            <div class="window-shine" aria-hidden="true"></div>
-          </div>
-
-          <div class="cube-wrap" aria-hidden="true">
-            <div class="cube">
-              <i class="f top"></i><i class="f front"></i><i class="f right"></i>
-              <i class="f back"></i><i class="f left"></i><i class="f bottom"></i>
+            <div class="window-screen zoomable" tabindex="0" role="button" data-src="assets/screenshots/library.jpg" data-cap-key="scr.t1" data-desc-key="scr.d1">
+              <img id="heroPreviewImg" src="assets/screenshots/library.jpg" width="1024" height="549" fetchpriority="high" alt="Sunset Launcher — библиотека изолированных сборок Minecraft" />
             </div>
-          </div>
-
-          <div class="float-card fc1">
-            <span class="fc-ico">⚡</span>
-            <div><b>64</b><small data-i18n="hero.fc1">параллельных загрузок</small></div>
-          </div>
-          <div class="float-card fc2">
-            <span class="fc-ico">🧩</span>
-            <div><b>Modrinth</b><small data-i18n="hero.fc2">моды · шейдеры · паки</small></div>
+            <div class="window-foot">
+              <span class="window-foot-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="heroPreviewPath">instances/my-instance · Fabric 1.21.11</span>
+              </span>
+              <span id="heroPreviewMeta">15 модов · готов к запуску</span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <svg class="mountains" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
-        <polygon class="m1" points="0,220 0,120 80,90 140,130 220,60 300,110 380,70 460,120 540,50 620,100 700,40 780,95 860,65 940,120 1020,55 1100,100 1180,70 1260,115 1340,80 1440,110 1440,220"/>
-        <polygon class="m2" points="0,220 0,160 100,130 180,165 260,120 360,160 440,135 540,170 640,125 740,165 840,140 940,175 1040,130 1140,165 1240,140 1340,170 1440,145 1440,220"/>
-      </svg>
-    </section>
-
-    <!-- MARQUEE -->
-    <section class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Vanilla</span><i>◆</i><span>Fabric</span><i>◆</i><span>Quilt</span><i>◆</i><span>Forge</span><i>◆</i><span>NeoForge</span><i>◆</i><span>Dedicated Servers</span><i>◆</i><span>bore Tunnel</span><i>◆</i><span>Modrinth</span><i>◆</i><span>.mrpack</span><i>◆</i><span>Ely.by</span><i>◆</i><span>Microsoft</span><i>◆</i><span>Discord RPC</span><i>◆</i><span>Quick Play</span><i>◆</i><span>Aikar's Flags</span><i>◆</i>
-        <span>Vanilla</span><i>◆</i><span>Fabric</span><i>◆</i><span>Quilt</span><i>◆</i><span>Forge</span><i>◆</i><span>NeoForge</span><i>◆</i><span>Dedicated Servers</span><i>◆</i><span>bore Tunnel</span><i>◆</i><span>Modrinth</span><i>◆</i><span>.mrpack</span><i>◆</i><span>Ely.by</span><i>◆</i><span>Microsoft</span><i>◆</i><span>Discord RPC</span><i>◆</i><span>Quick Play</span><i>◆</i><span>Aikar's Flags</span><i>◆</i>
       </div>
     </section>
 
     <!-- STATS -->
     <section class="stats">
-      <div class="container stats-grid reveal">
+      <div class="container stats-grid">
         <div class="stat"><b data-live="downloads">—</b><span data-i18n="stats.downloads">скачиваний</span></div>
         <div class="stat"><b data-live="stars">—</b><span data-i18n="stats.stars">звёзд на GitHub</span></div>
-        <div class="stat"><b data-count="5">0</b><span data-i18n="stats.loaders">загрузчиков модов</span></div>
-        <div class="stat"><b data-count="9">0</b><span data-i18n="stats.lang">языков интерфейса</span></div>
+        <div class="stat"><b data-count="5">5</b><span data-i18n="stats.loaders">загрузчиков модов</span></div>
+        <div class="stat"><b data-count="9">9</b><span data-i18n="stats.lang">языков интерфейса</span></div>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section">
+    <section class="section no-border">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" data-i18n="how.eyebrow">Как начать</span>
-          <h2 data-i18n="how.title">От скачивания до игры — 3 шага</h2>
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="how.eyebrow">Быстрый старт</span>
+          <h2 data-i18n="how.title">От установки до запуска за три шага</h2>
         </div>
         <div class="how">
-          <div class="how-line" aria-hidden="true"></div>
-          <div class="how-step reveal">
-            <div class="how-num">1</div>
-            <h3 data-i18n="how.s1t">Скачайте</h3>
-            <p data-i18n="how.s1d">Выберите удобный вариант: .exe для Windows, .deb или бинарник для Linux, либо сборку для macOS.</p>
+          <div class="how-step">
+            <span class="how-num">01</span>
+            <h3 data-i18n="how.s1t">Установите пакет</h3>
+            <p data-i18n="how.s1d">Выберите сборку под свою ОС: установщик Windows, пакет .deb, .rpm или .AppImage для Linux, либо .dmg для macOS.</p>
           </div>
-          <div class="how-step reveal">
-            <div class="how-num">2</div>
+          <div class="how-step">
+            <span class="how-num">02</span>
             <h3 data-i18n="how.s2t">Создайте сборку</h3>
-            <p data-i18n="how.s2d">Выберите версию и загрузчик или поставьте модпак с Modrinth в один клик.</p>
+            <p data-i18n="how.s2d">Укажите версию игры и загрузчик модов или установите готовый модпак из Modrinth и CurseForge в один клик.</p>
           </div>
-          <div class="how-step reveal">
-            <div class="how-num">3</div>
-            <h3 data-i18n="how.s3t">Играйте</h3>
-            <p data-i18n="how.s3d">Войдите через Microsoft, Ely.by или офлайн — и жмите «Играть».</p>
+          <div class="how-step">
+            <span class="how-num">03</span>
+            <h3 data-i18n="how.s3t">Запустите игру</h3>
+            <p data-i18n="how.s3d">Войдите через Microsoft, Ely.by или офлайн-профиль — лаунчер сам подберёт Java и проверит целостность файлов.</p>
           </div>
         </div>
       </div>
@@ -232,55 +209,162 @@
     <!-- HIGHLIGHTS -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" data-i18n="feat.eyebrow">Возможности</span>
-          <h2 data-i18n="feat.title">Всё, что нужно для игры — в одном окне</h2>
-          <p data-i18n="feat.sub">От ванильного выживания до модпака на 300 модов. Sunset берёт всю рутину на себя.</p>
+        <div class="section-head-split">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="feat.eyebrow">Возможности</span>
+            <h2 data-i18n="feat.title">Сборки, моды, аккаунты и серверы в одном окне</h2>
+            <p data-i18n="feat.sub">От чистой ванили до модпака на 300 модов и локального сервера с туннелем bore</p>
+          </div>
+          <a class="btn btn-ghost" href="features.html">
+            <span data-i18n="feat.all">Все возможности</span>
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
-        <div class="features">
-          <article class="feature reveal"><div class="f-ico">📦</div><h3 data-i18n="f1.t">Сборки и профили</h3><p data-i18n="f1.d">Создавайте, дублируйте и редактируйте сборки. Каждая живёт в своей изолированной папке.</p></article>
-          <article class="feature reveal"><div class="f-ico">🧩</div><h3 data-i18n="f2.t">Modrinth и .mrpack</h3><p data-i18n="f2.d">Моды, модпаки, ресурспаки и шейдеры. Импорт и экспорт .mrpack.</p></article>
-          <article class="feature reveal"><div class="f-ico">⚡</div><h3 data-i18n="f3.t">Молниеносные загрузки</h3><p data-i18n="f3.d">До 64 параллельных потоков с потоковой проверкой SHA-1.</p></article>
-          <article class="feature reveal"><div class="f-ico">👤</div><h3 data-i18n="f4.t">Аккаунты и скины</h3><p data-i18n="f4.d">Microsoft, Ely.by и офлайн-аккаунты с превью скина.</p></article>
-          <article class="feature reveal"><div class="f-ico">🌍</div><h3 data-i18n="f5.t">Миры и бэкапы</h3><p data-i18n="f5.d">Quick Play прямо в мир и .zip-бэкапы в один клик.</p></article>
-          <article class="feature reveal"><div class="f-ico">🖥️</div><h3 data-i18n="f7.t">Живая консоль</h3><p data-i18n="f7.d">Лог игры в реальном времени и детект крашей.</p></article>
+        <div class="features features-varied">
+          <article class="feature lead-card">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+              </span>
+              <code class="mono-token">instances/&lt;name&gt;</code>
+            </div>
+            <h3 data-i18n="f1.t">Изолированные сборки</h3>
+            <p data-i18n="f1.d">Создавайте, дублируйте и настраивайте профили в отдельных читаемых папках, чтобы конфиги, моды и миры не смешивались.</p>
+          </article>
+
+          <article class="feature lead-card">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+              </span>
+              <code class="mono-token">.mrpack</code>
+            </div>
+            <h3 data-i18n="f2.t">Modrinth, CurseForge и .mrpack</h3>
+            <p data-i18n="f2.d">Поиск и установка модов, модпаков, ресурспаков и шейдеров с автоподбором зависимостей, импортом и экспортом .mrpack.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f3.t">Загрузка в 64 потока</h3>
+            <p data-i18n="f3.d">До 64 параллельных соединений с потоковой проверкой контрольных сумм SHA-1.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f4.t">Аккаунты и скины</h3>
+            <p data-i18n="f4.d">Microsoft OAuth, Ely.by через authlib-injector и офлайн-профили с хранением токенов в OS Keyring.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f5b.t">Серверы и туннель bore</h3>
+            <p data-i18n="f5b.d">Локальные серверы Paper, Fabric и Forge с публикацией за серым IP (CGNAT) через bore.pub.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 4-5 4"/><path d="M12 16h7"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f7.t">Живая консоль</h3>
+            <p data-i18n="f7.d">Поток stdout и stderr в реальном времени с фильтрами и диагностикой вылетов.</p>
+          </article>
         </div>
-        <div class="center reveal"><a class="btn btn-ghost" href="features.html"><span data-i18n="feat.all">Все возможности</span> →</a></div>
       </div>
     </section>
 
     <!-- LOADERS -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" data-i18n="ld.eyebrow">Загрузчики</span>
-          <h2 data-i18n="ld.title">Любой загрузчик — в пару кликов</h2>
-          <p data-i18n="ld.sub">Официальные API Mojang, Fabric/Quilt Meta и Maven Forge/NeoForge, включая процессоры установщиков.</p>
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="ld.eyebrow">Загрузчики модов</span>
+          <h2 data-i18n="ld.title">Пять загрузчиков через официальные API метаданных</h2>
+          <p data-i18n="ld.sub">Прямая интеграция с Mojang, Fabric Meta, Quilt Meta и процессорами установщиков Forge и NeoForge</p>
         </div>
         <div class="loaders">
-          <div class="loader reveal"><div class="block grass"></div><b>Vanilla</b><small data-i18n="ld.v">Чистый Minecraft</small></div>
-          <div class="loader reveal"><div class="block fabric"></div><b>Fabric</b><small data-i18n="ld.f">Лёгкий и быстрый</small></div>
-          <div class="loader reveal"><div class="block quilt"></div><b>Quilt</b><small data-i18n="ld.q">Форк Fabric</small></div>
-          <div class="loader reveal"><div class="block forge"></div><b>Forge</b><small data-i18n="ld.fo">Классика модинга</small></div>
-          <div class="loader reveal"><div class="block neo"></div><b>NeoForge</b><small data-i18n="ld.n">Новое поколение</small></div>
+          <div class="loader">
+            <div class="block grass" aria-hidden="true"></div>
+            <b>Vanilla</b>
+            <small data-i18n="ld.v">Чистый клиент</small>
+          </div>
+          <div class="loader">
+            <div class="block fabric" aria-hidden="true"></div>
+            <b>Fabric</b>
+            <small data-i18n="ld.f">Лёгкий API модов</small>
+          </div>
+          <div class="loader">
+            <div class="block quilt" aria-hidden="true"></div>
+            <b>Quilt</b>
+            <small data-i18n="ld.q">Форк сообщества</small>
+          </div>
+          <div class="loader">
+            <div class="block forge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/></svg>
+            </div>
+            <b>Forge</b>
+            <small data-i18n="ld.fo">Классическая экосистема</small>
+          </div>
+          <div class="loader">
+            <div class="block neo" aria-hidden="true"></div>
+            <b>NeoForge</b>
+            <small data-i18n="ld.n">Современный форк Forge</small>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- COMPARE -->
     <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" data-i18n="cmp.eyebrow">Почему Sunset</span>
-          <h2 data-i18n="cmp.title">Нативность против Electron</h2>
+      <div class="container compare-split">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="cmp.eyebrow">Архитектура</span>
+          <h2 data-i18n="cmp.title">Скомпилированный Rust вместо обёртки на Electron</h2>
+          <p data-i18n="cmp.sub">Интерфейс рисуется нативно через egui без встроенного браузера и сбора телеметрии</p>
         </div>
-        <div class="compare reveal">
-          <div class="cmp-row head"><span></span><span>Sunset</span><span data-i18n="cmp.others">Типичный лаунчер</span></div>
-          <div class="cmp-row"><span data-i18n="cmp.r1">Технология</span><span class="ok">Rust + egui</span><span>Electron / Java</span></div>
-          <div class="cmp-row"><span data-i18n="cmp.r2">Телеметрия</span><span class="ok" data-i18n="cmp.none">Нет</span><span class="bad" data-i18n="cmp.often">Часто есть</span></div>
-          <div class="cmp-row"><span data-i18n="cmp.r3">Один бинарник</span><span class="ok">✓</span><span class="bad">✕</span></div>
-          <div class="cmp-row"><span data-i18n="cmp.r4">Ely.by из коробки</span><span class="ok">✓</span><span class="bad">✕</span></div>
-          <div class="cmp-row"><span data-i18n="cmp.r5">Открытый код</span><span class="ok">MIT</span><span data-i18n="cmp.varies">По-разному</span></div>
+        <div class="compare">
+          <div class="cmp-row head">
+            <span data-i18n="cmp.colParam">Параметр</span>
+            <span>Sunset</span>
+            <span data-i18n="cmp.others">Типичный лаунчер</span>
+          </div>
+          <div class="cmp-row">
+            <span data-i18n="cmp.r1">Среда интерфейса</span>
+            <span class="ok">Rust + egui</span>
+            <span>Electron / Java</span>
+          </div>
+          <div class="cmp-row">
+            <span data-i18n="cmp.r2">Телеметрия</span>
+            <span class="ok" data-i18n="cmp.none">Отсутствует</span>
+            <span class="bad" data-i18n="cmp.often">Часто встроена</span>
+          </div>
+          <div class="cmp-row">
+            <span data-i18n="cmp.r3">Один нативный бинарник</span>
+            <span class="ok check" aria-label="Yes"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="bad">—</span>
+          </div>
+          <div class="cmp-row">
+            <span data-i18n="cmp.r4">Ely.by и туннель bore</span>
+            <span class="ok check" aria-label="Yes"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="bad">—</span>
+          </div>
+          <div class="cmp-row">
+            <span data-i18n="cmp.r5">Лицензия кода</span>
+            <span class="ok">MIT</span>
+            <span data-i18n="cmp.varies">Закрытая / разная</span>
+          </div>
         </div>
       </div>
     </section>
@@ -288,13 +372,13 @@
     <!-- CTA -->
     <section class="section">
       <div class="container">
-        <div class="cta-card reveal">
-          <div class="dl-sun" aria-hidden="true"></div>
-          <img src="assets/logo.png" alt="" class="dl-logo" width="88" height="88" />
-          <h2 data-i18n="dl.title">Готовы играть?</h2>
-          <p data-i18n="dl.sub">Скачайте Sunset Launcher для своей системы. Это бесплатно и всегда будет бесплатно.</p>
-          <div class="hero-cta center-row">
-            <a href="download.html" class="btn btn-primary btn-lg magnetic" data-i18n="nav.download">Скачать</a>
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h2 data-i18n="dl.title">Скачайте Sunset Launcher</h2>
+            <p data-i18n="dl.sub">Бесплатный open-source лаунчер под лицензией MIT для Windows, Linux и macOS</p>
+          </div>
+          <div class="hero-cta">
+            <a href="download.html" class="btn btn-primary btn-lg" data-i18n="nav.download">Скачать</a>
             <a href="screenshots.html" class="btn btn-ghost btn-lg" data-i18n="cta.screens">Смотреть скриншоты</a>
           </div>
         </div>
@@ -303,6 +387,6 @@
   </main>
 
   <div id="app-footer"></div>
-  <script src="script.js?v=20261121a"></script>
+  <script src="script.js?v=20261125a"></script>
 </body>
 </html>

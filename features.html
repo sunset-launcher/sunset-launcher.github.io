@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Возможности — Sunset Launcher</title>
-  <meta name="theme-color" content="#120e18" />
-  <meta name="description" content="Все возможности Sunset Launcher: сборки, Modrinth и .mrpack, аккаунты Microsoft и Ely.by, живая консоль, бэкапы миров и темы." />
+  <meta name="theme-color" content="#151413" />
+  <meta name="description" content="Возможности Sunset Launcher: изолированные сборки, Modrinth, CurseForge и .mrpack, аккаунты Microsoft и Ely.by, серверы с туннелем bore и живая консоль." />
   <link rel="canonical" href="https://sunset-launcher.github.io/features.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Возможности — Sunset Launcher" />
@@ -18,8 +18,8 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261120c" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20261125a" />
 </head>
 <body data-page="features">
   <div id="app-header"></div>
@@ -28,81 +28,137 @@
     <section class="page-hero">
       <div class="container">
         <span class="eyebrow enter" style="--d:0" data-i18n="nav.features">Возможности</span>
-        <h1 class="enter" style="--d:1"><span data-i18n="fp.title1">Мощь, которая</span> <span class="grad shimmer" data-i18n="fp.title2">не тормозит</span></h1>
-        <p class="lead enter" style="--d:2" data-i18n="fp.lead">Всё, что умеет Sunset Launcher — от установки модпака до восстановления мира из бэкапа.</p>
+        <h1 class="enter" style="--d:1" data-i18n="fp.title">Сборки, моды, аккаунты и серверы в одном окне</h1>
+        <p class="lead enter" style="--d:2" data-i18n="fp.lead">Все инструменты Sunset Launcher — от экспорта модпаков до живых логов вылетов</p>
       </div>
     </section>
 
     <section class="section tight">
       <div class="container rows">
-        <div class="row reveal">
+        <div class="row">
           <div class="row-text">
             <span class="row-num">01</span>
-            <h2 data-i18n="f1.t">Сборки и профили</h2>
-            <p data-i18n="f1.long">Создавайте, дублируйте, редактируйте и удаляйте сборки. Каждая живёт в своей папке instances/&lt;name&gt; — моды, конфиги и миры разных версий никогда не перепутаются. Быстрое переключение между сборками прямо из боковой панели.</p>
-            <ul class="checks"><li data-i18n="f1.c1">Изолированные папки игры</li><li data-i18n="f1.c2">Дублирование в один клик</li><li data-i18n="f1.c3">Quick Switch и избранное</li></ul>
+            <h2 data-i18n="f1.t">Изолированные сборки</h2>
+            <p data-i18n="f1.long">Создавайте, дублируйте, настраивайте и удаляйте сборки. Каждая хранится в собственной папке instances/&lt;name&gt; — моды, конфиги и миры разных версий не смешиваются. Переключайтесь между профилями прямо из боковой панели.</p>
+            <ul class="checks">
+              <li data-i18n="f1.c1">Читаемые папки instances/&lt;name&gt;</li>
+              <li data-i18n="f1.c2">Дублирование сборки в один клик</li>
+              <li data-i18n="f1.c3">Быстрый переход из боковой панели и избранное</li>
+            </ul>
           </div>
-          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/library.jpg" data-cap-key="scr.t1" data-desc-key="scr.d1"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/library.jpg" alt="Sunset Launcher — Library" loading="lazy" /></div>
+          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/library.jpg" data-cap-key="scr.t1" data-desc-key="scr.d1">
+            <div class="window-bar">
+              <div class="window-dots"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="window-title">instances/my-instance</span></div>
+            </div>
+            <img src="assets/screenshots/library.jpg" width="1024" height="549" alt="Sunset Launcher — библиотека сборок" loading="lazy" />
+          </div>
         </div>
 
-        <div class="row reverse reveal">
+        <div class="row reverse">
           <div class="row-text">
             <span class="row-num">02</span>
-            <h2 data-i18n="f2.t">Modrinth и .mrpack</h2>
-            <p data-i18n="f2.long">Встроенный каталог Modrinth: ищите и ставьте моды, модпаки, ресурспаки и шейдеры, не выходя из лаунчера. Зависимости и совместимость с версией подбираются автоматически.</p>
-            <ul class="checks"><li data-i18n="f2.c1">Импорт и экспорт .mrpack</li><li data-i18n="f2.c2">Шейдеры и ресурспаки</li><li data-i18n="f2.c3">Фильтры по версии и загрузчику</li></ul>
+            <h2 data-i18n="f2.t">Modrinth, CurseForge и .mrpack</h2>
+            <p data-i18n="f2.long">Встроенные каталоги Modrinth и CurseForge: ищите и устанавливайте моды, модпаки, ресурспаки и шейдеры, не выходя из лаунчера. Зависимости и совместимость с загрузчиком проверяются автоматически.</p>
+            <ul class="checks">
+              <li data-i18n="f2.c1">Импорт и настраиваемый экспорт .mrpack</li>
+              <li data-i18n="f2.c2">Шейдеры и ресурспаки</li>
+              <li data-i18n="f2.c3">Фильтрация по версии игры и загрузчику</li>
+            </ul>
           </div>
-          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/discover.jpg" data-cap-key="scr.t2" data-desc-key="scr.d2"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/discover.jpg" alt="Sunset Launcher — Modrinth Discover" loading="lazy" /></div>
+          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/discover.jpg" data-cap-key="scr.t2" data-desc-key="scr.d2">
+            <div class="window-bar">
+              <div class="window-dots"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="window-title">Discover · Modrinth + CurseForge</span></div>
+            </div>
+            <img src="assets/screenshots/discover.jpg" width="1024" height="549" alt="Sunset Launcher — каталог модов" loading="lazy" />
+          </div>
         </div>
 
-        <div class="row reveal">
+        <div class="row">
           <div class="row-text">
             <span class="row-num">03</span>
             <h2 data-i18n="f3b.t">Управление контентом</h2>
-            <p data-i18n="f3b.long">Включайте и выключайте отдельные моды, не удаляя их. Видно, что установлено, какой версии и откуда.</p>
-            <ul class="checks"><li data-i18n="f3b.c1">Вкл/выкл файлов</li><li data-i18n="f3b.c2">64 параллельных загрузки</li><li data-i18n="f3b.c3">Проверка SHA-1 на лету</li></ul>
+            <p data-i18n="f3b.long">Включайте и отключайте отдельные моды без удаления файлов. Для каждого элемента отображаются версия, размер и источник каталога.</p>
+            <ul class="checks">
+              <li data-i18n="f3b.c1">Отключение модов без удаления файлов</li>
+              <li data-i18n="f3b.c2">64 параллельных потока скачивания</li>
+              <li data-i18n="f3b.c3">Потоковая проверка SHA-1</li>
+            </ul>
           </div>
-          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/mods.jpg" data-cap-key="scr.t3" data-desc-key="scr.d3"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/mods.jpg" alt="Sunset Launcher — Mods Management" loading="lazy" /></div>
+          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/mods.jpg" data-cap-key="scr.t3" data-desc-key="scr.d3">
+            <div class="window-bar">
+              <div class="window-dots"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="window-title">instances/my-instance/mods</span></div>
+            </div>
+            <img src="assets/screenshots/mods.jpg" width="1024" height="549" alt="Sunset Launcher — управление модами" loading="lazy" />
+          </div>
         </div>
 
-        <div class="row reverse reveal">
+        <div class="row reverse">
           <div class="row-text">
             <span class="row-num">04</span>
             <h2 data-i18n="f4.t">Аккаунты и скины</h2>
-            <p data-i18n="f4.long">Вход через Microsoft по Device Code, аккаунты Ely.by через authlib-injector и офлайн-профили. Превью головы и скина кешируются локально.</p>
-            <ul class="checks"><li>Microsoft OAuth</li><li>Ely.by · authlib-injector</li><li>Offline</li></ul>
+            <p data-i18n="f4.long">Авторизация Microsoft по Device Code, аккаунты Ely.by через authlib-injector и офлайн-профили. Превью скинов кешируются локально, а токены хранятся в системном OS Keyring.</p>
+            <ul class="checks">
+              <li>Microsoft OAuth</li>
+              <li>Ely.by · authlib-injector</li>
+              <li>OS Keyring · Offline</li>
+            </ul>
           </div>
-          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/accounts.jpg" data-cap-key="scr.t4" data-desc-key="scr.d4"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/accounts.jpg" alt="Sunset Launcher — Accounts &amp; Skins" loading="lazy" /></div>
+          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/accounts.jpg" data-cap-key="scr.t4" data-desc-key="scr.d4">
+            <div class="window-bar">
+              <div class="window-dots"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="window-title">Accounts · OS Keyring</span></div>
+            </div>
+            <img src="assets/screenshots/accounts.jpg" width="1024" height="549" alt="Sunset Launcher — аккаунты и скины" loading="lazy" />
+          </div>
         </div>
 
-        <div class="row reveal">
+        <div class="row">
           <div class="row-text">
             <span class="row-num">05</span>
             <h2 data-i18n="f7.t">Живая консоль</h2>
-            <p data-i18n="f7.long">stdout и stderr игры в реальном времени с фильтрами. Если игра упала — появится баннер с причиной, а краш-репорт копируется одной кнопкой.</p>
-            <ul class="checks"><li data-i18n="f7.c1">Фильтры логов</li><li data-i18n="f7.c2">Детект крашей</li><li data-i18n="f7.c3">Копирование краш-репорта</li></ul>
+            <p data-i18n="f7.long">Поток stdout и stderr игры в реальном времени с фильтрацией по уровням лога. При аварийном завершении лаунчер выделяет причину и копирует отчёт одной кнопкой.</p>
+            <ul class="checks">
+              <li data-i18n="f7.c1">Фильтрация логов в реальном времени</li>
+              <li data-i18n="f7.c2">Автоматический разбор причин сбоя</li>
+              <li data-i18n="f7.c3">Копирование краш-репорта в один клик</li>
+            </ul>
           </div>
-          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/console.png" data-cap-key="scr.t6" data-desc-key="scr.d6"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/console.png" alt="Sunset Launcher — Live Console" loading="lazy" /></div>
+          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/console.png" data-cap-key="scr.t6" data-desc-key="scr.d6">
+            <div class="window-bar">
+              <div class="window-dots"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="window-title">Console · stdout / stderr</span></div>
+            </div>
+            <img src="assets/screenshots/console.png" width="1024" height="549" alt="Sunset Launcher — живая консоль" loading="lazy" />
+          </div>
         </div>
 
-        <div class="row reverse reveal">
+        <div class="row reverse">
           <div class="row-text">
             <span class="row-num">06</span>
             <h2 data-i18n="f8.t">Темы, языки и Discord</h2>
-            <p data-i18n="f8.long">9 языков интерфейса, настраиваемые темы и шрифты, командная палитра по Ctrl+K и Discord Rich Presence на вашем языке.</p>
-            <ul class="checks"><li>Ctrl + K</li><li>Discord RPC</li><li data-i18n="f8.c3">9 языков</li></ul>
+            <p data-i18n="f8.long">Девять языков интерфейса, настраиваемые цветовые темы, командная палитра по Ctrl+K и статус Discord Rich Presence на выбранном языке.</p>
+            <ul class="checks">
+              <li><kbd>Ctrl</kbd> <kbd>K</kbd></li>
+              <li>Discord Rich Presence</li>
+              <li data-i18n="f8.c3">9 языков интерфейса</li>
+            </ul>
           </div>
-          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/settings.jpg" data-cap-key="scr.t5" data-desc-key="scr.d5"><div class="window-bar"><span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span></div><img src="assets/screenshots/settings.jpg" alt="Sunset Launcher — Settings &amp; Themes" loading="lazy" /></div>
+          <div class="row-media window zoomable" tabindex="0" role="button" data-src="assets/screenshots/settings.jpg" data-cap-key="scr.t5" data-desc-key="scr.d5">
+            <div class="window-bar">
+              <div class="window-dots"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="window-title">Settings</span></div>
+            </div>
+            <img src="assets/screenshots/settings.jpg" width="1024" height="549" alt="Sunset Launcher — настройки и темы" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="langs-card reveal">
-          <span class="eyebrow" data-i18n="fp.langsEyebrow">Локализация</span>
-          <h2 data-i18n="fp.langs">Языки интерфейса</h2>
-          <p class="muted" data-i18n="fp.langsDesc">Перевод интерфейса, командной палитры и статусов Discord Rich Presence.</p>
+        <div class="langs-card">
+          <div class="langs-card-copy">
+            <span class="eyebrow" data-i18n="fp.langsEyebrow">Локализация</span>
+            <h2 data-i18n="fp.langs">Девять языков интерфейса</h2>
+            <p class="muted" data-i18n="fp.langsDesc">Переведены все разделы приложения, командная палитра и статусы Discord Rich Presence</p>
+          </div>
           <div class="lang-pills">
             <span>English</span><span>Русский</span><span>Українська</span><span>Deutsch</span><span>Français</span><span>Español</span><span>Polski</span><span>Português</span><span>Türkçe</span>
           </div>
@@ -112,30 +168,85 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" data-i18n="fp.more">И ещё</span>
-          <h2 data-i18n="fp.moreTitle">Мелочи, которые решают</h2>
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="fp.more">Системные детали</span>
+          <h2 data-i18n="fp.moreTitle">Устроен для ежедневной игры с модами</h2>
         </div>
-        <div class="features">
-          <article class="feature reveal"><div class="f-ico">🌍</div><h3 data-i18n="f5.t">Миры и бэкапы</h3><p data-i18n="f5.d">Quick Play прямо в мир и .zip-бэкапы в один клик.</p></article>
-          <article class="feature reveal"><div class="f-ico">☕</div><h3 data-i18n="f6.t">Java и JVM</h3><p data-i18n="f6.d">RAM, свои аргументы JVM, пресеты G1GC, ZGC, Aikar's. Автопоиск Java.</p></article>
-          <article class="feature reveal"><div class="f-ico">🔄</div><h3 data-i18n="f9.t">Автообновления</h3><p data-i18n="f9.d">Проверка и установка обновлений из GitHub Releases.</p></article>
-          <article class="feature reveal"><div class="f-ico">🔒</div><h3 data-i18n="f10.t">Приватность</h3><p data-i18n="f10.d">Ноль телеметрии. Токены хранятся только у вас на диске.</p></article>
-          <article class="feature reveal"><div class="f-ico">🪟</div><h3 data-i18n="f11.t">Интеграция с ОС</h3><p data-i18n="f11.d">Ярлык .desktop в Linux и в меню «Пуск» в Windows, один экземпляр приложения.</p></article>
-          <article class="feature reveal"><div class="f-ico">🦀</div><h3 data-i18n="f12.t">Чистый Rust</h3><p data-i18n="f12.d">Один нативный бинарник на eframe/egui. Мгновенный старт и мало памяти.</p></article>
+        <div class="features features-varied">
+          <article class="feature lead-card">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+              </span>
+              <code class="mono-token">Adoptium</code>
+            </div>
+            <h3 data-i18n="f6.t">Java и пресеты JVM</h3>
+            <p data-i18n="f6.d">Лимиты RAM, собственные флаги, пресеты G1GC, ZGC и Aikar с автоматической загрузкой подходящей версии Adoptium Java.</p>
+          </article>
+
+          <article class="feature lead-card">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+              </span>
+              <code class="mono-token">Rust + egui</code>
+            </div>
+            <h3 data-i18n="f12.t">Нативный Rust и egui</h3>
+            <p data-i18n="f12.d">Один скомпилированный бинарник без движка Chromium и фоновых процессов Electron.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f5.t">Миры и бэкапы</h3>
+            <p data-i18n="f5.d">Вход сразу в сохранение через Quick Play и создание .zip-архивов миров в один клик.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f9.t">Проверка обновлений</h3>
+            <p data-i18n="f9.d">Получение релизов из GitHub Releases со сверкой контрольной суммы SHA-256 перед установкой.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f10.t">Ноль телеметрии</h3>
+            <p data-i18n="f10.d">Никакой аналитики и трекеров. Ключи авторизации хранятся локально в системном Keyring.</p>
+          </article>
+
+          <article class="feature">
+            <div class="f-head">
+              <span class="f-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              </span>
+            </div>
+            <h3 data-i18n="f11.t">Интеграция с ОС</h3>
+            <p data-i18n="f11.d">Ярлык .desktop в Linux, меню «Пуск» в Windows и блокировка повторного запуска через сокет.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section tight">
+    <section class="section">
       <div class="container">
-        <div class="cta-card reveal">
-          <div class="dl-sun" aria-hidden="true"></div>
-          <img src="assets/logo.png" alt="" class="dl-logo" width="80" height="80" />
-          <h2 data-i18n="fp.ctaTitle">Готовы попробовать?</h2>
-          <p data-i18n="dl.sub">Скачайте Sunset Launcher для своей системы. Это бесплатно и всегда будет бесплатно.</p>
-          <div class="hero-cta center-row">
-            <a href="download.html" class="btn btn-primary btn-lg magnetic" data-i18n="nav.download">Скачать</a>
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h2 data-i18n="fp.ctaTitle">Установите Sunset Launcher на свой компьютер</h2>
+            <p data-i18n="dl.sub">Бесплатный open-source лаунчер под лицензией MIT для Windows, Linux и macOS</p>
+          </div>
+          <div class="hero-cta">
+            <a href="download.html" class="btn btn-primary btn-lg" data-i18n="nav.download">Скачать</a>
             <a href="screenshots.html" class="btn btn-ghost btn-lg" data-i18n="cta.screens">Смотреть скриншоты</a>
           </div>
         </div>
@@ -144,7 +255,6 @@
   </main>
 
   <div id="app-footer"></div>
-  <script src="script.js?v=20261121a"></script>
+  <script src="script.js?v=20261125a"></script>
 </body>
 </html>
-

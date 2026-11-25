@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ — Sunset Launcher</title>
-  <meta name="theme-color" content="#120e18" />
+  <meta name="theme-color" content="#151413" />
   <meta name="description" content="Частые вопросы о Sunset Launcher: лицензия, аккаунты, SmartScreen, приватность, Java, модпаки и обновления." />
   <link rel="canonical" href="https://sunset-launcher.github.io/faq.html" />
   <meta property="og:type" content="website" />
@@ -18,20 +18,22 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261120c" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20261125a" />
 </head>
 <body data-page="faq">
   <div id="app-header"></div>
 
   <main class="page">
     <section class="page-hero">
-      <div class="container">
+      <div class="container narrow">
         <span class="eyebrow enter" style="--d:0">FAQ</span>
-        <h1 class="enter" style="--d:1"><span data-i18n="qp.title1">Частые</span> <span class="grad shimmer" data-i18n="qp.title2">вопросы</span></h1>
-        <div class="search enter" style="--d:2">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-          <input id="faqSearch" type="search" placeholder="Поиск по вопросам…" data-i18n-ph="qp.search" />
+        <h1 class="enter" style="--d:1" data-i18n="qp.title">Частые вопросы</h1>
+        <div class="page-controls enter" style="--d:2">
+          <div class="search">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="faqSearch" type="search" placeholder="Поиск" data-i18n-ph="qp.search" />
+          </div>
         </div>
       </div>
     </section>
@@ -39,32 +41,31 @@
     <section class="section tight">
       <div class="container narrow">
         <div class="faq" id="faqList">
-          <details class="reveal" id="q1"><summary data-i18n="q1">Это бесплатно?</summary><div class="ans"><p data-i18n="a1">Да. Sunset Launcher распространяется под лицензией MIT, исходный код открыт на GitHub.</p></div></details>
-          <details class="reveal" id="q2"><summary data-i18n="q2">Нужна ли лицензия Minecraft?</summary><div class="ans"><p data-i18n="a2">Для входа через Microsoft нужна купленная игра. Также поддерживаются аккаунты Ely.by и офлайн-режим.</p></div></details>
-          <details class="reveal" id="q3"><summary data-i18n="q3">Windows пишет «Неизвестный издатель». Это опасно?</summary><div class="ans"><p data-i18n="a3">Релизы пока не подписаны сертификатом, поэтому SmartScreen показывает предупреждение. Нажмите «Подробнее» → «Выполнить в любом случае». Целостность можно проверить по файлу .sha256 или собрать лаунчер из исходников.</p></div></details>
-          <details class="reveal" id="q4"><summary data-i18n="q4">Собираете ли вы мои данные?</summary><div class="ans"><p data-i18n="a4">Нет. Никакой телеметрии и аналитики. Токены и аккаунты хранятся только локально. Сетевые запросы идут лишь к нужным сервисам: Mojang, Modrinth, загрузчики модов, Adoptium, Microsoft / Ely.by и GitHub для обновлений.</p></div></details>
-          <details class="reveal" id="q5"><summary data-i18n="q5">Где хранятся файлы игры?</summary><div class="ans"><p data-i18n="a5">Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\sunset-launcher. macOS: ~/Library/Application Support/sunset-launcher. Внутри — профили, аккаунты, версии, библиотеки, ассеты и изолированные папки сборок.</p></div></details>
-          <details class="reveal" id="q6"><summary data-i18n="q6">Есть ли версия для macOS и .deb пакет для Linux?</summary><div class="ans"><p data-i18n="a6">Да! На странице загрузки и в релизах sunset-launcher/sunset-launcher доступны .exe и .zip для Windows, .deb пакеты и бинарники для Linux (x64 и ARM64), а также .app и бинарники для macOS (Apple Silicon и Intel).</p></div></details>
-          <details class="reveal" id="q7"><summary data-i18n="q7">Как установить модпак?</summary><div class="ans"><p data-i18n="a7">Откройте вкладку Discover, найдите модпак на Modrinth и нажмите «Установить» — или импортируйте готовый .mrpack-файл. Лаунчер сам создаст сборку и скачает всё нужное.</p></div></details>
-          <details class="reveal" id="q8"><summary data-i18n="q8">Нужно ли ставить Java вручную?</summary><div class="ans"><p data-i18n="a8">Нет. Лаунчер находит установленную Java автоматически и может скачать подходящую версию Adoptium в свою папку.</p></div></details>
-          <details class="reveal" id="q9"><summary data-i18n="q9">Игра вылетает. Что делать?</summary><div class="ans"><p data-i18n="a9">Откройте вкладку Console — там будет баннер с крашем и кнопка копирования краш-репорта. Часто помогает увеличить RAM или выбрать пресет JVM в настройках сборки.</p></div></details>
-          <details class="reveal" id="q10"><summary data-i18n="q10">Как обновить лаунчер?</summary><div class="ans"><p data-i18n="a10">Sunset сам проверяет GitHub Releases и предложит установить новую версию прямо из интерфейса.</p></div></details>
+          <details id="q1"><summary data-i18n="q1">Это бесплатно?</summary><div class="ans"><p data-i18n="a1">Да. Sunset Launcher распространяется под лицензией MIT, полный исходный код открыт на GitHub.</p></div></details>
+          <details id="q2"><summary data-i18n="q2">Нужна ли лицензия Minecraft?</summary><div class="ans"><p data-i18n="a2">Для входа через Microsoft нужна купленная копия игры. Также поддерживаются аккаунты Ely.by и офлайн-режим.</p></div></details>
+          <details id="q3"><summary data-i18n="q3">Windows пишет «Неизвестный издатель». Это безопасно?</summary><div class="ans"><p data-i18n="a3">Сборки пока не подписаны сертификатом Authenticode, поэтому SmartScreen предупреждает при первом запуске. Выберите «Подробнее» → «Выполнить в любом случае». Вы можете сверить контрольную сумму SHA-256 в GitHub Releases или собрать лаунчер из исходного кода.</p></div></details>
+          <details id="q4"><summary data-i18n="q4">Собирает ли лаунчер телеметрию?</summary><div class="ans"><p data-i18n="a4">Нет. Никакой аналитики и телеметрии нет. Токены хранятся локально в системном OS Keyring. Сетевые запросы отправляются только к Mojang, Modrinth, CurseForge, серверам метаданных загрузчиков, Adoptium, Microsoft / Ely.by и GitHub Releases.</p></div></details>
+          <details id="q5"><summary data-i18n="q5">Где хранятся файлы игры?</summary><div class="ans"><p data-i18n="a5">Linux: ~/.local/share/sunset-launcher. Windows: %LOCALAPPDATA%\sunset-launcher. macOS: ~/Library/Application Support/sunset-launcher. Внутри расположены профили, версии, библиотеки, ассеты и изолированные папки instances/&lt;name&gt;.</p></div></details>
+          <details id="q6"><summary data-i18n="q6">Доступны ли сборки для macOS и пакеты для Linux?</summary><div class="ans"><p data-i18n="a6">Да. На странице загрузки и в GitHub Releases публикуются сборки для Windows (установщик .exe и портативный .zip), Linux (.deb, .rpm и .AppImage для x64 и ARM64) и macOS (.dmg и .app.zip для Apple Silicon и Intel).</p></div></details>
+          <details id="q7"><summary data-i18n="q7">Как установить модпак?</summary><div class="ans"><p data-i18n="a7">Откройте вкладку Discover, выберите модпак из Modrinth или CurseForge и нажмите «Установить» — либо импортируйте локальный файл .mrpack. Лаунчер сам создаст изолированную сборку и скачает файлы.</p></div></details>
+          <details id="q8"><summary data-i18n="q8">Нужно ли устанавливать Java вручную?</summary><div class="ans"><p data-i18n="a8">Нет. Sunset находит установленные версии Java в системе и при необходимости скачивает подходящую среду Adoptium в свою директорию автоматически.</p></div></details>
+          <details id="q9"><summary data-i18n="q9">Игра вылетела. Где посмотреть причину?</summary><div class="ans"><p data-i18n="a9">Откройте вкладку Console, чтобы увидеть сводку сбоя и скопировать полный отчёт одной кнопкой. В большинстве случаев модпакам помогает увеличение лимита RAM или выбор пресета JVM в настройках сборки.</p></div></details>
+          <details id="q10"><summary data-i18n="q10">Как работают обновления?</summary><div class="ans"><p data-i18n="a10">Лаунчер проверяет GitHub Releases, сверяет контрольную сумму SHA-256 и предлагает установить обновление прямо из интерфейса.</p></div></details>
         </div>
-        <p class="muted center empty" id="faqEmpty" hidden data-i18n="qp.empty">Ничего не найдено 🤔</p>
+        <p class="muted center empty" id="faqEmpty" hidden data-i18n="qp.empty">По вашему запросу вопросов не найдено</p>
 
-        <div class="help-card reveal">
+        <div class="help-card">
           <div>
-            <h3 data-i18n="qp.help">Не нашли ответ?</h3>
-            <p class="muted" data-i18n="qp.helpd">Создайте issue на GitHub — разберёмся.</p>
+            <h3 data-i18n="qp.help">Остался вопрос?</h3>
+            <p class="muted" data-i18n="qp.helpd">Создайте issue на GitHub, указав вашу ОС и вывод консоли</p>
           </div>
-          <a class="btn btn-primary magnetic" href="https://github.com/sunset-launcher/sunset-launcher/issues" target="_blank" rel="noopener" data-i18n="qp.issue">Открыть issue</a>
+          <a class="btn btn-primary" href="https://github.com/sunset-launcher/sunset-launcher/issues" target="_blank" rel="noopener" data-i18n="qp.issue">Открыть issue</a>
         </div>
       </div>
     </section>
   </main>
 
   <div id="app-footer"></div>
-  <script src="script.js?v=20261121a"></script>
+  <script src="script.js?v=20261125a"></script>
 </body>
 </html>
-

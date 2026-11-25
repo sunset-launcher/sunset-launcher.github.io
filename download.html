@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Скачать — Sunset Launcher</title>
-  <meta name="theme-color" content="#120e18" />
-  <meta name="description" content="Скачать Sunset Launcher для Windows (установщик, .exe, .zip), Linux (.deb, .rpm, .AppImage, бинарник) и macOS (.dmg, .app, бинарник) бесплатно из репозитория sunset-launcher/sunset-launcher." />
+  <meta name="theme-color" content="#151413" />
+  <meta name="description" content="Скачать Sunset Launcher для Windows (установщик .exe, портативный .zip), Linux (.deb, .rpm, .AppImage) и macOS (.dmg, .app.zip) бесплатно из репозитория sunset-launcher/sunset-launcher." />
   <link rel="canonical" href="https://sunset-launcher.github.io/download.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Скачать Sunset Launcher" />
@@ -18,8 +18,8 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261120c" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20261125a" />
 </head>
 <body data-page="download">
   <div id="app-header"></div>
@@ -27,17 +27,10 @@
   <main class="page">
     <section class="page-hero">
       <div class="container">
-        <div class="enter" style="--d:0">
-          <div class="cube-wrap static" aria-hidden="true">
-            <div class="cube">
-              <i class="f top"></i><i class="f front"></i><i class="f right"></i>
-              <i class="f back"></i><i class="f left"></i><i class="f bottom"></i>
-            </div>
-          </div>
-        </div>
-        <h1 class="enter" style="--d:1"><span data-i18n="dp.title1">Скачать</span> <span class="grad shimmer">Sunset Launcher</span></h1>
+        <span class="eyebrow enter" style="--d:0" data-i18n="nav.download">Скачать</span>
+        <h1 class="enter" style="--d:1" data-i18n="dp.title">Скачать Sunset Launcher</h1>
         <p class="lead enter" style="--d:2">
-          <span data-i18n="dl.ver">Последняя версия:</span> <b class="version">v0.2.0</b>
+          <span data-i18n="dl.ver">Актуальный релиз:</span> <code class="mono-token version">v0.2.0</code>
           <span class="rel-date" id="relDate"></span>
         </p>
       </div>
@@ -46,9 +39,13 @@
     <section class="section tight">
       <div class="container">
         <div class="os-cards">
-          <div class="os-card reveal" id="cardWin">
-            <span class="badge" data-i18n="dp.rec">Рекомендуем</span>
-            <svg viewBox="0 0 24 24" width="52" height="52" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3v-6zm0 13l7.5 1v-7H3v6zm8.5 1.1L21 21v-8.5h-9.5v7.1zm0-15.2v7.1H21V3l-9.5 1.4z"/></svg>
+          <div class="os-card" id="cardWin">
+            <div class="os-card-top">
+              <span class="os-card-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              </span>
+              <span class="badge" data-i18n="dp.rec">Ваша ОС</span>
+            </div>
             <h3>Windows</h3>
             <p class="muted">Windows 10 / 11 · <span data-i18n="dp.bit64">64-бит</span></p>
             <div class="arch-switch" data-i18n-aria="dp.archLabel" aria-label="Архитектура">
@@ -56,23 +53,12 @@
             </div>
             <div class="dl-options">
               <div class="dl-opt">
-                <a class="btn btn-primary btn-block magnetic" data-dl data-dl-key="win-setup" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64-setup.exe">
+                <a class="btn btn-primary btn-block" data-dl data-dl-key="win-setup" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64-setup.exe">
                   <span><span data-i18n="dp.get">Скачать</span> <span data-i18n="dl.winSetupLabel">установщик</span></span>
                   <small class="size" data-asset-key="win-setup"></small>
                 </a>
                 <div class="dl-opt-meta">
-                  <span data-i18n="dp.winSetupSub">Мастер установки (.exe)</span>
-                  <a class="sha" data-sha-key="win-setup" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64-setup.exe.sha256">SHA-256</a>
-                </div>
-              </div>
-              <div class="dl-opt">
-                <a class="btn btn-ghost btn-block" data-dl data-dl-key="win-exe" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64.exe">
-                  <span><span data-i18n="dp.get">Скачать</span> .exe</span>
-                  <small class="size" data-asset-key="win-exe"></small>
-                </a>
-                <div class="dl-opt-meta">
-                  <span data-i18n="dp.winExeSub">Исполняемый файл .exe</span>
-                  <a class="sha" data-sha-key="win-exe" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64.exe.sha256">SHA-256</a>
+                  <span data-i18n="dp.winSetupSub">Мастер установки Inno Setup (.exe)</span>
                 </div>
               </div>
               <div class="dl-opt">
@@ -82,30 +68,32 @@
                 </a>
                 <div class="dl-opt-meta">
                   <span data-i18n="dp.winZipSub">Портативный архив</span>
-                  <a class="sha" data-sha-key="win-zip" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-windows-x64-portable.zip.sha256">SHA-256</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="os-card reveal" id="cardLinux">
-            <span class="badge" data-i18n="dp.rec">Рекомендуем</span>
-            <svg viewBox="0 0 24 24" width="52" height="52" fill="currentColor" aria-hidden="true"><path d="M12.5 2c-2.2 0-3.4 1.8-3.4 4.2 0 1.4.2 2.3-.6 3.6-.9 1.4-2.6 3.4-2.9 5.8-.1.9 0 1.5.3 2-.6.4-1.6.6-2 1.3-.4.8.3 1.6.4 2.3.1.6-.2 1.3.5 1.6.8.3 2.2-.1 3.4.3 1.2.4 2.2.9 3 .3.4-.3.6-.8.6-.8h2.6s.3.7 1 1c.9.4 2-.1 3-.7 1-.6 2.4-.8 2.7-1.6.2-.6-.4-1.3-.7-2 .4-.8.5-1.8.2-2.8-.5-1.8-2-3.6-2.9-5-.9-1.3-.6-2.3-.6-3.8C17 4 15.2 2 12.5 2z"/></svg>
+          <div class="os-card" id="cardLinux">
+            <div class="os-card-top">
+              <span class="os-card-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 4-5 4"/><path d="M12 16h7"/></svg>
+              </span>
+              <span class="badge" data-i18n="dp.rec">Ваша ОС</span>
+            </div>
             <h3>Linux</h3>
-            <p class="muted">Debian / Ubuntu · Arch · Fedora</p>
+            <p class="muted">Debian / Ubuntu · Fedora · Arch</p>
             <div class="arch-switch" role="group" data-i18n-aria="dp.archLabel" aria-label="Архитектура" data-arch-card="linux">
               <button type="button" class="arch-btn active" data-arch="x64">x64 (amd64)</button>
               <button type="button" class="arch-btn" data-arch="arm64">ARM64</button>
             </div>
             <div class="dl-options">
               <div class="dl-opt">
-                <a class="btn btn-primary btn-block magnetic" data-dl data-dl-key="linux-deb-x64" id="btnLinuxDeb" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher_0.2.0_amd64.deb">
+                <a class="btn btn-primary btn-block" data-dl data-dl-key="linux-deb-x64" id="btnLinuxDeb" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher_0.2.0_amd64.deb">
                   <span><span data-i18n="dp.get">Скачать</span> <span data-i18n="dl.debShort">.deb пакет</span></span>
                   <small class="size" data-asset-key="linux-deb-x64" id="sizeLinuxDeb"></small>
                 </a>
                 <div class="dl-opt-meta">
                   <span data-i18n="dp.debSub">Ubuntu / Debian / Mint</span>
-                  <a class="sha" data-sha-key="linux-deb-x64" id="shaLinuxDeb" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher_0.2.0_amd64.deb.sha256">SHA-256</a>
                 </div>
               </div>
               <div class="dl-opt">
@@ -115,7 +103,6 @@
                 </a>
                 <div class="dl-opt-meta">
                   <span data-i18n="dp.rpmSub">Fedora / RHEL / openSUSE</span>
-                  <a class="sha" data-sha-key="linux-rpm-x64" id="shaLinuxRpm" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-0.2.0-1.x86_64.rpm.sha256">SHA-256</a>
                 </div>
               </div>
               <div class="dl-opt">
@@ -125,25 +112,18 @@
                 </a>
                 <div class="dl-opt-meta">
                   <span data-i18n="dp.appImageSub">Портативный AppImage</span>
-                  <a class="sha" data-sha-key="linux-appimage-x64" id="shaLinuxAppImage" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-0.2.0-x86_64.AppImage.sha256">SHA-256</a>
-                </div>
-              </div>
-              <div class="dl-opt">
-                <a class="btn btn-ghost btn-block" data-dl data-dl-key="linux-bin-x64" id="btnLinuxBin" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-linux-x64">
-                  <span><span data-i18n="dp.get">Скачать</span> <span data-i18n="dp.binLabel">бинарник</span></span>
-                  <small class="size" data-asset-key="linux-bin-x64" id="sizeLinuxBin"></small>
-                </a>
-                <div class="dl-opt-meta">
-                  <span data-i18n="dp.binSub">Любой дистрибутив · glibc</span>
-                  <a class="sha" data-sha-key="linux-bin-x64" id="shaLinuxBin" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-linux-x64.sha256">SHA-256</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="os-card reveal" id="cardMac">
-            <span class="badge" data-i18n="dp.rec">Рекомендуем</span>
-            <svg viewBox="0 0 24 24" width="52" height="52" fill="currentColor" aria-hidden="true"><path d="M16.4 13.1c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7 1.2 0 1.9-1 2.6-2.1.8-1.2 1.2-2.3 1.2-2.4-.1 0-2.6-1-2.6-3.4zM14.2 6.8c.6-.7 1-1.7.9-2.8-.9 0-1.9.6-2.5 1.3-.5.6-1 1.7-.9 2.7 1 .1 1.9-.5 2.5-1.2z"/></svg>
+          <div class="os-card" id="cardMac">
+            <div class="os-card-top">
+              <span class="os-card-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+              </span>
+              <span class="badge" data-i18n="dp.rec">Ваша ОС</span>
+            </div>
             <h3>macOS</h3>
             <p class="muted" data-i18n="dp.macSub">macOS 11+ · Apple Silicon и Intel</p>
             <div class="arch-switch" role="group" data-i18n-aria="dp.archLabel" aria-label="Архитектура" data-arch-card="mac">
@@ -152,13 +132,12 @@
             </div>
             <div class="dl-options">
               <div class="dl-opt">
-                <a class="btn btn-primary btn-block magnetic" data-dl data-dl-key="mac-dmg-arm64" id="btnMacDmg" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.dmg">
+                <a class="btn btn-primary btn-block" data-dl data-dl-key="mac-dmg-arm64" id="btnMacDmg" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.dmg">
                   <span><span data-i18n="dp.get">Скачать</span> <span data-i18n="dl.dmgShort">.dmg</span></span>
                   <small class="size" data-asset-key="mac-dmg-arm64" id="sizeMacDmg"></small>
                 </a>
                 <div class="dl-opt-meta">
                   <span data-i18n="dp.macDmgSub">Образ диска .dmg</span>
-                  <a class="sha" data-sha-key="mac-dmg-arm64" id="shaMacDmg" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.dmg.sha256">SHA-256</a>
                 </div>
               </div>
               <div class="dl-opt">
@@ -168,31 +147,20 @@
                 </a>
                 <div class="dl-opt-meta">
                   <span data-i18n="dp.macAppSub">Пакет приложения .app</span>
-                  <a class="sha" data-sha-key="mac-app-arm64" id="shaMacApp" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.app.zip.sha256">SHA-256</a>
-                </div>
-              </div>
-              <div class="dl-opt">
-                <a class="btn btn-ghost btn-block" data-dl data-dl-key="mac-bin-arm64" id="btnMacBin" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64">
-                  <span><span data-i18n="dp.get">Скачать</span> <span data-i18n="dp.binLabel">бинарник</span></span>
-                  <small class="size" data-asset-key="mac-bin-arm64" id="sizeMacBin"></small>
-                </a>
-                <div class="dl-opt-meta">
-                  <span data-i18n="dp.macBinSub">Отдельный бинарник</span>
-                  <a class="sha" data-sha-key="mac-bin-arm64" id="shaMacBin" href="https://github.com/sunset-launcher/sunset-launcher/releases/latest/download/sunset-launcher-macos-arm64.sha256">SHA-256</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="src-strip reveal">
+        <div class="src-strip">
           <div class="src-strip-left">
             <span class="src-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
             </span>
             <div>
-              <b data-i18n="dl.src">Исходники</b>
-              <p class="muted"><span data-i18n="dp.srcDesc">Открытый репозиторий sunset-launcher/sunset-launcher · Rust 2021 · MIT License</span></p>
+              <b data-i18n="dl.src">Исходный код</b>
+              <p class="muted" data-i18n="dp.srcDesc">sunset-launcher/sunset-launcher · Rust 2021 · MIT License</p>
             </div>
           </div>
           <div class="src-strip-actions">
@@ -203,66 +171,60 @@
       </div>
     </section>
 
-    <section class="section tight">
+    <section class="section">
       <div class="container narrow">
-        <div class="section-head reveal">
+        <div class="section-head">
           <span class="eyebrow" data-i18n="dp.install">Установка</span>
-          <h2 data-i18n="dp.howto">Как установить</h2>
+          <h2 data-i18n="dp.howto">Установка из пакета или терминала</h2>
         </div>
-        <div class="seg reveal" role="tablist">
+        <div class="seg" role="tablist">
           <button class="seg-btn active" type="button" role="tab" aria-selected="true" data-os="linux">Linux</button>
           <button class="seg-btn" type="button" role="tab" aria-selected="false" data-os="windows">Windows</button>
           <button class="seg-btn" type="button" role="tab" aria-selected="false" data-os="macos">macOS</button>
-          <button class="seg-btn" type="button" role="tab" aria-selected="false" data-os="source" data-i18n="dl.src">Исходники</button>
-          <span class="seg-ind"></span>
+          <button class="seg-btn" type="button" role="tab" aria-selected="false" data-os="source" data-i18n="dl.src">Исходный код</button>
         </div>
 
-        <div class="os-panel active reveal" data-panel="linux">
+        <div class="os-panel active" data-panel="linux">
           <ol class="steps">
-            <li data-i18n="dp.l1">На Ubuntu / Debian / Mint установите .deb, на Fedora / RHEL / openSUSE — .rpm, либо используйте портативный AppImage или бинарник.</li>
-            <li data-i18n="dp.l2">Выберите нужный вариант установки в терминале:</li>
+            <li data-i18n="dp.l1">Установите .deb на Ubuntu / Debian / Mint, .rpm на Fedora / RHEL / openSUSE, либо запустите портативный AppImage.</li>
+            <li data-i18n="dp.l2">Выполните команду для вашего дистрибутива:</li>
           </ol>
           <div class="terminal">
-            <div class="term-head"><span data-i18n="dp.termDeb">Ubuntu / Debian — установка .deb пакета</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
-            <pre><span class="c">$</span> sudo apt install ~/Downloads/<span data-deb-file="amd64">sunset-launcher_0.1.9_amd64.deb</span></pre>
+            <div class="term-head"><span data-i18n="dp.termDeb">Ubuntu / Debian — пакет .deb</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
+            <pre><span class="c">$</span> sudo apt install ~/Downloads/<span data-deb-file="amd64">sunset-launcher_0.2.0_amd64.deb</span></pre>
           </div>
-          <div class="terminal" style="margin-top:14px">
-            <div class="term-head"><span data-i18n="dp.termRpm">Fedora / RHEL / openSUSE — установка .rpm пакета</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
-            <pre><span class="c">$</span> sudo dnf install ~/Downloads/<span data-rpm-file="x86_64">sunset-launcher-0.1.9-1.x86_64.rpm</span></pre>
+          <div class="terminal">
+            <div class="term-head"><span data-i18n="dp.termRpm">Fedora / RHEL / openSUSE — пакет .rpm</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
+            <pre><span class="c">$</span> sudo dnf install ~/Downloads/<span data-rpm-file="x86_64">sunset-launcher-0.2.0-1.x86_64.rpm</span></pre>
           </div>
-          <div class="terminal" style="margin-top:14px">
-            <div class="term-head"><span data-i18n="dp.termAppImage">Любой дистрибутив — запуск AppImage</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
-            <pre><span class="c">$</span> chmod +x ~/Downloads/<span data-appimage-file="x86_64">sunset-launcher-0.1.9-x86_64.AppImage</span>
-<span class="c">$</span> ~/Downloads/<span data-appimage-file="x86_64">sunset-launcher-0.1.9-x86_64.AppImage</span></pre>
+          <div class="terminal">
+            <div class="term-head"><span data-i18n="dp.termAppImage">Любой дистрибутив — портативный AppImage</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
+            <pre><span class="c">$</span> chmod +x ~/Downloads/<span data-appimage-file="x86_64">sunset-launcher-0.2.0-x86_64.AppImage</span>
+<span class="c">$</span> ~/Downloads/<span data-appimage-file="x86_64">sunset-launcher-0.2.0-x86_64.AppImage</span></pre>
           </div>
-          <div class="terminal" style="margin-top:14px">
-            <div class="term-head"><span data-i18n="dp.termBin">Любой дистрибутив — запуск бинарника</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
-            <pre><span class="c">$</span> chmod +x ~/Downloads/sunset-launcher-linux-x64
-<span class="c">$</span> ~/Downloads/sunset-launcher-linux-x64</pre>
+          <div class="terminal">
+            <div class="term-head"><span data-i18n="dp.verifyLinux">Проверка контрольной суммы SHA-256</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
+            <pre><span class="c">$</span> sha256sum ~/Downloads/<span data-appimage-file="x86_64">sunset-launcher-0.2.0-x86_64.AppImage</span></pre>
           </div>
-          <div class="terminal" style="margin-top:14px">
-            <div class="term-head"><span data-i18n="dp.verifyLinux">Проверка SHA-256 (по желанию)</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
-            <pre><span class="c">$</span> sha256sum -c sunset-launcher-linux-x64.sha256</pre>
-          </div>
-          <p class="hint" data-i18n="dp.l3">При установке .deb/.rpm или первом запуске бинарника лаунчер автоматически появится в меню приложений.</p>
+          <p class="hint" data-i18n="dp.l3">При установке .deb или .rpm ярлык Sunset Launcher автоматически добавляется в меню приложений.</p>
         </div>
 
         <div class="os-panel" data-panel="windows">
           <ol class="steps">
-            <li data-i18n="dp.w1">Скачайте установщик sunset-launcher-windows-x64-setup.exe (либо автономный .exe / портативный .zip).</li>
-            <li data-i18n="dp.w2">Пройдите мастер установки (или просто запустите .exe — ярлык в меню «Пуск» создастся автоматически).</li>
-            <li data-i18n="dp.w3">Если появится SmartScreen: «Подробнее» → «Выполнить в любом случае».</li>
+            <li data-i18n="dp.w1">Скачайте установщик sunset-launcher-windows-x64-setup.exe или портативный архив .zip.</li>
+            <li data-i18n="dp.w2">Запустите мастер установки или распакуйте .zip в любую папку.</li>
+            <li data-i18n="dp.w3">При появлении окна SmartScreen выберите «Подробнее» → «Выполнить в любом случае».</li>
           </ol>
           <div class="terminal">
-            <div class="term-head"><span data-i18n="dp.verify">PowerShell — проверка SHA-256</span><button class="copy" data-i18n="dl.copy">Копировать</button></div>
+            <div class="term-head"><span data-i18n="dp.verify">PowerShell — проверка SHA-256</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
             <pre><span class="c">&gt;</span> Get-FileHash .\sunset-launcher-windows-x64-setup.exe -Algorithm SHA256</pre>
           </div>
         </div>
 
         <div class="os-panel" data-panel="macos">
           <ol class="steps">
-            <li data-i18n="dp.m1">Скачайте sunset-launcher-macos-arm64.dmg (Apple Silicon M1–M4) или sunset-launcher-macos-x64.dmg (Intel), либо .app.zip.</li>
-            <li data-i18n="dp.m2">Откройте .dmg (или распакуйте .app.zip) и перенесите Sunset Launcher.app в папку /Applications.</li>
+            <li data-i18n="dp.m1">Скачайте sunset-launcher-macos-arm64.dmg (Apple Silicon) или sunset-launcher-macos-x64.dmg (Intel).</li>
+            <li data-i18n="dp.m2">Откройте .dmg и перенесите Sunset Launcher.app в папку /Applications.</li>
             <li data-i18n="dp.m3">Снимите карантин Gatekeeper перед первым запуском неподписанной сборки:</li>
           </ol>
           <div class="terminal">
@@ -270,19 +232,19 @@
             <pre><span class="c">$</span> xattr -cr "/Applications/Sunset Launcher.app"
 <span class="c">$</span> open -a "Sunset Launcher"</pre>
           </div>
-          <div class="terminal" style="margin-top:14px">
-            <div class="term-head"><span data-i18n="dp.verifyLinux">Проверка SHA-256 (по желанию)</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
-            <pre><span class="c">$</span> shasum -a 256 -c sunset-launcher-macos-arm64.dmg.sha256</pre>
+          <div class="terminal">
+            <div class="term-head"><span data-i18n="dp.verifyLinux">Проверка контрольной суммы SHA-256</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
+            <pre><span class="c">$</span> shasum -a 256 ~/Downloads/sunset-launcher-macos-arm64.dmg</pre>
           </div>
         </div>
 
         <div class="os-panel" data-panel="source">
           <ol class="steps">
-            <li data-i18n="dp.s1">Установите Rust через rustup.</li>
-            <li data-i18n="dp.s2">Склонируйте репозиторий и соберите релиз:</li>
+            <li data-i18n="dp.s1">Установите инструментарий Rust через rustup.</li>
+            <li data-i18n="dp.s2">Склонируйте репозиторий и соберите релизный бинарник:</li>
           </ol>
           <div class="terminal">
-            <div class="term-head"><span>bash</span><button class="copy" data-i18n="dl.copy">Копировать</button></div>
+            <div class="term-head"><span>bash</span><button class="copy" type="button" data-i18n="dl.copy">Копировать</button></div>
             <pre><span class="c">$</span> git clone https://github.com/sunset-launcher/sunset-launcher
 <span class="c">$</span> cd sunset-launcher
 <span class="c">$</span> cargo build --release
@@ -292,58 +254,54 @@
       </div>
     </section>
 
-    <section class="section tight">
+    <section class="section">
       <div class="container narrow">
-        <div class="req reveal">
+        <div class="req">
           <h3 data-i18n="dp.req">Системные требования</h3>
           <div class="req-grid">
-            <div><small data-i18n="dp.r1">ОС</small><b>Windows 10+ · Linux (x64 / ARM64) · macOS 11+</b></div>
-            <div><small data-i18n="dp.r2">Память</small><b data-i18n="dp.r2v">4 ГБ+ (8 ГБ для модпаков)</b></div>
-            <div><small>Java</small><b data-i18n="dp.r3v">Автопоиск / Adoptium</b></div>
-            <div><small data-i18n="dp.r4">Интернет</small><b data-i18n="dp.r4v">Для первой загрузки версий</b></div>
+            <div><small data-i18n="dp.r1">Операционная система</small><b>Windows 10+ · Linux (x64 / ARM64) · macOS 11+</b></div>
+            <div><small data-i18n="dp.r2">Оперативная память</small><b data-i18n="dp.r2v">4 ГБ+ (8 ГБ для модпаков)</b></div>
+            <div><small>Java</small><b data-i18n="dp.r3v">Автопоиск или загрузка Adoptium</b></div>
+            <div><small data-i18n="dp.r4">Сеть</small><b data-i18n="dp.r4v">Нужна для первой загрузки ассетов</b></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section tight">
+    <section class="section">
       <div class="container narrow">
-        <div class="section-head reveal">
+        <div class="section-head">
           <span class="eyebrow" data-i18n="nav.changelog">Чейнджлог</span>
-          <h2 data-i18n="dp.changes">Что нового</h2>
+          <h2 data-i18n="dp.changes">Примечания к актуальному релизу</h2>
         </div>
-        <div class="changelog reveal" id="changelog" data-curated-ver="v0.2.0">
+        <div class="changelog" id="changelog" data-curated-ver="v0.2.0">
           <h3 data-i18n="dp.v019.h">Sunset Launcher v0.2.0 — CurseForge, установщики ОС и встроенный туннель</h3>
           <ul>
-            <li data-i18n="dp.v019.b1">Поддержка каталога CurseForge наряду с Modrinth: поиск, фильтрация под версию/загрузчик и установка с зависимостями.</li>
-            <li data-i18n="dp.v019.b2">Новые форматы распространения: мастер установки Windows (.exe / Inno Setup), Linux .rpm и .AppImage (x64 / ARM64), а также macOS .dmg.</li>
-            <li data-i18n="dp.v019.b3">Хуки запуска (wrapper, pre-launch, post-exit), переменные окружения, просмотрщик логов инстанса и настраиваемый экспорт .mrpack.</li>
-            <li data-i18n="dp.v019.b4">Автономный режим Offline Mode, глобальные настройки инстансов по умолчанию и улучшенная адаптивность вкладок.</li>
+            <li data-i18n="dp.v019.b1">Интеграция каталога CurseForge наряду с Modrinth: поиск, фильтрация по загрузчику и версии и установка зависимостей.</li>
+            <li data-i18n="dp.v019.b2">Нативные пакеты для ОС: мастер установки Windows (-setup.exe), Linux .rpm и .AppImage (x64 и ARM64) и образы macOS .dmg.</li>
+            <li data-i18n="dp.v019.b3">Хуки запуска (wrapper, pre-launch, post-exit), переменные окружения, просмотр логов сборки и настраиваемый экспорт .mrpack.</li>
+            <li data-i18n="dp.v019.b4">Автономный режим Offline Mode, глобальные настройки сборок по умолчанию и исправления вёрстки на узких окнах.</li>
           </ul>
           <div id="changelogAssets"></div>
         </div>
-        <div class="rel-history reveal" id="relHistory" hidden></div>
+        <div class="rel-history" id="relHistory" hidden></div>
         <div class="center hero-cta center-row">
-          <a class="btn btn-primary magnetic" href="changelog.html"><span data-i18n="dp.fullCl">Полный чейнджлог</span> →</a>
+          <a class="btn btn-primary" href="changelog.html"><span data-i18n="dp.fullCl">Полный чейнджлог</span> <span aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="https://github.com/sunset-launcher/sunset-launcher/releases" target="_blank" rel="noopener" data-i18n="dl.all">Все релизы</a>
         </div>
-      </div>
-    </section>
 
-    <section class="section tight">
-      <div class="container narrow">
-        <div class="help-card reveal">
+        <div class="help-card">
           <div>
             <h3 data-i18n="dp.faqTitle">Вопросы по установке или SmartScreen?</h3>
-            <p class="muted" data-i18n="dp.faqDesc">Ответы про безопасность, Java, папки игры и модпаки собраны в FAQ.</p>
+            <p class="muted" data-i18n="dp.faqDesc">Подробности о подписи кода, загрузке Java, папках игры и модпаках собраны в FAQ</p>
           </div>
-          <a class="btn btn-primary magnetic" href="faq.html" data-i18n="dp.faqBtn">Открыть FAQ</a>
+          <a class="btn btn-ghost" href="faq.html" data-i18n="dp.faqBtn">Открыть FAQ</a>
         </div>
       </div>
     </section>
   </main>
 
   <div id="app-footer"></div>
-  <script src="script.js?v=20261121b"></script>
+  <script src="script.js?v=20261125a"></script>
 </body>
 </html>
